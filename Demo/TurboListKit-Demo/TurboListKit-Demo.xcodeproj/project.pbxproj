@@ -7,57 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF750E462F49AEA9000E6D55 /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF750E452F49AEA9000E6D55 /* TurboListKit */; };
+		DF8925F92F597E7200BE368B /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF8925F82F597E7200BE368B /* TurboListKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DFBD64CC2F49ADD30069E8BB /* PBXContainerItemProxy */ = {
+		DF6BE1A52F597E33002EA8E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DFBD64AD2F49ADD20069E8BB /* Project object */;
+			containerPortal = DF6BE18F2F597E32002EA8E4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DFBD64B42F49ADD20069E8BB;
+			remoteGlobalIDString = DF6BE1962F597E32002EA8E4;
 			remoteInfo = "TurboListKit-Demo";
 		};
-		DFBD64D62F49ADD30069E8BB /* PBXContainerItemProxy */ = {
+		DF6BE1AF2F597E33002EA8E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DFBD64AD2F49ADD20069E8BB /* Project object */;
+			containerPortal = DF6BE18F2F597E32002EA8E4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DFBD64B42F49ADD20069E8BB;
+			remoteGlobalIDString = DF6BE1962F597E32002EA8E4;
 			remoteInfo = "TurboListKit-Demo";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DFBD64B52F49ADD20069E8BB /* TurboListKit-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TurboListKit-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFBD64CB2F49ADD30069E8BB /* TurboListKit-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TurboListKit-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFBD64D52F49ADD30069E8BB /* TurboListKit-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TurboListKit-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF6BE1972F597E32002EA8E4 /* TurboListKit-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TurboListKit-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF6BE1A42F597E33002EA8E4 /* TurboListKit-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TurboListKit-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF6BE1AE2F597E33002EA8E4 /* TurboListKit-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TurboListKit-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		DFBD64DD2F49ADD30069E8BB /* Exceptions for "TurboListKit-Demo" folder in "TurboListKit-Demo" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = DFBD64B42F49ADD20069E8BB /* TurboListKit-Demo */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		DFBD64B72F49ADD20069E8BB /* TurboListKit-Demo */ = {
+		DF6BE1992F597E32002EA8E4 /* TurboListKit-Demo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				DFBD64DD2F49ADD30069E8BB /* Exceptions for "TurboListKit-Demo" folder in "TurboListKit-Demo" target */,
-			);
 			path = "TurboListKit-Demo";
 			sourceTree = "<group>";
 		};
-		DFBD64CE2F49ADD30069E8BB /* TurboListKit-DemoTests */ = {
+		DF6BE1A72F597E33002EA8E4 /* TurboListKit-DemoTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "TurboListKit-DemoTests";
 			sourceTree = "<group>";
 		};
-		DFBD64D82F49ADD30069E8BB /* TurboListKit-DemoUITests */ = {
+		DF6BE1B12F597E33002EA8E4 /* TurboListKit-DemoUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "TurboListKit-DemoUITests";
 			sourceTree = "<group>";
@@ -65,22 +52,22 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DFBD64B22F49ADD20069E8BB /* Frameworks */ = {
+		DF6BE1942F597E32002EA8E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF750E462F49AEA9000E6D55 /* TurboListKit in Frameworks */,
+				DF8925F92F597E7200BE368B /* TurboListKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFBD64C82F49ADD30069E8BB /* Frameworks */ = {
+		DF6BE1A12F597E33002EA8E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFBD64D22F49ADD30069E8BB /* Frameworks */ = {
+		DF6BE1AB2F597E33002EA8E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,22 +77,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DFBD64AC2F49ADD20069E8BB = {
+		DF6BE18E2F597E32002EA8E4 = {
 			isa = PBXGroup;
 			children = (
-				DFBD64B72F49ADD20069E8BB /* TurboListKit-Demo */,
-				DFBD64CE2F49ADD30069E8BB /* TurboListKit-DemoTests */,
-				DFBD64D82F49ADD30069E8BB /* TurboListKit-DemoUITests */,
-				DFBD64B62F49ADD20069E8BB /* Products */,
+				DF6BE1992F597E32002EA8E4 /* TurboListKit-Demo */,
+				DF6BE1A72F597E33002EA8E4 /* TurboListKit-DemoTests */,
+				DF6BE1B12F597E33002EA8E4 /* TurboListKit-DemoUITests */,
+				DF6BE1982F597E32002EA8E4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DFBD64B62F49ADD20069E8BB /* Products */ = {
+		DF6BE1982F597E32002EA8E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DFBD64B52F49ADD20069E8BB /* TurboListKit-Demo.app */,
-				DFBD64CB2F49ADD30069E8BB /* TurboListKit-DemoTests.xctest */,
-				DFBD64D52F49ADD30069E8BB /* TurboListKit-DemoUITests.xctest */,
+				DF6BE1972F597E32002EA8E4 /* TurboListKit-Demo.app */,
+				DF6BE1A42F597E33002EA8E4 /* TurboListKit-DemoTests.xctest */,
+				DF6BE1AE2F597E33002EA8E4 /* TurboListKit-DemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,138 +100,138 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DFBD64B42F49ADD20069E8BB /* TurboListKit-Demo */ = {
+		DF6BE1962F597E32002EA8E4 /* TurboListKit-Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DFBD64DE2F49ADD30069E8BB /* Build configuration list for PBXNativeTarget "TurboListKit-Demo" */;
+			buildConfigurationList = DF6BE1B82F597E33002EA8E4 /* Build configuration list for PBXNativeTarget "TurboListKit-Demo" */;
 			buildPhases = (
-				DFBD64B12F49ADD20069E8BB /* Sources */,
-				DFBD64B22F49ADD20069E8BB /* Frameworks */,
-				DFBD64B32F49ADD20069E8BB /* Resources */,
+				DF6BE1932F597E32002EA8E4 /* Sources */,
+				DF6BE1942F597E32002EA8E4 /* Frameworks */,
+				DF6BE1952F597E32002EA8E4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				DFBD64B72F49ADD20069E8BB /* TurboListKit-Demo */,
+				DF6BE1992F597E32002EA8E4 /* TurboListKit-Demo */,
 			);
 			name = "TurboListKit-Demo";
 			packageProductDependencies = (
-				DF750E452F49AEA9000E6D55 /* TurboListKit */,
+				DF8925F82F597E7200BE368B /* TurboListKit */,
 			);
 			productName = "TurboListKit-Demo";
-			productReference = DFBD64B52F49ADD20069E8BB /* TurboListKit-Demo.app */;
+			productReference = DF6BE1972F597E32002EA8E4 /* TurboListKit-Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DFBD64CA2F49ADD30069E8BB /* TurboListKit-DemoTests */ = {
+		DF6BE1A32F597E33002EA8E4 /* TurboListKit-DemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DFBD64E32F49ADD30069E8BB /* Build configuration list for PBXNativeTarget "TurboListKit-DemoTests" */;
+			buildConfigurationList = DF6BE1BB2F597E33002EA8E4 /* Build configuration list for PBXNativeTarget "TurboListKit-DemoTests" */;
 			buildPhases = (
-				DFBD64C72F49ADD30069E8BB /* Sources */,
-				DFBD64C82F49ADD30069E8BB /* Frameworks */,
-				DFBD64C92F49ADD30069E8BB /* Resources */,
+				DF6BE1A02F597E33002EA8E4 /* Sources */,
+				DF6BE1A12F597E33002EA8E4 /* Frameworks */,
+				DF6BE1A22F597E33002EA8E4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DFBD64CD2F49ADD30069E8BB /* PBXTargetDependency */,
+				DF6BE1A62F597E33002EA8E4 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				DFBD64CE2F49ADD30069E8BB /* TurboListKit-DemoTests */,
+				DF6BE1A72F597E33002EA8E4 /* TurboListKit-DemoTests */,
 			);
 			name = "TurboListKit-DemoTests";
 			packageProductDependencies = (
 			);
 			productName = "TurboListKit-DemoTests";
-			productReference = DFBD64CB2F49ADD30069E8BB /* TurboListKit-DemoTests.xctest */;
+			productReference = DF6BE1A42F597E33002EA8E4 /* TurboListKit-DemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DFBD64D42F49ADD30069E8BB /* TurboListKit-DemoUITests */ = {
+		DF6BE1AD2F597E33002EA8E4 /* TurboListKit-DemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DFBD64E62F49ADD30069E8BB /* Build configuration list for PBXNativeTarget "TurboListKit-DemoUITests" */;
+			buildConfigurationList = DF6BE1BE2F597E33002EA8E4 /* Build configuration list for PBXNativeTarget "TurboListKit-DemoUITests" */;
 			buildPhases = (
-				DFBD64D12F49ADD30069E8BB /* Sources */,
-				DFBD64D22F49ADD30069E8BB /* Frameworks */,
-				DFBD64D32F49ADD30069E8BB /* Resources */,
+				DF6BE1AA2F597E33002EA8E4 /* Sources */,
+				DF6BE1AB2F597E33002EA8E4 /* Frameworks */,
+				DF6BE1AC2F597E33002EA8E4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DFBD64D72F49ADD30069E8BB /* PBXTargetDependency */,
+				DF6BE1B02F597E33002EA8E4 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				DFBD64D82F49ADD30069E8BB /* TurboListKit-DemoUITests */,
+				DF6BE1B12F597E33002EA8E4 /* TurboListKit-DemoUITests */,
 			);
 			name = "TurboListKit-DemoUITests";
 			packageProductDependencies = (
 			);
 			productName = "TurboListKit-DemoUITests";
-			productReference = DFBD64D52F49ADD30069E8BB /* TurboListKit-DemoUITests.xctest */;
+			productReference = DF6BE1AE2F597E33002EA8E4 /* TurboListKit-DemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DFBD64AD2F49ADD20069E8BB /* Project object */ = {
+		DF6BE18F2F597E32002EA8E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					DFBD64B42F49ADD20069E8BB = {
+					DF6BE1962F597E32002EA8E4 = {
 						CreatedOnToolsVersion = 16.4;
 					};
-					DFBD64CA2F49ADD30069E8BB = {
+					DF6BE1A32F597E33002EA8E4 = {
 						CreatedOnToolsVersion = 16.4;
-						TestTargetID = DFBD64B42F49ADD20069E8BB;
+						TestTargetID = DF6BE1962F597E32002EA8E4;
 					};
-					DFBD64D42F49ADD30069E8BB = {
+					DF6BE1AD2F597E33002EA8E4 = {
 						CreatedOnToolsVersion = 16.4;
-						TestTargetID = DFBD64B42F49ADD20069E8BB;
+						TestTargetID = DF6BE1962F597E32002EA8E4;
 					};
 				};
 			};
-			buildConfigurationList = DFBD64B02F49ADD20069E8BB /* Build configuration list for PBXProject "TurboListKit-Demo" */;
+			buildConfigurationList = DF6BE1922F597E32002EA8E4 /* Build configuration list for PBXProject "TurboListKit-Demo" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = DFBD64AC2F49ADD20069E8BB;
+			mainGroup = DF6BE18E2F597E32002EA8E4;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				DF750E442F49AEA9000E6D55 /* XCLocalSwiftPackageReference "../../../TurboListKit" */,
+				DF8925F72F597E7200BE368B /* XCLocalSwiftPackageReference "../../../TurboListKit" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = DFBD64B62F49ADD20069E8BB /* Products */;
+			productRefGroup = DF6BE1982F597E32002EA8E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DFBD64B42F49ADD20069E8BB /* TurboListKit-Demo */,
-				DFBD64CA2F49ADD30069E8BB /* TurboListKit-DemoTests */,
-				DFBD64D42F49ADD30069E8BB /* TurboListKit-DemoUITests */,
+				DF6BE1962F597E32002EA8E4 /* TurboListKit-Demo */,
+				DF6BE1A32F597E33002EA8E4 /* TurboListKit-DemoTests */,
+				DF6BE1AD2F597E33002EA8E4 /* TurboListKit-DemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DFBD64B32F49ADD20069E8BB /* Resources */ = {
+		DF6BE1952F597E32002EA8E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFBD64C92F49ADD30069E8BB /* Resources */ = {
+		DF6BE1A22F597E33002EA8E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFBD64D32F49ADD30069E8BB /* Resources */ = {
+		DF6BE1AC2F597E33002EA8E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,21 +241,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DFBD64B12F49ADD20069E8BB /* Sources */ = {
+		DF6BE1932F597E32002EA8E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFBD64C72F49ADD30069E8BB /* Sources */ = {
+		DF6BE1A02F597E33002EA8E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFBD64D12F49ADD30069E8BB /* Sources */ = {
+		DF6BE1AA2F597E33002EA8E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,76 +265,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DFBD64CD2F49ADD30069E8BB /* PBXTargetDependency */ = {
+		DF6BE1A62F597E33002EA8E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DFBD64B42F49ADD20069E8BB /* TurboListKit-Demo */;
-			targetProxy = DFBD64CC2F49ADD30069E8BB /* PBXContainerItemProxy */;
+			target = DF6BE1962F597E32002EA8E4 /* TurboListKit-Demo */;
+			targetProxy = DF6BE1A52F597E33002EA8E4 /* PBXContainerItemProxy */;
 		};
-		DFBD64D72F49ADD30069E8BB /* PBXTargetDependency */ = {
+		DF6BE1B02F597E33002EA8E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DFBD64B42F49ADD20069E8BB /* TurboListKit-Demo */;
-			targetProxy = DFBD64D62F49ADD30069E8BB /* PBXContainerItemProxy */;
+			target = DF6BE1962F597E32002EA8E4 /* TurboListKit-Demo */;
+			targetProxy = DF6BE1AF2F597E33002EA8E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		DFBD64DF2F49ADD30069E8BB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LGX4B4WC66;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TurboListKit-Demo/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.indextrown.TurboListKit-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DFBD64E02F49ADD30069E8BB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LGX4B4WC66;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TurboListKit-Demo/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.indextrown.TurboListKit-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		DFBD64E12F49ADD30069E8BB /* Debug */ = {
+		DF6BE1B62F597E33002EA8E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -411,7 +342,7 @@
 			};
 			name = Debug;
 		};
-		DFBD64E22F49ADD30069E8BB /* Release */ = {
+		DF6BE1B72F597E33002EA8E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -468,7 +399,63 @@
 			};
 			name = Release;
 		};
-		DFBD64E42F49ADD30069E8BB /* Debug */ = {
+		DF6BE1B92F597E33002EA8E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGX4B4WC66;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.indextrown.TurboListKit-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DF6BE1BA2F597E33002EA8E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGX4B4WC66;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.indextrown.TurboListKit-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DF6BE1BC2F597E33002EA8E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,7 +474,7 @@
 			};
 			name = Debug;
 		};
-		DFBD64E52F49ADD30069E8BB /* Release */ = {
+		DF6BE1BD2F597E33002EA8E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,7 +493,7 @@
 			};
 			name = Release;
 		};
-		DFBD64E72F49ADD30069E8BB /* Debug */ = {
+		DF6BE1BF2F597E33002EA8E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -523,7 +510,7 @@
 			};
 			name = Debug;
 		};
-		DFBD64E82F49ADD30069E8BB /* Release */ = {
+		DF6BE1C02F597E33002EA8E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -543,38 +530,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DFBD64B02F49ADD20069E8BB /* Build configuration list for PBXProject "TurboListKit-Demo" */ = {
+		DF6BE1922F597E32002EA8E4 /* Build configuration list for PBXProject "TurboListKit-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DFBD64E12F49ADD30069E8BB /* Debug */,
-				DFBD64E22F49ADD30069E8BB /* Release */,
+				DF6BE1B62F597E33002EA8E4 /* Debug */,
+				DF6BE1B72F597E33002EA8E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DFBD64DE2F49ADD30069E8BB /* Build configuration list for PBXNativeTarget "TurboListKit-Demo" */ = {
+		DF6BE1B82F597E33002EA8E4 /* Build configuration list for PBXNativeTarget "TurboListKit-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DFBD64DF2F49ADD30069E8BB /* Debug */,
-				DFBD64E02F49ADD30069E8BB /* Release */,
+				DF6BE1B92F597E33002EA8E4 /* Debug */,
+				DF6BE1BA2F597E33002EA8E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DFBD64E32F49ADD30069E8BB /* Build configuration list for PBXNativeTarget "TurboListKit-DemoTests" */ = {
+		DF6BE1BB2F597E33002EA8E4 /* Build configuration list for PBXNativeTarget "TurboListKit-DemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DFBD64E42F49ADD30069E8BB /* Debug */,
-				DFBD64E52F49ADD30069E8BB /* Release */,
+				DF6BE1BC2F597E33002EA8E4 /* Debug */,
+				DF6BE1BD2F597E33002EA8E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DFBD64E62F49ADD30069E8BB /* Build configuration list for PBXNativeTarget "TurboListKit-DemoUITests" */ = {
+		DF6BE1BE2F597E33002EA8E4 /* Build configuration list for PBXNativeTarget "TurboListKit-DemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DFBD64E72F49ADD30069E8BB /* Debug */,
-				DFBD64E82F49ADD30069E8BB /* Release */,
+				DF6BE1BF2F597E33002EA8E4 /* Debug */,
+				DF6BE1C02F597E33002EA8E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -582,18 +569,18 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		DF750E442F49AEA9000E6D55 /* XCLocalSwiftPackageReference "../../../TurboListKit" */ = {
+		DF8925F72F597E7200BE368B /* XCLocalSwiftPackageReference "../../../TurboListKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../../TurboListKit;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DF750E452F49AEA9000E6D55 /* TurboListKit */ = {
+		DF8925F82F597E7200BE368B /* TurboListKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TurboListKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = DFBD64AD2F49ADD20069E8BB /* Project object */;
+	rootObject = DF6BE18F2F597E32002EA8E4 /* Project object */;
 }
