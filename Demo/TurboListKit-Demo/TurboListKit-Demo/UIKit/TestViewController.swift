@@ -53,6 +53,15 @@ final class TestViewController: UIViewController {
             NumberComponent(number: 1),
             NumberComponent(number: 2),
         ])
+        
+        /*
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            self.adapter.setItems([
+                NumberComponent(number: 1),
+                NumberComponent(number: 2),
+            ])
+        })
+         */
     }
 }
 

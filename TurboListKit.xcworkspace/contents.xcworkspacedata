@@ -10,6 +10,10 @@
    <FileRef
       location = "group:Readme.md">
    </FileRef>
+   <FileSystemSynchronizedGroup
+      location = "group:Docs"
+      name = "Docs">
+   </FileSystemSynchronizedGroup>
    <FileRef
       location = "group:Sources">
    </FileRef>
