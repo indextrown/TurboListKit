@@ -8,6 +8,9 @@
       location = "group:Package.resolved">
    </FileRef>
    <FileRef
+      location = "group:Readme.md">
+   </FileRef>
+   <FileRef
       location = "group:Sources">
    </FileRef>
    <FileRef
