@@ -8,16 +8,14 @@
 import UIKit
 import TurboListKit
 
-final class TestViewController: UIViewController {
+final class DiffViewController: UIViewController {
     
-//    private let collectionView = UICollectionView(
-//        frame: .zero,
-//        collectionViewLayout: UICollectionViewFlowLayout()
-//    )
-    
-    
-    let collectionView = UICollectionView(scrollDirection: .vertical, lineSpacing: 10, interitemSpacing: 10)
-    lazy var adapter = CollectionViewAdapter(collectionView: collectionView)
+    let collectionView = UICollectionView(scrollDirection: .vertical,
+                                          lineSpacing: 10,
+                                          interitemSpacing: 10)
+
+    lazy var adapter = DiffCollectionViewAdapter(collectionView: collectionView,
+                                                 animated: true)
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -56,14 +54,15 @@ final class TestViewController: UIViewController {
             NumberComponent(number: 2),
         ])
         
-        /*
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.adapter.setItems([
-                NumberComponent(number: 1),
-                NumberComponent(number: 2),
+                TitleComponent(title: "Hello"),
+                TitleComponent(title: "World"),
+                NumberComponent(number: 100),
+                TitleComponent(title: "TurboListKit"),
+                NumberComponent(number: 200),
             ])
-        })
-         */
+        }
     }
 }
 

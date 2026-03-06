@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF8925F92F597E7200BE368B /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF8925F82F597E7200BE368B /* TurboListKit */; };
+		DF9592B52F5B302D00F09F62 /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF9592B42F5B302D00F09F62 /* TurboListKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9592B52F5B302D00F09F62 /* TurboListKit in Frameworks */,
 				DF8925F92F597E7200BE368B /* TurboListKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +120,7 @@
 			name = "TurboListKit-Demo";
 			packageProductDependencies = (
 				DF8925F82F597E7200BE368B /* TurboListKit */,
+				DF9592B42F5B302D00F09F62 /* TurboListKit */,
 			);
 			productName = "TurboListKit-Demo";
 			productReference = DF6BE1972F597E32002EA8E4 /* TurboListKit-Demo.app */;
@@ -202,7 +205,7 @@
 			mainGroup = DF6BE18E2F597E32002EA8E4;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				DF8925F72F597E7200BE368B /* XCLocalSwiftPackageReference "../../../TurboListKit" */,
+				DF9592B32F5B302D00F09F62 /* XCLocalSwiftPackageReference "../../../TurboListKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DF6BE1982F597E32002EA8E4 /* Products */;
@@ -569,7 +572,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		DF8925F72F597E7200BE368B /* XCLocalSwiftPackageReference "../../../TurboListKit" */ = {
+		DF9592B32F5B302D00F09F62 /* XCLocalSwiftPackageReference "../../../TurboListKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../../TurboListKit;
 		};
@@ -577,6 +580,10 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		DF8925F82F597E7200BE368B /* TurboListKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TurboListKit;
+		};
+		DF9592B42F5B302D00F09F62 /* TurboListKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TurboListKit;
 		};

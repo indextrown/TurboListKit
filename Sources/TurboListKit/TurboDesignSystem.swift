@@ -40,7 +40,7 @@ public protocol ContainsButton {
 /// 셀 데이터 타입
 /// CollectionViewCell의 프로토콜
 /// Model → 어떤 Cell을 사용할지 알고 있음
-public protocol CellDataModel {
+public protocol CellDataModel: Hashable {
     nonisolated static var cellType: UICollectionViewCell.Type { get }
 }
 

@@ -53,12 +53,19 @@ let package = Package(
          --hosting-base-path TurboListKit
          */
         .package(url: "https://github.com/apple/swift-docc-plugin",
-                 branch: "main")
+                 branch: "main"),
+        
+        .package(
+            url: "https://github.com/ra1028/DifferenceKit",
+            from: "1.3.0"
+        ),
     ],
     targets: [
         // 별도로 빌드할 소스 위치를 명시하지 않음
         // 자동으로 Sources/TurboListKit/소스파일들을 빌드한다
-        .target(name: "TurboListKit"),
+        .target(name: "TurboListKit",
+                dependencies: ["DifferenceKit"]
+        ),
         .testTarget(name: "TurboListKitTests",
                     dependencies: ["TurboListKit"]
         ),
