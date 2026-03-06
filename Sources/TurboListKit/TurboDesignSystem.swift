@@ -76,6 +76,7 @@ public struct Context {
     public let indexPath: IndexPath
 }
 
+// MARK: - Data + Render
 @MainActor
 public protocol Component: CellDataModel, FlowSizable {
     associatedtype CellUIView: UIView
