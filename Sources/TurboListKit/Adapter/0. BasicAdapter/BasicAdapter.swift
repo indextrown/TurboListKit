@@ -61,7 +61,7 @@ public protocol FlowSizable {
 /// CellModel을 바인딩할 수 있는 프로토콜 셀을 실제 셀 UI에 연결해서 화면에 그려주는 작업
 public protocol CellDataModelBindable {
     @MainActor
-    func bind(to cellDataModel: CellDataModel, context: Context)
+    func bind(to cellDataModel: any CellDataModel, context: Context)
 }
 
 /// 공통 베이스 셀
@@ -93,7 +93,7 @@ class ContainerCell<C>: UICollectionViewCell, CellDataModelBindable where C: Com
         "\(Self.self)_\(C.self)"
     }
     
-    func bind(to cellDataModel: CellDataModel, context: Context) {
+    func bind(to cellDataModel: any CellDataModel, context: Context) {
         guard let component = cellDataModel as? C else {
             assertionFailure("Component 타입이 아닙니다.")
             return
@@ -126,7 +126,7 @@ class ContainerCell<C>: UICollectionViewCell, CellDataModelBindable where C: Com
 @MainActor
 public final class CollectionViewAdapter: NSObject {
     private weak var collectionView: UICollectionView?
-    private var items: [CellDataModel] = []
+    private var items: [any CellDataModel] = []
     private var registeredIdentifiers = Set<String>()
     
     public init(collectionView: UICollectionView) {
@@ -136,7 +136,7 @@ public final class CollectionViewAdapter: NSObject {
         collectionView.delegate = self
     }
     
-    public func setItems(_ items: [CellDataModel]) {
+    public func setItems(_ items: [any CellDataModel]) {
         self.items = items
         registerCells()
         collectionView?.reloadData()

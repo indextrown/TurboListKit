@@ -4,23 +4,6 @@
 import DifferenceKit
 import UIKit
 
-public struct AnyComponent: Differentiable {
-    let base: CellDataModel
-
-    // MARK: - Component
-    public init(base: CellDataModel) {
-        self.base = base
-    }
-    
-    public var differenceIdentifier: AnyHashable {
-        return AnyHashable(base)
-    }
-
-    public func isContentEqual(to source: AnyComponent) -> Bool {
-        return AnyHashable(base) == AnyHashable(source.base)
-    }
-}
-
 @MainActor
 public final class DiffCollectionViewAdapter: NSObject {
     private weak var collectionView: UICollectionView?
@@ -38,7 +21,7 @@ public final class DiffCollectionViewAdapter: NSObject {
         collectionView.delegate = self
     }
     
-    public func setItems(_ models: [CellDataModel]) {
+    public func setItems(_ models: [any CellDataModel]) {
         guard let collectionView else { return }
         let newItems = models.map { AnyComponent(base: $0) }
         registerCells(models)
@@ -62,7 +45,7 @@ public final class DiffCollectionViewAdapter: NSObject {
 }
 
 private extension DiffCollectionViewAdapter {
-    func registerCells(_ models: [CellDataModel]) {
+    func registerCells(_ models: [any CellDataModel]) {
         guard let collectionView else { return }
         models.forEach { model in
             let cellType = type(of: model).cellType

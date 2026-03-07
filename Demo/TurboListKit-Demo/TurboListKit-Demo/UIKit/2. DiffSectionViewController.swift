@@ -67,6 +67,7 @@ final class DiffSectionViewController: UIViewController {
 
         ])
         
+        /*
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.adapter.setSections([
                 
@@ -114,6 +115,7 @@ final class DiffSectionViewController: UIViewController {
 
             ])
         }
+         */
     }
 }
 

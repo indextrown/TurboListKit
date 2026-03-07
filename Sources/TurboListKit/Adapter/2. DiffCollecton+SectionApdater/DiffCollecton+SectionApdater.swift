@@ -8,66 +8,6 @@
 import UIKit
 import DifferenceKit
 
-public struct ComponentSection: DifferentiableSection {
-
-    public var id: String
-    public var elements: [AnyComponent]
-
-    public init(id: String, elements: [CellDataModel]) {
-        self.id = id
-        self.elements = elements.map { AnyComponent(base: $0) }
-    }
-
-    public init<C>(
-        source: ComponentSection,
-        elements: C
-    ) where C: Collection, C.Element == AnyComponent {
-
-        self.id = source.id
-        self.elements = Array(elements)
-    }
-
-    public var differenceIdentifier: String {
-        id
-    }
-
-    public func isContentEqual(to source: ComponentSection) -> Bool {
-        id == source.id
-    }
-}
-
-final class SectionHeaderView: UICollectionReusableView {
-
-    static let reuseIdentifier = "SectionHeaderView"
-
-    private let label = UILabel()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        label.font = .boldSystemFont(ofSize: 18)
-
-        addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            label.trailingAnchor.constraint(equalTo: trailingAnchor),
-            label.topAnchor.constraint(equalTo: topAnchor),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-
-    func setTitle(_ title: String) {
-        label.text = title
-    }
-}
-
-
 @MainActor
 public final class DiffSectionCollectionViewAdapter: NSObject {
 
@@ -127,7 +67,7 @@ public final class DiffSectionCollectionViewAdapter: NSObject {
 
 private extension DiffSectionCollectionViewAdapter {
 
-    func registerCells(_ models: [CellDataModel]) {
+    func registerCells(_ models: [any CellDataModel]) {
 
         guard let collectionView else { return }
 
@@ -150,12 +90,9 @@ private extension DiffSectionCollectionViewAdapter {
 
 extension DiffSectionCollectionViewAdapter: UICollectionViewDataSource {
 
-    public func numberOfSections(
-        in collectionView: UICollectionView
-    ) -> Int {
-        sections.count
-    }
-
+    // 필수: 각 섹션의 아이템 개수
+    /// 특정 섹션에 표시할 아이템(셀)의 개수 반환
+    /// 이 값만큼 cellForItemAt이 호출됨
     public func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
@@ -163,6 +100,8 @@ extension DiffSectionCollectionViewAdapter: UICollectionViewDataSource {
         sections[section].elements.count
     }
 
+    // 필수: 셀생성
+    // 실제 셀을 생성(재사용)하고 데이터 바인딩하는 메서드
     public func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
@@ -192,7 +131,14 @@ extension DiffSectionCollectionViewAdapter: UICollectionViewDataSource {
         return cell
     }
     
-    // section header
+    /// 섹션 개수
+    public func numberOfSections(
+        in collectionView: UICollectionView
+    ) -> Int {
+        sections.count
+    }
+    
+    /// 섹션 헤더 생성
     public func collectionView(
         _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
@@ -218,12 +164,17 @@ extension DiffSectionCollectionViewAdapter: UICollectionViewDataSource {
 
 extension DiffSectionCollectionViewAdapter: UICollectionViewDelegateFlowLayout {
 
+    /// 셀 하나의 크기 설정
+    /// 레이아웃 계산은 bounds 기준이 안전함
+    /// 현재는 2열 그리드 구성
     public func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-
+        // frame은 superview 좌표 기준
+        // bounds는 자기 내부 좌표 기준
+        // 좌우 간격 + 셀 사이 간격 고려
         let model = sections[indexPath.section]
             .elements[indexPath.item]
             .base
@@ -235,7 +186,8 @@ extension DiffSectionCollectionViewAdapter: UICollectionViewDelegateFlowLayout {
         return .zero
     }
     
-    // section header size
+    /// 헤더 크기 지정
+    /// height가 0이면 헤더는 화면에 보이지 않는다.
     public func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -246,5 +198,18 @@ extension DiffSectionCollectionViewAdapter: UICollectionViewDelegateFlowLayout {
             width: collectionView.bounds.width,
             height: 40
         )
+    }
+    
+    /// 섹션 전체 여백
+    /// 테두리 padding 개념
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
+    }
+}
+
+extension DiffSectionCollectionViewAdapter: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView,
+                               didSelectItemAt indexPath: IndexPath) {
+        print("섹션: \(indexPath.section) 아이템: \(indexPath.item)번 cell 클릭")
     }
 }
