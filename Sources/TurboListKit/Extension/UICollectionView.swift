@@ -17,7 +17,7 @@ extension UICollectionView {
         layout.minimumLineSpacing = lineSpacing
         layout.minimumInteritemSpacing = interitemSpacing
         self.init(frame: .zero, collectionViewLayout: layout)
-        backgroundColor = .systemBackground
+        backgroundColor = .clear
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
     }

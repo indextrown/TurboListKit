@@ -12,7 +12,8 @@ import TurboListKit
 struct ContentView: View {
     var body: some View {
         // TestViewController.toSwiftUI()
-        DiffViewController.toSwiftUI()
+        // DiffViewController.toSwiftUI()
+        DiffSectionViewController.toSwiftUI()
     }
 }
 

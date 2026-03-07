@@ -4,19 +4,19 @@
 import DifferenceKit
 import UIKit
 
-struct AnyComponent: Differentiable {
+public struct AnyComponent: Differentiable {
     let base: CellDataModel
 
     // MARK: - Component
-    init(base: CellDataModel) {
+    public init(base: CellDataModel) {
         self.base = base
     }
     
-    var differenceIdentifier: AnyHashable {
+    public var differenceIdentifier: AnyHashable {
         return AnyHashable(base)
     }
 
-    func isContentEqual(to source: AnyComponent) -> Bool {
+    public func isContentEqual(to source: AnyComponent) -> Bool {
         return AnyHashable(base) == AnyHashable(source.base)
     }
 }
