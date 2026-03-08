@@ -38,8 +38,8 @@ final class DiffSectionViewController: UIViewController {
          collectionView.translatesAutoresizingMaskIntoConstraints = false
          
          NSLayoutConstraint.activate([
-             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
              collectionView.topAnchor.constraint(equalTo: view.topAnchor),
              collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
          ])
@@ -65,70 +65,87 @@ final class DiffSectionViewController: UIViewController {
                         },
                     
                     NumberComponent(number: 2)
+                        .padding(left: 50)
                         .onTouch {
                             print("테스트2")
                         },
+                        
                     NumberComponent(number: 3)
+                        .padding(right: 50)
                         .onTouch {
                             print("테스트3")
+                        },
+                    
+                    NumberComponent(number: 4)
+                        .padding(vertical: 0)
+                        .onTouch {
+                            print("테스트4")
+                        },
+                    
+                    NumberComponent(number: 5)
+                        .padding(horizontal: 50)
+                        .onTouch {
+                            print("테스트5")
                         }
                 ]
             )
-
         ])
-        
-        /*
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.adapter.setSections([
-                
-                ComponentSection(
-                    id: "title",
-                    elements: [
-                        TitleComponent(title: "World"),
-                        TitleComponent(title: "Hello"),
-                    ]
-                ),
-
-                ComponentSection(
-                    id: "numbers",
-                    elements: [
-                        NumberComponent(number: 1),
-                        NumberComponent(number: 3),
-                        NumberComponent(number: 2),
-                        
-                    ]
-                )
-
-            ])
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-            self.adapter.setSections([
-                
-                ComponentSection(
-                    id: "title",
-                    elements: [
-                        TitleComponent(title: "World"),
-                       
-                        NumberComponent(number: 1),
-                    ]
-                ),
-
-                ComponentSection(
-                    id: "numbers",
-                    elements: [
-                        TitleComponent(title: "Hello"),
-                        NumberComponent(number: 3),
-                        NumberComponent(number: 2),
-                    ]
-                )
-
-            ])
-        }
-         */
     }
 }
 
 #Preview {
     DiffSectionViewController()
 }
+
+
+
+
+/*
+DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+    self.adapter.setSections([
+        
+        ComponentSection(
+            id: "title",
+            elements: [
+                TitleComponent(title: "World"),
+                TitleComponent(title: "Hello"),
+            ]
+        ),
+
+        ComponentSection(
+            id: "numbers",
+            elements: [
+                NumberComponent(number: 1),
+                NumberComponent(number: 3),
+                NumberComponent(number: 2),
+                
+            ]
+        )
+
+    ])
+}
+
+DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+    self.adapter.setSections([
+        
+        ComponentSection(
+            id: "title",
+            elements: [
+                TitleComponent(title: "World"),
+               
+                NumberComponent(number: 1),
+            ]
+        ),
+
+        ComponentSection(
+            id: "numbers",
+            elements: [
+                TitleComponent(title: "Hello"),
+                NumberComponent(number: 3),
+                NumberComponent(number: 2),
+            ]
+        )
+
+    ])
+}
+ */

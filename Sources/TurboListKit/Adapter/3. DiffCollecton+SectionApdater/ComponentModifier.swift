@@ -110,3 +110,149 @@ public extension Component where CellUIView: Touchable {
         )
     }
 }
+
+
+
+
+
+
+
+
+public protocol LayoutModifier: Component {
+    associatedtype Wrapped: Component
+    var wrapped: Wrapped { get }
+}
+
+
+
+public final class PaddingContainerView<Content: UIView>: UIView {
+
+    let content: Content
+    let inset: UIEdgeInsets
+
+    public init(content: Content, inset: UIEdgeInsets) {
+        self.content = content
+        self.inset = inset
+        super.init(frame: .zero)
+
+        addSubview(content)
+    }
+
+    public required init?(coder: NSCoder) {
+        fatalError()
+    }
+
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+
+        content.frame = bounds.inset(by: inset)
+    }
+}
+public struct PaddingModifier<Wrapped: Component>: LayoutModifier {
+
+    public typealias CellUIView = PaddingContainerView<Wrapped.CellUIView>
+
+    public let wrapped: Wrapped
+    public let inset: UIEdgeInsets
+
+//    public func size(cellSize: CGSize) -> CGSize {
+//        return wrapped.size(cellSize: cellSize)
+//    }
+    
+    public func size(cellSize: CGSize) -> CGSize {
+            let inner = wrapped.size(cellSize: cellSize)
+
+            return CGSize(
+                width: inner.width,
+                height: inner.height + inset.top + inset.bottom
+            )
+        }
+
+    public func createCellUIView() -> CellUIView {
+
+        let inner = wrapped.createCellUIView()
+
+        return PaddingContainerView(
+            content: inner,
+            inset: inset
+        )
+    }
+
+    public func render(context: Context, content: CellUIView) {
+
+        wrapped.render(
+            context: context,
+            content: content.content
+        )
+    }
+}
+extension PaddingModifier: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(wrapped)
+    }
+    
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.wrapped == rhs.wrapped
+    }
+}
+
+public extension Component {
+
+    func padding(left value: CGFloat) -> PaddingModifier<Self> {
+        PaddingModifier(
+            wrapped: self,
+            inset: UIEdgeInsets(
+                top: 0,
+                left: value,
+                bottom: 0,
+                right: 0
+            )
+        )
+    }
+
+    func padding(right value: CGFloat) -> PaddingModifier<Self> {
+        PaddingModifier(
+            wrapped: self,
+            inset: UIEdgeInsets(
+                top: 0,
+                left: 0,
+                bottom: 0,
+                right: value
+            )
+        )
+    }
+}
+
+public extension Component {
+
+    func padding(vertical value: CGFloat) -> PaddingModifier<Self> {
+        PaddingModifier(
+            wrapped: self,
+            inset: UIEdgeInsets(
+                top: value,
+                left: 0,
+                bottom: value,
+                right: 0
+            )
+        )
+    }
+
+    func padding(horizontal value: CGFloat) -> PaddingModifier<Self> {
+        PaddingModifier(
+            wrapped: self,
+            inset: UIEdgeInsets(
+                top: 0,
+                left: value,
+                bottom: 0,
+                right: value
+            )
+        )
+    }
+}
+
+extension PaddingContainerView: Touchable where Content: Touchable {
+
+    public func touchableAreaTap(_ action: @escaping () -> Void) {
+        content.touchableAreaTap(action)
+    }
+}

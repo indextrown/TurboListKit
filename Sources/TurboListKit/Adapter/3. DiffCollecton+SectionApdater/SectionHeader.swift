@@ -16,6 +16,7 @@ final class SectionHeaderView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        label.textColor = .black
         label.font = .boldSystemFont(ofSize: 18)
 
         addSubview(label)

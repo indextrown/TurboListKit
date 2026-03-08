@@ -82,6 +82,7 @@ open class BaseCell: UICollectionViewCell {
 // MARK: - Component
 public struct Context {
     public let indexPath: IndexPath
+    // public let containerSize: CGSize
 }
 
 // MARK: - Data + Render
