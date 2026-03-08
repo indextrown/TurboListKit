@@ -68,7 +68,8 @@ where Wrapped.CellUIView: Touchable {
     @MainActor
     public func createCellUIView() -> CellUIView {
         // print("OnTouchModifier wrapping:", Wrapped.self)
-        debugDepth()
+        // debugDepth()
+        // 여기
         return wrapped.createCellUIView()
     }
     

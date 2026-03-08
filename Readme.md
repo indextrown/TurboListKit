@@ -33,6 +33,89 @@ Component = Model + Layout + Rendering
 
 ---
 
+# How to use
+```swift
+import UIKit
+import TurboListKit
+
+final class Diff_Section_Builder_ViewController2: UIViewController {
+    
+    let collectionView = UICollectionView(
+        scrollDirection: .vertical,
+        lineSpacing: 10,
+        interitemSpacing: 10
+    )
+    
+    lazy var adapter = DiffSectionCollectionViewAdapter(
+        collectionView: collectionView,
+        animated: true
+    )
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        setupAdapter()
+    }
+    
+    private func setupUI() {
+         view.backgroundColor = .white
+         
+         view.addSubview(collectionView)
+         collectionView.translatesAutoresizingMaskIntoConstraints = false
+         
+         NSLayoutConstraint.activate([
+             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+         ])
+     }
+    
+    func setupAdapter() {
+        adapter.sections {
+            
+            // use 1
+            ComponentSection(
+                id: "title0",
+                elements: [
+                    TitleComponent(title: "기본")
+                        .onTouch {
+                            print("테스트1")
+                        }
+                ]
+            )
+            
+            // use 2
+            Section("title2") {
+                TitleComponent(title: "A1")
+                    .padding(left: 50)
+                TitleComponent(title: "A1")
+                    .padding(right: 50)
+            }
+            
+            // use 3
+            Section("title3") {
+                For(of: 0..<300) { index in
+                    TitleComponent(title: "기본: \(index)")
+                        .onTouch {
+                            print("테스트1")
+                        }
+                }
+            }
+        }
+    }
+}
+```
+
+<!--
 # Architecture
 
 ```
@@ -248,3 +331,4 @@ Swift Package Manager
 ```
 
 ---
+-->

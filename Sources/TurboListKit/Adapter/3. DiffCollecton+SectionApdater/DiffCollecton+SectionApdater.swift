@@ -237,3 +237,63 @@ extension DiffSectionCollectionViewAdapter: UICollectionViewDelegate {
     }
 }
 */
+
+/*
+ func setupAdapter() {
+
+     adapter.sections {
+
+         Section("title1") {
+             TitleComponent(title: "Hello")
+             TitleComponent(title: "World")
+         }
+
+         Section("title2") {
+             TitleComponent(title: "A1")
+         }
+
+         Section("title3") {
+             For(of: 1...5) { index in
+                 TitleComponent(title: "기본")
+             }
+         }
+
+     }
+ }
+ */
+public extension DiffSectionCollectionViewAdapter {
+
+    func sections(@SectionBuilder _ content: () -> [ComponentSection]) {
+        setSections(content())
+    }
+
+}
+
+/*
+ [테스트용]
+ func setupAdapter() {
+
+     collectionView.sections(adapter: adapter) {
+
+         Section("title1") {
+             TitleComponent(title: "Hello")
+         }
+
+         Section("title2") {
+             TitleComponent(title: "A1")
+         }
+
+     }
+
+ }
+ */
+public extension UICollectionView {
+
+    func sections(
+        adapter: DiffSectionCollectionViewAdapter,
+        @SectionBuilder _ content: () -> [ComponentSection]
+    ) {
+        adapter.setSections(content())
+    }
+
+}
