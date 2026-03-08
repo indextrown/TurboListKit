@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF7855012F5D6B5500372852 /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF7855002F5D6B5500372852 /* TurboListKit */; };
 		DF8925F92F597E7200BE368B /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF8925F82F597E7200BE368B /* TurboListKit */; };
 		DF9592B52F5B302D00F09F62 /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF9592B42F5B302D00F09F62 /* TurboListKit */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 			files = (
 				DF9592B52F5B302D00F09F62 /* TurboListKit in Frameworks */,
 				DF8925F92F597E7200BE368B /* TurboListKit in Frameworks */,
+				DF7855012F5D6B5500372852 /* TurboListKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +123,7 @@
 			packageProductDependencies = (
 				DF8925F82F597E7200BE368B /* TurboListKit */,
 				DF9592B42F5B302D00F09F62 /* TurboListKit */,
+				DF7855002F5D6B5500372852 /* TurboListKit */,
 			);
 			productName = "TurboListKit-Demo";
 			productReference = DF6BE1972F597E32002EA8E4 /* TurboListKit-Demo.app */;
@@ -205,7 +208,7 @@
 			mainGroup = DF6BE18E2F597E32002EA8E4;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				DF9592B32F5B302D00F09F62 /* XCLocalSwiftPackageReference "../../../TurboListKit" */,
+				DF7854FF2F5D6B5500372852 /* XCLocalSwiftPackageReference "../../../TurboListKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DF6BE1982F597E32002EA8E4 /* Products */;
@@ -572,13 +575,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		DF9592B32F5B302D00F09F62 /* XCLocalSwiftPackageReference "../../../TurboListKit" */ = {
+		DF7854FF2F5D6B5500372852 /* XCLocalSwiftPackageReference "../../../TurboListKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../../TurboListKit;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DF7855002F5D6B5500372852 /* TurboListKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TurboListKit;
+		};
 		DF8925F82F597E7200BE368B /* TurboListKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TurboListKit;

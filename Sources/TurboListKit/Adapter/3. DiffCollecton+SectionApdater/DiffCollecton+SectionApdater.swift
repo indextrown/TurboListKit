@@ -4,6 +4,26 @@
 //
 //  Created by 김동현 on 3/7/26.
 //
+/*
+ ComponentSection
+  └ elements: [AnyComponent]
+ 
+ AnyComponent
+  └ base: any CellDataModel
+ 
+ Section
+  └ AnyComponent
+      └ base = NumberComponent
+ 
+ let model = sections[indexPath.section]
+     .elements[indexPath.item]
+     .base
+ => AnyComponent -> NumberComponent
+ 
+ AnyComponent
+    ↓ .base
+ NumberComponent
+ */
 
 import UIKit
 import DifferenceKit
@@ -13,9 +33,7 @@ public final class DiffSectionCollectionViewAdapter: NSObject {
 
     private weak var collectionView: UICollectionView?
     private var sections: [ComponentSection] = []
-
     private var registeredIdentifiers: Set<String> = []
-
     private let animated: Bool
 
     public init(
@@ -126,6 +144,8 @@ extension DiffSectionCollectionViewAdapter: UICollectionViewDataSource {
 
         let context = Context(indexPath: indexPath)
 
+        // bindableCell: CellDataModelBindable
+        // model: CellDataModel
         bindableCell.bind(to: model, context: context)
 
         return cell
@@ -202,7 +222,9 @@ extension DiffSectionCollectionViewAdapter: UICollectionViewDelegateFlowLayout {
     
     /// 섹션 전체 여백
     /// 테두리 padding 개념
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
     }
 }

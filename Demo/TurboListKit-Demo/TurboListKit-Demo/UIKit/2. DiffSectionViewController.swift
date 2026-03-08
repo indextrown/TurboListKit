@@ -119,5 +119,6 @@ final class DiffSectionViewController: UIViewController {
     }
 }
 
-
-
+#Preview {
+    DiffSectionViewController()
+}
