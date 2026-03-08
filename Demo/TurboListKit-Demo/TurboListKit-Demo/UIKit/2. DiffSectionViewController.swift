@@ -59,9 +59,19 @@ final class DiffSectionViewController: UIViewController {
             ComponentSection(
                 id: "numbers",
                 elements: [
-                    NumberComponent(number: 1),
-                    NumberComponent(number: 2),
+                    NumberComponent(number: 1)
+                        .onTouch {
+                            print("테스트1")
+                        },
+                    
+                    NumberComponent(number: 2)
+                        .onTouch {
+                            print("테스트2")
+                        },
                     NumberComponent(number: 3)
+                        .onTouch {
+                            print("테스트3")
+                        }
                 ]
             )
 

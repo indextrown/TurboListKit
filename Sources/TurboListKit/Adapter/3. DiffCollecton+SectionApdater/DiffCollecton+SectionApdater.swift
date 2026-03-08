@@ -229,9 +229,11 @@ extension DiffSectionCollectionViewAdapter: UICollectionViewDelegateFlowLayout {
     }
 }
 
+/*
 extension DiffSectionCollectionViewAdapter: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView,
                                didSelectItemAt indexPath: IndexPath) {
-        print("섹션: \(indexPath.section) 아이템: \(indexPath.item)번 cell 클릭")
+        // print("섹션: \(indexPath.section) 아이템: \(indexPath.item)번 cell 클릭")
     }
 }
+*/

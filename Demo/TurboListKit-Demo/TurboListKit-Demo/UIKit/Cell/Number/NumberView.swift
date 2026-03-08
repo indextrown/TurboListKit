@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import TurboListKit
 
-final class NumberView: UIView {
+final class NumberView: UIView, Touchable {
     
     private let titleLabel = UILabel()
     

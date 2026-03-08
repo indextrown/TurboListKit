@@ -33,6 +33,13 @@ public protocol Touchable {
     
 }
 
+extension Touchable where Self: UIView {
+    @MainActor
+    func touchableAreaTap(_ action: @escaping () -> Void) {
+        self.onTap(action)
+    }
+}
+
 /// 버튼 존재 여부
 public protocol ContainsButton {
     
@@ -54,8 +61,8 @@ public extension Component {
 }
 
 /// 셀 사이즈 계산 책임
-@MainActor
 public protocol FlowSizable {
+    @MainActor
     func size(cellSize: CGSize) -> CGSize
 }
 
@@ -78,11 +85,13 @@ public struct Context {
 }
 
 // MARK: - Data + Render
-@MainActor
 public protocol Component: CellDataModel, FlowSizable {
     associatedtype CellUIView: UIView
     
+    @MainActor
     func createCellUIView() -> CellUIView
+    
+    @MainActor
     func render(context: Context, content: CellUIView)
 }
 

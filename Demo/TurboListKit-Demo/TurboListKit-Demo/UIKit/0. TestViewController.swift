@@ -53,7 +53,7 @@ final class TestViewController: UIViewController {
             TitleComponent(title: "World"),
             TitleComponent(title: "TurboListKit"),
             NumberComponent(number: 1),
-            NumberComponent(number: 2),
+            NumberComponent(number: 2)
         ])
         
         /*
@@ -65,6 +65,8 @@ final class TestViewController: UIViewController {
         })
          */
     }
+    
+
 }
 
 
