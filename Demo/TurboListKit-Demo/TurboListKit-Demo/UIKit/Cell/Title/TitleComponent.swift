@@ -32,7 +32,7 @@ struct TitleComponent: Component {
     func render(context: Context, content: CellUIView) {
         content.setTitle(title)
         content.setBackground(.gray)
-        print(context.indexPath)
+        // print(context.indexPath)
     }
 }
 

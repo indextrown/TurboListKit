@@ -17,6 +17,7 @@ public struct ComponentSection: DifferentiableSection {
         self.elements = elements.map { AnyComponent(base: $0) }
     }
 
+    // default
     public init<C>(
         source: ComponentSection,
         elements: C
@@ -24,6 +25,15 @@ public struct ComponentSection: DifferentiableSection {
 
         self.id = source.id
         self.elements = Array(elements)
+    }
+    
+    // dsl
+    public init(
+        id: String,
+        @ComponentBuilder content: () -> [AnyComponent]
+    ) {
+        self.id = id
+        self.elements = content()
     }
 
     public var differenceIdentifier: String {

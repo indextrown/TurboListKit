@@ -7,6 +7,7 @@
 
 import UIKit
 import TurboListKit
+import SwiftUICore
 
 final class DiffSectionViewController: UIViewController {
     
@@ -46,18 +47,32 @@ final class DiffSectionViewController: UIViewController {
      }
     
     func setupAdapter() {
+ 
         adapter.setSections([
-
-            ComponentSection(
-                id: "title",
-                elements: [
-                    TitleComponent(title: "Hello"),
-                    TitleComponent(title: "World")
-                ]
-            ),
+            // section1
+            ComponentSection(id: "title1") {
+                TitleComponent(title: "Hello")
+                TitleComponent(title: "World")
+            },
             
+            // section2
+            Section("title2") {
+                TitleComponent(title: "A1")
+            },
+            
+            // section3
+            Section("title3") {
+                For(of: 1...5) { index in
+                    TitleComponent(title: "기본")
+                        .onTouch {
+                            print("테스트1")
+                        }
+                }
+            },
+            
+            // section4
             ComponentSection(
-                id: "title2",
+                id: "title4",
                 elements: [
                     TitleComponent(title: "기본")
                         .onTouch {
@@ -83,47 +98,31 @@ final class DiffSectionViewController: UIViewController {
                         },
                     
                     TitleComponent(title: ".padding(horizontal: 50)")
+                        .padding(left: 50)
+                        .padding(right: 50)
                         .padding(horizontal: 50)
                         .onTouch {
                             print("테스트5")
                         }
                 ]
             ),
-            
-            ComponentSection(
-                id: "numbers",
-                elements: [
-                    NumberComponent(number: 1)
-                        .onTouch {
-                            print("테스트1")
-                        },
-                    
-                    NumberComponent(number: 2)
-                        .padding(left: 50)
-                        .onTouch {
-                            print("테스트2")
-                        },
-                        
-                    NumberComponent(number: 3)
-                        .padding(right: 50)
-                        .onTouch {
-                            print("테스트3")
-                        },
-                    
-                    NumberComponent(number: 4)
-                        .padding(vertical: 0)
-                        .onTouch {
-                            print("테스트4")
-                        },
-                    
-                    NumberComponent(number: 5)
-                        .padding(horizontal: 50)
-                        .onTouch {
-                            print("테스트5")
-                        }
-                ]
-            )
         ])
+
+        
+        // MARK: - SectionBuilder
+        /*
+        adapter.setSections(
+            sections {
+                Section("A") {
+                    TitleComponent(title: "A1")
+                }
+
+                Section("B") {
+                    TitleComponent(title: "B1")
+                }
+            }
+        )
+         */
     }
 }
 
@@ -216,4 +215,43 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
 
     ])
 }
+ */
+
+
+/*
+ComponentSection(
+    id: "numbers",
+    elements: [
+        NumberComponent(number: 1)
+            .onTouch {
+                print("테스트1")
+            },
+        
+        NumberComponent(number: 2)
+            .padding(left: 50)
+            .onTouch {
+                print("테스트2")
+            },
+            
+        NumberComponent(number: 3)
+            .padding(right: 50)
+            .onTouch {
+                print("테스트3")
+            },
+        
+        NumberComponent(number: 4)
+            .padding(vertical: 0)
+            .onTouch {
+                print("테스트4")
+            },
+        
+        NumberComponent(number: 5)
+            .padding(left: 50)
+            .padding(right: 50)
+            .padding(horizontal: 50)
+            .onTouch {
+                print("테스트5")
+            }
+    ]
+)
  */

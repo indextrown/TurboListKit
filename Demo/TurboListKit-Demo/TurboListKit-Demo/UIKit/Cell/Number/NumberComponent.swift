@@ -32,6 +32,6 @@ struct NumberComponent: Component {
     func render(context: Context, content: CellUIView) {
         content.setTitle(number)
         content.setBackground(.green)
-        print(context.indexPath)
+        // print(context.indexPath)
     }
 }
