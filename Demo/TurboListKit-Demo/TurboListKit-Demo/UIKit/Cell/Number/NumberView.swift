@@ -26,11 +26,8 @@ final class NumberView: UIView, Touchable {
 private extension NumberView {
     
     func setupUI() {
-        
         backgroundColor = .systemBackground
-        
         addSubview(titleLabel)
-        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([

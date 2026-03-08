@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import TurboListKit
 
-final class TitleView: UIView {
+final class TitleView: UIView, Touchable {
     
     private let titleLabel = UILabel()
     
@@ -24,11 +25,8 @@ final class TitleView: UIView {
 private extension TitleView {
     
     func setupUI() {
-        
         backgroundColor = .systemBackground
-        
         addSubview(titleLabel)
-        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([

@@ -55,7 +55,41 @@ final class DiffSectionViewController: UIViewController {
                     TitleComponent(title: "World")
                 ]
             ),
-
+            
+            ComponentSection(
+                id: "title2",
+                elements: [
+                    TitleComponent(title: "기본")
+                        .onTouch {
+                            print("테스트1")
+                        },
+                    
+                    TitleComponent(title: ".padding(left: 50)")
+                        .padding(left: 50)
+                        .onTouch {
+                            print("테스트2")
+                        },
+                        
+                    TitleComponent(title: ".padding(right: 50)")
+                        .padding(right: 50)
+                        .onTouch {
+                            print("테스트3")
+                        },
+                    
+                    TitleComponent(title: ".padding(vertical: 0)")
+                        .padding(vertical: 0)
+                        .onTouch {
+                            print("테스트4")
+                        },
+                    
+                    TitleComponent(title: ".padding(horizontal: 50)")
+                        .padding(horizontal: 50)
+                        .onTouch {
+                            print("테스트5")
+                        }
+                ]
+            ),
+            
             ComponentSection(
                 id: "numbers",
                 elements: [
@@ -97,7 +131,41 @@ final class DiffSectionViewController: UIViewController {
     DiffSectionViewController()
 }
 
-
+/*
+ ComponentSection(
+     id: "numbers",
+     elements: [
+         TitleComponent(title: "기본")
+             .onTouch {
+                 print("테스트1")
+             },
+         
+         TitleComponent(title: ".padding(left: 50)")
+             .padding(left: 50)
+             .onTouch {
+                 print("테스트2")
+             },
+             
+         TitleComponent(title: ".padding(right: 50)")
+             .padding(right: 50)
+             .onTouch {
+                 print("테스트3")
+             },
+         
+         TitleComponent(title: ".padding(vertical: 0)")
+             .padding(vertical: 0)
+             .onTouch {
+                 print("테스트4")
+             },
+         
+         TitleComponent(title: ".padding(horizontal: 50)")
+             .padding(horizontal: 50)
+             .onTouch {
+                 print("테스트5")
+             }
+     ]
+ )
+ */
 
 
 /*

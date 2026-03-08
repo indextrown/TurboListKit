@@ -123,8 +123,6 @@ public protocol LayoutModifier: Component {
     var wrapped: Wrapped { get }
 }
 
-
-
 public final class PaddingContainerView<Content: UIView>: UIView {
 
     let content: Content
@@ -136,18 +134,21 @@ public final class PaddingContainerView<Content: UIView>: UIView {
         super.init(frame: .zero)
 
         addSubview(content)
+        content.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            content.leadingAnchor.constraint(equalTo: leadingAnchor, constant: inset.left),
+            content.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -inset.right),
+            content.topAnchor.constraint(equalTo: topAnchor, constant: inset.top),
+            content.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset.bottom)
+        ])
     }
 
     public required init?(coder: NSCoder) {
         fatalError()
     }
-
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-
-        content.frame = bounds.inset(by: inset)
-    }
 }
+
 public struct PaddingModifier<Wrapped: Component>: LayoutModifier {
 
     public typealias CellUIView = PaddingContainerView<Wrapped.CellUIView>
@@ -155,18 +156,29 @@ public struct PaddingModifier<Wrapped: Component>: LayoutModifier {
     public let wrapped: Wrapped
     public let inset: UIEdgeInsets
 
-//    public func size(cellSize: CGSize) -> CGSize {
-//        return wrapped.size(cellSize: cellSize)
-//    }
-    
-    public func size(cellSize: CGSize) -> CGSize {
-            let inner = wrapped.size(cellSize: cellSize)
 
-            return CGSize(
-                width: inner.width,
-                height: inner.height + inset.top + inset.bottom
-            )
-        }
+//    public func size(cellSize: CGSize) -> CGSize {
+//        let inner = wrapped.size(cellSize: cellSize)
+//
+//        return CGSize(
+//            width: inner.width,
+//            height: inner.height + inset.top + inset.bottom
+//        )
+//    }
+    public func size(cellSize: CGSize) -> CGSize {
+
+        let innerSize = CGSize(
+            width: cellSize.width - inset.left - inset.right,
+            height: cellSize.height
+        )
+
+        let inner = wrapped.size(cellSize: innerSize)
+
+        return CGSize(
+            width: inner.width + inset.left + inset.right,
+            height: inner.height + inset.top + inset.bottom
+        )
+    }
 
     public func createCellUIView() -> CellUIView {
 
