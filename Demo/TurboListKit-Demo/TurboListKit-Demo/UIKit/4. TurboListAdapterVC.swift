@@ -9,17 +9,6 @@ import UIKit
 import TurboListKit
 
 final class TurboListAdapterVC: UIViewController {
-    
-    let collectionView = UICollectionView(
-        scrollDirection: .vertical,
-        lineSpacing: 10,
-        interitemSpacing: 10
-    )
-    
-    lazy var adapter = TurboListAdapter(
-        collectionView: collectionView,
-        animated: true
-    )
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -49,45 +38,62 @@ final class TurboListAdapterVC: UIViewController {
          ])
      }
     
+    let collectionView = UICollectionView(
+        scrollDirection: .vertical,
+        lineSpacing: 10,
+        interitemSpacing: 10
+    )
+    
+    lazy var adapter = TurboListAdapter(
+        collectionView: collectionView,
+        animated: true
+    )
+    
     func setupAdapter() {
         adapter.setSections([
             
             // section1
             TurboSection(
-                id: "title1",
+                id: "id1",
                 header: HeaderComponent(title: "Header"),
                 footer: FooterComponent(title: "Footer"),
                 items: [
                     NumberComponent(number: 1),
                     NumberComponent(number: 2),
-                    NumberComponent(number: 3),
+                    NumberComponent(number: 3)
+                        .onTouch { print("Touched") }       // Touchable
+                    ,
                 ]
             ),
             
             // section2
             TurboSection(
-                id: "title2",
-                layout: .grid(columns: 2),
-                header: HeaderComponent(title: "Header"),
-                footer: FooterComponent(title: "Footer"),
-                items: [
-                    NumberComponent(number: 1),
-                    NumberComponent(number: 2),
-                ]
-            ),
-            
-            // section3
-            TurboSection(
-                id: "title3",
-                layout: .grid(columns: 3),
-                header: HeaderComponent(title: "Header"),
-                footer: FooterComponent(title: "Footer"),
+                id: "id2",
+                layout: .grid(columns: 3),                  // optional
+                header: HeaderComponent(title: "Header"),   // optional
+                footer: FooterComponent(title: "Footer"),   // optional
                 items: [
                     NumberComponent(number: 1),
                     NumberComponent(number: 2),
                     NumberComponent(number: 3),
                 ]
-            )
+            ),
+            
+            // section3
+            TurboSection(
+                id: "id3",
+                layout: .grid(columns: 2),
+                header: HeaderComponent(title: "Header"),
+                footer: FooterComponent(title: "Footer"),
+                items: [
+                    NumberComponent(number: 1)
+                        .padding(left: 50)
+                    ,
+                    NumberComponent(number: 2)
+                        .padding(right: 50)
+                    ,
+                ]
+            ),
         ])
     }
 }
@@ -95,4 +101,10 @@ final class TurboListAdapterVC: UIViewController {
 #Preview {
     TurboListAdapterVC()
 }
+
+
+
+
+
+
 
