@@ -94,6 +94,19 @@ final class TurboListAdapterVC: UIViewController {
                     ,
                 ]
             ),
+            
+            TurboSection(
+                id: "id4",
+                header: HeaderComponent(title: "Header"),
+                footer: FooterComponent(title: "Footer"),
+                items: [
+                    NumberComponent(number: 1),
+                    NumberComponent(number: 2),
+                    NumberComponent(number: 3)
+                        .onTouch { print("Touched") }       // Touchable
+                    ,
+                ]
+            ),
         ])
     }
 }
