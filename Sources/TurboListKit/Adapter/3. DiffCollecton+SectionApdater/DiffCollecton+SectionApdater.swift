@@ -59,7 +59,9 @@ public final class DiffSectionCollectionViewAdapter: NSObject {
 
         guard let collectionView else { return }
 
+        // 기존 하드코딩
         let models = newSections.flatMap { $0.elements.map { $0.base } }
+        
         registerCells(models)
 
         if !animated {
@@ -173,6 +175,7 @@ extension DiffSectionCollectionViewAdapter: UICollectionViewDataSource {
                 for: indexPath
             ) as! SectionHeaderView
 
+            // 기존 하드코딩
             header.setTitle(sections[indexPath.section].id)
 
             return header

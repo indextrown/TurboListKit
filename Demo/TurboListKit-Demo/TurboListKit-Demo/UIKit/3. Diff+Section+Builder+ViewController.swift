@@ -52,9 +52,11 @@ final class Diff_Section_Builder_ViewController2: UIViewController {
     func setupAdapter() {
         adapter.sections {
             
+            
             // section0
             ComponentSection(
                 id: "title0",
+                header: NumberComponent(number: 1),
                 elements: [
                     TitleComponent(title: "기본")
                         .onTouch {
@@ -79,7 +81,7 @@ final class Diff_Section_Builder_ViewController2: UIViewController {
                 For(of: 0..<300) { index in
                     TitleComponent(title: "기본: \(index)")
                         .onTouch {
-                            print("테스트1")
+                            print("탭: \(index)")
                         }
                 }
             }
@@ -91,4 +93,4 @@ final class Diff_Section_Builder_ViewController2: UIViewController {
     Diff_Section_Builder_ViewController2()
 }
 
-// 헤더를 지금 기본으로 만들어버리는데 해더도 컴포넌트로 만들수있게어떄 
+
