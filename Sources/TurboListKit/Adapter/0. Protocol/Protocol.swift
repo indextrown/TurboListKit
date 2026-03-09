@@ -29,10 +29,7 @@ import UIKit
 extension UICollectionViewCell {}
 
 /// 터치 가능 여부
-public protocol Touchable {
-    
-}
-
+public protocol Touchable {}
 extension Touchable where Self: UIView {
     @MainActor
     func touchableAreaTap(_ action: @escaping () -> Void) {

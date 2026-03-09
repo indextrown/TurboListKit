@@ -7,32 +7,41 @@
 
 import DifferenceKit
 
+public enum SectionLayout {
+    case list
+    case grid(columns: Int)
+}
+
 public struct TurboSection: Differentiable {
     public var id: String
+    public var layout: SectionLayout
     public var header: AnyTurboItem?
     public var footer: AnyTurboItem?
     public var items: [AnyTurboItem]
     
     public init(id: String,
-                header: AnyTurboItem? = nil,
-                footer: AnyTurboItem? = nil,
-                items: [AnyTurboItem]
+                layout: SectionLayout = .list,
+                header: (any CellDataModel)? = nil,
+                footer: (any CellDataModel)? = nil,
+                items: [any CellDataModel]
     ) {
         self.id = id
-        self.header = header
-        self.footer = footer
-        self.items = items
+        self.layout = layout
+        self.header = header.map { AnyTurboItem(base: $0) }
+        self.footer = footer.map { AnyTurboItem(base: $0) }
+        self.items = items.map { AnyTurboItem(base: $0) }
     }
     
     public init<C>(
         source: TurboSection,
-        elements: C
+        items: C
     ) where C: Collection, C.Element == AnyTurboItem {
 
         self.id = source.id
+        self.layout = source.layout
         self.header = source.header
         self.footer = source.footer
-        self.items = Array(elements)
+        self.items = Array(items)
     }
     
     public var differenceIdentifier: String {
