@@ -34,7 +34,9 @@ Component = Model + Layout + Rendering
 ---
 
 # How to use
-<img src="https://raw.githubusercontent.com/ra1028/Carbon/master/assets/hello.png" height=240 align=right>
+<img src="https://github.com/user-attachments/assets/78fd8745-bfbf-4663-8e1a-39fe32120563" height=800 align=right>
+<!-- <img width="493" height="943" alt="image" src="https://github.com/user-attachments/assets/78fd8745-bfbf-4663-8e1a-39fe32120563" /> -->
+
 
 ```swift
 func setupAdapter() {
