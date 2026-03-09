@@ -117,21 +117,22 @@ private extension TurboListAdapter {
     }
     
     private func registerCells(in sections: [TurboSection]) {
-        sections.forEach { section in
-            
+        
+        for section in sections {
+
             // 만약 header가 있다면 header register
             if let header = section.header {
                 registerHeader(header.base)
             }
-            
+
             // 만약 footer가 있다면 footer register
             if let footer = section.footer {
                 registerFooter(footer.base)
             }
-            
+
             // 만약 cell이 있다면 cell register
-            section.items.forEach {
-                registerCell($0.base)
+            for item in section.items {
+                registerCell(item.base)
             }
         }
     }
@@ -228,5 +229,64 @@ extension TurboListAdapter: UICollectionViewDataSource {
 }
 
 extension TurboListAdapter: UICollectionViewDelegateFlowLayout {
+    /// 셀 하나의 크기 설정
+    /// 레이아웃 계산은 bounds 기준이 안전함
+    /// 현재는 2열 그리드 구성
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        // frame은 superview 좌표 기준
+        // bounds는 자기 내부 좌표 기준
+        // 좌우 간격 + 셀 사이 간격 고려
+        let model = sections[indexPath.section]
+            .items[indexPath.item]
+            .base
+        if let sizable = model as? FlowSizable {
+            return sizable.size(cellSize: collectionView.bounds.size)
+        }
+        
+        return .zero
+    }
     
+    /// header size
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout:
+                               UICollectionViewLayout, referenceSizeForHeaderInSection
+                               section: Int) -> CGSize {
+        
+        guard let model = sections[section].header?.base else {
+            return .zero
+        }
+        
+        if let sizable = model as? FlowSizable {
+            return sizable.size(cellSize: collectionView.bounds.size)
+        }
+        
+        return .zero
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               referenceSizeForFooterInSection section: Int
+    ) -> CGSize {
+        
+        guard let model = sections[section].footer?.base else {
+            return .zero
+        }
+        
+        if let sizable = model as? FlowSizable {
+            return sizable.size(cellSize: collectionView.bounds.size)
+        }
+        
+        return .zero
+    }
+    
+    /// 섹션 전체 여백
+    /// 테두리 padding 개념
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
+    }
 }
