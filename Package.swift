@@ -11,6 +11,9 @@ let package = Package(
         .library(name: "TurboListKit",
                  targets: ["TurboListKit"]),
         
+        .library(name: "TurboListLab",
+                 targets: ["TurboListLab"])
+        
         // 실행파일(터미널에서 돌아가는 프로그램 구현 시 사용)
         // .executable(name: <#T##String#>, targets: <#T##[String]#>)
     ],
@@ -65,11 +68,16 @@ let package = Package(
     targets: [
         // 별도로 빌드할 소스 위치를 명시하지 않음
         // 자동으로 Sources/TurboListKit/소스파일들을 빌드한다
+        
+        // Production implementation
         .target(name: "TurboListKit",
                 dependencies: ["DifferenceKit",
-                               .product(name: "Algorithms", package: "swift-algorithms")
-                              ]
-        ),
+                               .product(name: "Algorithms", package: "swift-algorithms")]),
+        
+        // Experimental / beta implementation
+        .target(name: "TurboListLab",
+                dependencies: ["DifferenceKit"]),
+        
         .testTarget(name: "TurboListKitTests",
                     dependencies: ["TurboListKit"]
         ),

@@ -128,3 +128,7 @@ class ContainerCell<C>: UICollectionViewCell, CellDataModelBindable where C: Com
     }
 }
 
+
+public protocol Swipeable {
+    var trailingSwipeActions: [UIContextualAction] { get }
+}

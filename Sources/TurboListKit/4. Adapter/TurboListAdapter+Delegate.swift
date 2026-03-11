@@ -91,3 +91,27 @@ extension TurboListAdapter: UICollectionViewDelegateFlowLayout {
 //        return UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
 //    }
 }
+
+//extension TurboListAdapter: UICollectionViewDelegate {
+//    public func collectionView(
+//        _ collectionView: UICollectionView,
+//        trailingSwipeActionsConfigurationForItemAt indexPath: IndexPath
+//    ) -> UISwipeActionsConfiguration? {
+//
+//        let item = sections[indexPath.section].items[indexPath.item].base
+//        
+//        guard
+//            let cell = collectionView.cellForItem(at: indexPath)
+//        else {
+//            return nil
+//        }
+//        
+//        for subview in cell.contentView.subviews {
+//            if let swipeable = subview as? Swipeable {
+//                return UISwipeActionsConfiguration(actions: swipeable.trailingSwipeActions)
+//            }
+//        }
+//        
+//        return nil
+//    }
+//}

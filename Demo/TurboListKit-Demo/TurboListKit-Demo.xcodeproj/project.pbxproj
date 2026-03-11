@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF317A592F61562D0028B92C /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF317A582F61562D0028B92C /* TurboListKit */; };
+		DF317A5B2F61562D0028B92C /* TurboListLab in Frameworks */ = {isa = PBXBuildFile; productRef = DF317A5A2F61562D0028B92C /* TurboListLab */; };
 		DF7855012F5D6B5500372852 /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF7855002F5D6B5500372852 /* TurboListKit */; };
 		DF8925F92F597E7200BE368B /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF8925F82F597E7200BE368B /* TurboListKit */; };
 		DF9592B52F5B302D00F09F62 /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF9592B42F5B302D00F09F62 /* TurboListKit */; };
+		DFE402EA2F61687200FABC28 /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DFE402E92F61687200FABC28 /* TurboListKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +61,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF317A592F61562D0028B92C /* TurboListKit in Frameworks */,
 				DF9592B52F5B302D00F09F62 /* TurboListKit in Frameworks */,
+				DFE402EA2F61687200FABC28 /* TurboListKit in Frameworks */,
 				DF8925F92F597E7200BE368B /* TurboListKit in Frameworks */,
+				DF317A5B2F61562D0028B92C /* TurboListLab in Frameworks */,
 				DF7855012F5D6B5500372852 /* TurboListKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +130,9 @@
 				DF8925F82F597E7200BE368B /* TurboListKit */,
 				DF9592B42F5B302D00F09F62 /* TurboListKit */,
 				DF7855002F5D6B5500372852 /* TurboListKit */,
+				DF317A582F61562D0028B92C /* TurboListKit */,
+				DF317A5A2F61562D0028B92C /* TurboListLab */,
+				DFE402E92F61687200FABC28 /* TurboListKit */,
 			);
 			productName = "TurboListKit-Demo";
 			productReference = DF6BE1972F597E32002EA8E4 /* TurboListKit-Demo.app */;
@@ -208,7 +217,7 @@
 			mainGroup = DF6BE18E2F597E32002EA8E4;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				DF7854FF2F5D6B5500372852 /* XCLocalSwiftPackageReference "../../../TurboListKit" */,
+				DFE402E82F61687200FABC28 /* XCLocalSwiftPackageReference "../../../TurboListKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DF6BE1982F597E32002EA8E4 /* Products */;
@@ -410,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LGX4B4WC66;
@@ -427,6 +437,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.indextrown.TurboListKit-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -438,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LGX4B4WC66;
@@ -455,6 +467,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.indextrown.TurboListKit-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -575,13 +588,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		DF7854FF2F5D6B5500372852 /* XCLocalSwiftPackageReference "../../../TurboListKit" */ = {
+		DFE402E82F61687200FABC28 /* XCLocalSwiftPackageReference "../../../TurboListKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../../TurboListKit;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DF317A582F61562D0028B92C /* TurboListKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TurboListKit;
+		};
+		DF317A5A2F61562D0028B92C /* TurboListLab */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TurboListLab;
+		};
 		DF7855002F5D6B5500372852 /* TurboListKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TurboListKit;
@@ -591,6 +612,10 @@
 			productName = TurboListKit;
 		};
 		DF9592B42F5B302D00F09F62 /* TurboListKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TurboListKit;
+		};
+		DFE402E92F61687200FABC28 /* TurboListKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TurboListKit;
 		};

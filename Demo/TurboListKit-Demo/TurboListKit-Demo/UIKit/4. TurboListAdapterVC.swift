@@ -101,7 +101,7 @@ final class TurboListAdapterVC: UIViewController {
                 footer: FooterComponent(title: "Footer"),
                 items: [
                     NumberComponent(number: 1),
-                    NumberComponent(number: 2),
+                    SwipableNumberComponent(number: 2),
                     NumberComponent(number: 3)
                         .onTouch { print("Touched") }       // Touchable
                     ,
