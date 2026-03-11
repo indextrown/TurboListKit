@@ -6,10 +6,13 @@
 //
 
 import DifferenceKit
+import UIKit
 
 public enum SectionLayout {
     case list
-    case grid(columns: Int)
+    case grid(columns: Int,
+              itemSpacing: CGFloat = 0,
+              lineSpacing: CGFloat = 0)
 }
 
 public struct TurboSection: Differentiable {
@@ -18,6 +21,9 @@ public struct TurboSection: Differentiable {
     public var header: AnyTurboItem?
     public var footer: AnyTurboItem?
     public var items: [AnyTurboItem]
+    
+    /// 섹션 전체 여백 (UICollectionViewFlowLayout.sectionInset)
+    public var inset: UIEdgeInsets = .zero
     
     public init(id: String,
                 layout: SectionLayout = .list,
@@ -42,6 +48,19 @@ public struct TurboSection: Differentiable {
         self.header = source.header
         self.footer = source.footer
         self.items = Array(items)
+    }
+    
+    // MARK: - ResultBuilder
+    public init(_ id: String,
+                layout: SectionLayout = .list,
+                header: AnyTurboItem? = nil,
+                footer: AnyTurboItem? = nil,
+                @AnyTurboItemBuilder content: () -> [AnyTurboItem]) {
+        self.id = id
+        self.layout = layout
+        self.header = header
+        self.footer = footer
+        self.items = content()
     }
     
     public var differenceIdentifier: String {

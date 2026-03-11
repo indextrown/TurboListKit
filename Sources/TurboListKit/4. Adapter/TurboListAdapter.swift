@@ -61,6 +61,13 @@ public extension TurboListAdapter {
                 self?.sections = data
         })
     }
+    
+    /// ResultBuilder DSL 지원
+    func setSections(
+        @TurboSectionBuilder _ content: () -> [TurboSection]
+    ) {
+        setSections(content())
+    }
 }
 
 // MARK: - Register

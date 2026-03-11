@@ -166,6 +166,7 @@ extension PaddingContainerView: Touchable where Content: Touchable {
     .left()
     .right()
  */
+
 public extension Component {
     func padding(left value: CGFloat) -> PaddingModifier<Self> {
         return PaddingModifier(wrapped: self,
@@ -183,7 +184,7 @@ public extension Component {
                                                    right: value))
     }
     
-    func padding(vertical value: CGFloat) -> PaddingModifier<Self> {
+    func padding(v value: CGFloat) -> PaddingModifier<Self> {
         return PaddingModifier(wrapped: self,
                                inset: UIEdgeInsets(
                                 top: value,
@@ -192,7 +193,7 @@ public extension Component {
                                 right: 0))
     }
     
-    func padding(horizontal value: CGFloat) -> PaddingModifier<Self> {
+    func padding(h value: CGFloat) -> PaddingModifier<Self> {
         return PaddingModifier(wrapped: self,
                                inset: UIEdgeInsets(
                                 top: 0,
@@ -200,4 +201,23 @@ public extension Component {
                                 bottom: 0,
                                 right: value))
     }
+    
+    func padding(t value: CGFloat) -> PaddingModifier<Self> {
+        return PaddingModifier(wrapped: self,
+                               inset: UIEdgeInsets(
+                                top: value,
+                                left: 0,
+                                bottom: 0,
+                                right: 0))
+    }
+    
+    func padding(b value: CGFloat) -> PaddingModifier<Self> {
+        return PaddingModifier(wrapped: self,
+                               inset: UIEdgeInsets(
+                                top: 0,
+                                left: 0,
+                                bottom: value,
+                                right: 0))
+    }
 }
+
