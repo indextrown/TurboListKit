@@ -38,7 +38,7 @@ Component = Model + Layout + Rendering
 <!-- <img src="https://github.com/user-attachments/assets/0966ba82-ca9e-4d6f-b568-39b91b222f8b" height=800 align=right> -->
 <!-- <img width="493" height="943" alt="image" src="https://github.com/user-attachments/assets/78fd8745-bfbf-4663-8e1a-39fe32120563" /> -->
 
-
+## UIKit MVP
 ```swift
 func setupAdapter() {
     adapter.setSections([
@@ -87,6 +87,40 @@ func setupAdapter() {
         ),
     ])
 }
+```
+
+## DSL MVP
+```swift
+func setupAdapter() {
+    adapter.setSections {
+        
+        // example 1
+        TurboSection("id2") {
+            for idx in 0..<3 {
+                NumberComponent(number: idx)
+                    .padding(h: 20)
+                    .padding(b: 10)
+            }
+        }
+        .header { HeaderComponent(title: "Header").padding(h: 20) }
+        
+        
+
+        // example 2
+        TurboSection("id3") {
+            For(of: 0..<3) { idx in
+                NumberComponent(number: idx)
+            }
+        }
+        .padding(h: 20)
+        .header { HeaderComponent(title: "Header").padding(h: 20) }
+        .footer { FooterComponent(title: "Footer").padding(h: 20) }
+        .sectionLayout(.grid(columns: 2,        // 가로 셀 개수
+                             itemSpacing: 10,   // 열 간격
+                             lineSpacing: 10))  // 행 간격
+    }
+}
+
 ```
 
 
@@ -389,3 +423,5 @@ Swift Package Manager
 
 ---
 -->
+
+
