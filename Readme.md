@@ -96,7 +96,8 @@ func setupAdapter() {
 
 
 ### DSL MVP
-<img src="https://github.com/user-attachments/assets/baa3d091-eb2e-4249-bf6c-3e3e074bd320" height=600 align=right>
+<img src="https://github.com/user-attachments/assets/4b529e31-c96e-4364-9288-e80e34624645" height=600 align=right>
+
 
 ```swift
 func setupAdapter() {
