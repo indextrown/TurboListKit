@@ -74,6 +74,7 @@ func setupAdapter() {
     }
 }
 ```
+<br/>
 
 
 ### UIKit MVP
