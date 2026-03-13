@@ -47,7 +47,7 @@ func setupAdapter() {
     typealias Section = TurboSection
     adapter.setSections([
         
-        // section1
+        // example 1
         Section(
             id: "id1",
             layout: .list(lineSpacing: 10),
@@ -62,7 +62,7 @@ func setupAdapter() {
             ]
         ),
         
-        // section2
+        // example 2
         Section(
             id: "id2",
             layout: .grid(columns: 3, itemSpacing: 10), // optional
@@ -75,7 +75,7 @@ func setupAdapter() {
             ]
         ),
         
-        // section3
+        // example 3
         Section(
             id: "id3",
             layout: .grid(columns: 2, itemSpacing: 10),
