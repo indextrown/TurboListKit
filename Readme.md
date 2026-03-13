@@ -38,7 +38,9 @@ Component = Model + Layout + Rendering
 <!-- <img width="493" height="943" alt="image" src="https://github.com/user-attachments/assets/78fd8745-bfbf-4663-8e1a-39fe32120563" /> -->
 
 ### UIKit MVP
-<img src="https://github.com/user-attachments/assets/78fd8745-bfbf-4663-8e1a-39fe32120563" height=600 align=right>
+<img src="https://github.com/user-attachments/assets/a5a834e0-597d-4e43-819c-eff7530ac8c1" height=600 align=right>
+
+
 
 ```swift
 func setupAdapter() {
