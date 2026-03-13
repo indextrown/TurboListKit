@@ -163,35 +163,15 @@ extension PaddingContainerView: Touchable where Content: Touchable {
 
 // [Padding DSL API]
 public extension Component {
-    // 4 방향을 직접 지정할 수 있는 padding
-    /*
-     TitleComponent(title: "Hello")
-         .padding(
-             UIEdgeInsets(
-                 top: 10,
-                 left: 20,
-                 bottom: 30,
-                 right: 40
-             )
-         )
-     */
-    func padding(
-        _ inset: UIEdgeInsets
-    ) -> PaddingModifier<Self> {
+
+    func padding(_ inset: UIEdgeInsets) -> PaddingModifier<Self> {
         return PaddingModifier(
             wrapped: self,
             inset: inset
         )
     }
-    
-    // 모든 방향 동일 padding
-    /*
-     TitleComponent(title: "Hello")
-         .padding(16)
-     */
-    func padding(
-        _ value: CGFloat
-    ) -> PaddingModifier<Self> {
+
+    func padding(_ value: CGFloat) -> PaddingModifier<Self> {
         return padding(
             UIEdgeInsets(
                 top: value,
@@ -201,23 +181,28 @@ public extension Component {
             )
         )
     }
-    
-    // v, h
-    /*
-     TitleComponent(title: "Hello")
-         .padding(v: 10, h: 20)
-     */
-    func padding(
-        v: CGFloat = 0,
-        h: CGFloat = 0
-    ) -> PaddingModifier<Self> {
-        return padding(
-            UIEdgeInsets(
-                top: v,
-                left: h,
-                bottom: v,
-                right: h
-            )
-        )
+
+    func padding(_ edge: SectionEdge, _ value: CGFloat) -> PaddingModifier<Self> {
+
+        switch edge {
+
+        case .top:
+            return padding(UIEdgeInsets(top: value, left: 0, bottom: 0, right: 0))
+
+        case .bottom:
+            return padding(UIEdgeInsets(top: 0, left: 0, bottom: value, right: 0))
+
+        case .leading:
+            return padding(UIEdgeInsets(top: 0, left: value, bottom: 0, right: 0))
+
+        case .trailing:
+            return padding(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: value))
+
+        case .horizontal:
+            return padding(UIEdgeInsets(top: 0, left: value, bottom: 0, right: value))
+
+        case .vertical:
+            return padding(UIEdgeInsets(top: value, left: 0, bottom: value, right: 0))
+        }
     }
 }

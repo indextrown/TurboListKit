@@ -57,33 +57,57 @@ final class TurboListAdapterDSLVC2: UIViewController {
     // Component는 사용자 정의 UI
     func setupAdapter() {
         typealias Section = TurboSection
-        adapter.setSections {
+        adapter.setSections([
             
-            // ex1)
-            Section("id1") {
-                Header(title: "Header")
-                
-                NumberComponent(number: 1)
-                NumberComponent(number: 2)
-            }
-            .list(spacing: 5)
-            .paddingHorizontal(10)
-            .spacingAfter(20)
+            // section1
+            Section(
+                id: "id1",
+                layout: .list(lineSpacing: 10),
+                header: Header(title: "Header"),
+                footer: Footer(title: "Footer"),
+                items: [
+                    NumberComponent(number: 1),
+                    NumberComponent(number: 2),
+                    NumberComponent(number: 3)
+                        .onTouch { print("Touched") }       // Touchable
+                    ,
+                ]
+            ),
             
-            // ex2)
-            Section("id2") {
-                Header(title: "Header")
-                
-                for idx in 0..<6 {
-                    NumberComponent(number: idx)
-                }
-                
-                Footer(title: "Footer")
-            }
-            .grid(columns: 2, vSpacing: 10, hSpacing: 10)
-            .paddingHorizontal(10)
-        }
+            // section2
+            Section(
+                id: "id2",
+                layout: .grid(columns: 3, itemSpacing: 10), // optional
+                header: Header(title: "Header"),            // optional
+                footer: Footer(title: "Footer"),            // optional
+                items: [
+                    NumberComponent(number: 1),
+                    NumberComponent(number: 2),
+                    NumberComponent(number: 3),
+                ]
+            ),
+            
+            // section3
+            Section(
+                id: "id3",
+                layout: .grid(columns: 2, itemSpacing: 10),
+                header: Header(title: "Header"),
+                footer: Footer(title: "Footer"),
+                items: [
+                    NumberComponent(number: 1)
+                        .padding(.leading, 50)
+                    ,
+                    NumberComponent(number: 2)
+                        .padding(.trailing, 50)
+                    ,
+                ]
+            ),
+        ])
     }
+    
+    
+    
+    
     
     
     
@@ -154,6 +178,90 @@ final class TurboListAdapterDSLVC2: UIViewController {
 
 
 
+
+
+/*
+ 
+ func setupAdapter() {
+     typealias Section = TurboSection
+     adapter.setSections {
+         
+         // ex1)
+//            Section("id1") {
+//                Header(title: "Header")
+//
+//                NumberComponent(number: 1)
+//                NumberComponent(number: 2)
+//            }
+//            .list(spacing: 5)
+//            .paddingHorizontal(10)
+//            .spacingAfter(20)
+//
+//            // ex2)
+//            Section("id2") {
+//                Header(title: "Header")
+//
+//                for idx in 0..<6 {
+//                    NumberComponent(number: idx)
+//                }
+//
+//                Footer(title: "Footer")
+//            }
+//            .grid(columns: 2, vSpacing: 10, hSpacing: 10)
+//            .paddingHorizontal(10)
+         
+     }
+     
+     adapter.setSections([
+         
+         // section1
+         TurboSection(
+             id: "id1",
+             layout: .list(lineSpacing: 10),
+             header: Header(title: "Header"),
+             footer: Footer(title: "Footer"),
+             items: [
+                 NumberComponent(number: 1),
+                 NumberComponent(number: 2),
+                 NumberComponent(number: 3)
+                     .onTouch { print("Touched") }       // Touchable
+                 ,
+             ]
+         ),
+         
+         // section2
+         TurboSection(
+             id: "id2",
+             layout: .grid(columns: 3, itemSpacing: 10), // optional
+             header: Header(title: "Header"),            // optional
+             footer: Footer(title: "Footer"),            // optional
+             items: [
+                 NumberComponent(number: 1),
+                 NumberComponent(number: 2),
+                 NumberComponent(number: 3),
+             ]
+         ),
+         
+         // section3
+         TurboSection(
+             id: "id3",
+             layout: .grid(columns: 2, itemSpacing: 10),
+             header: Header(title: "Header"),
+             footer: Footer(title: "Footer"),
+             items: [
+                 NumberComponent(number: 1)
+                     .padding(.leading, 50)
+                 ,
+                 NumberComponent(number: 2)
+                     .padding(.trailing, 50)
+                 ,
+             ]
+         ),
+     ])
+ }
+ 
+ 
+ */
 
 
 

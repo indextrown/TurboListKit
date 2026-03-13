@@ -67,72 +67,49 @@ extension TurboSection {
     }
 }
 
+public enum SectionEdge {
+    case top
+    case bottom
+    case leading
+    case trailing
+    case horizontal
+    case vertical
+}
+
 //// padding
 extension TurboSection {
 
-    // 전체 padding
     public func padding(_ value: CGFloat) -> TurboSection {
         var copy = self
-        copy.inset = UIEdgeInsets(top: value, left: value, bottom: value, right: value)
+        copy.inset = UIEdgeInsets(
+            top: value,
+            left: value,
+            bottom: value,
+            right: value
+        )
         return copy
     }
 
-    // 특정 Edge padding
-    public func padding(
-        top: CGFloat = 0,
-        left: CGFloat = 0,
-        bottom: CGFloat = 0,
-        right: CGFloat = 0
-    ) -> TurboSection {
+    public func padding(_ edge: SectionEdge, _ value: CGFloat) -> TurboSection {
         var copy = self
-        copy.inset.top = top
-        copy.inset.left = left
-        copy.inset.bottom = bottom
-        copy.inset.right = right
-        return copy
-    }
 
-    // top
-    public func paddingTop(_ value: CGFloat) -> TurboSection {
-        var copy = self
-        copy.inset.top = value
-        return copy
-    }
+        switch edge {
+        case .top:
+            copy.inset.top = value
+        case .bottom:
+            copy.inset.bottom = value
+        case .leading:
+            copy.inset.left = value
+        case .trailing:
+            copy.inset.right = value
+        case .horizontal:
+            copy.inset.left = value
+            copy.inset.right = value
+        case .vertical:
+            copy.inset.top = value
+            copy.inset.bottom = value
+        }
 
-    // bottom
-    public func paddingBottom(_ value: CGFloat) -> TurboSection {
-        var copy = self
-        copy.inset.bottom = value
-        return copy
-    }
-
-    // left
-    public func paddingLeft(_ value: CGFloat) -> TurboSection {
-        var copy = self
-        copy.inset.left = value
-        return copy
-    }
-
-    // right
-    public func paddingRight(_ value: CGFloat) -> TurboSection {
-        var copy = self
-        copy.inset.right = value
-        return copy
-    }
-
-    // horizontal
-    public func paddingHorizontal(_ value: CGFloat) -> TurboSection {
-        var copy = self
-        copy.inset.left = value
-        copy.inset.right = value
-        return copy
-    }
-
-    // vertical
-    public func paddingVertical(_ value: CGFloat) -> TurboSection {
-        var copy = self
-        copy.inset.top = value
-        copy.inset.bottom = value
         return copy
     }
 }
