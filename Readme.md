@@ -37,6 +37,45 @@ Component = Model + Layout + Rendering
 <!-- <img src="https://github.com/user-attachments/assets/0966ba82-ca9e-4d6f-b568-39b91b222f8b" height=800 align=right> -->
 <!-- <img width="493" height="943" alt="image" src="https://github.com/user-attachments/assets/78fd8745-bfbf-4663-8e1a-39fe32120563" /> -->
 
+### DSL MVP
+<img src="https://github.com/user-attachments/assets/4b529e31-c96e-4364-9288-e80e34624645" height=600 align=right>
+
+
+```swift
+func setupAdapter() {
+    typealias Section = TurboSection
+    adapter.setSections {
+        
+        // example 1
+        Section("id2") {
+            Header(title: "Header")
+            
+            for idx in 0..<3 {
+                NumberComponent(number: idx)
+                    .onTouch { print("Hello Turbo!") }
+            }
+            
+            Footer(title: "Footer")
+        }
+        .list(spacing: 10)
+        .padding(.horizontal, 20)
+        .spacingAfter(20)
+        
+        // example 2
+        Section("id3") {
+            Header(title: "Header")
+            For(of: 0..<3) { idx in
+                NumberComponent(number: idx)
+            }
+            Footer(title: "Footer")
+        }
+        .grid(columns: 2, vSpacing: 10, hSpacing: 10)
+        .padding(.horizontal, 20)
+    }
+}
+```
+
+
 ### UIKit MVP
 <img src="https://github.com/user-attachments/assets/a5a834e0-597d-4e43-819c-eff7530ac8c1" height=600 align=right>
 
@@ -95,41 +134,4 @@ func setupAdapter() {
 ```
 
 
-### DSL MVP
-<img src="https://github.com/user-attachments/assets/4b529e31-c96e-4364-9288-e80e34624645" height=600 align=right>
-
-
-```swift
-func setupAdapter() {
-    typealias Section = TurboSection
-    adapter.setSections {
-        
-        // example 1
-        Section("id2") {
-            Header(title: "Header")
-            
-            for idx in 0..<3 {
-                NumberComponent(number: idx)
-                    .onTouch { print("Hello Turbo!") }
-            }
-            
-            Footer(title: "Footer")
-        }
-        .list(spacing: 10)
-        .padding(.horizontal, 20)
-        .spacingAfter(20)
-        
-        // example 2
-        Section("id3") {
-            Header(title: "Header")
-            For(of: 0..<3) { idx in
-                NumberComponent(number: idx)
-            }
-            Footer(title: "Footer")
-        }
-        .grid(columns: 2, vSpacing: 10, hSpacing: 10)
-        .padding(.horizontal, 20)
-    }
-}
-```
 
