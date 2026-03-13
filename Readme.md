@@ -100,34 +100,35 @@ func setupAdapter() {
 
 ```swift
 func setupAdapter() {
+    typealias Section = TurboSection
     adapter.setSections {
         
         // example 1
-        TurboSection("id2") {
+        Section("id2") {
+            Header(title: "Header")
+            
             for idx in 0..<3 {
                 NumberComponent(number: idx)
-                    .padding(h: 20)
-                    .padding(b: 10)
+                    .onTouch { print("Hello Turbo!") }
             }
+            
+            Footer(title: "Footer")
         }
-        .header { HeaderComponent(title: "Header").padding(h: 20) }
+        .list(spacing: 10)
+        .padding(.horizontal, 20)
+        .spacingAfter(20)
         
-        
-
         // example 2
-        TurboSection("id3") {
+        Section("id3") {
+            Header(title: "Header")
             For(of: 0..<3) { idx in
                 NumberComponent(number: idx)
             }
+            Footer(title: "Footer")
         }
-        .padding(h: 20)
-        .header { HeaderComponent(title: "Header").padding(h: 20) }
-        .footer { FooterComponent(title: "Footer").padding(h: 20) }
-        .sectionLayout(.grid(columns: 2,        // 가로 셀 개수
-                             itemSpacing: 10,   // 열 간격
-                             lineSpacing: 10))  // 행 간격
+        .grid(columns: 2, vSpacing: 10, hSpacing: 10)
+        .padding(.horizontal, 20)
     }
 }
-
 ```
 

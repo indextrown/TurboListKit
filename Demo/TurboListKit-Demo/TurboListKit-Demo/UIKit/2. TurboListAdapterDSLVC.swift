@@ -9,7 +9,7 @@ import UIKit
 import TurboListKit
 
 final class TurboListAdapterDSLVC2: UIViewController {
-
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,18 +25,18 @@ final class TurboListAdapterDSLVC2: UIViewController {
     }
     
     private func setupUI() {
-         view.backgroundColor = .white
-         
-         view.addSubview(collectionView)
-         collectionView.translatesAutoresizingMaskIntoConstraints = false
-         
-         NSLayoutConstraint.activate([
-             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-         ])
-     }
+        view.backgroundColor = .white
+        
+        view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
     
     let collectionView = UICollectionView(scrollDirection: .vertical)
     
@@ -57,58 +57,54 @@ final class TurboListAdapterDSLVC2: UIViewController {
     // Component는 사용자 정의 UI
     func setupAdapter() {
         typealias Section = TurboSection
-        adapter.setSections([
+        adapter.setSections {
             
-            // section1
-            Section(
-                id: "id1",
-                layout: .list(lineSpacing: 10),
-                header: Header(title: "Header"),
-                footer: Footer(title: "Footer"),
-                items: [
-                    NumberComponent(number: 1),
-                    NumberComponent(number: 2),
-                    NumberComponent(number: 3)
-                        .onTouch { print("Touched") }       // Touchable
-                    ,
-                ]
-            ),
+            // example 1
+            Section("id2") {
+                Header(title: "Header")
+                
+                for idx in 0..<3 {
+                    NumberComponent(number: idx)
+                        .onTouch { print("Hello Turbo!") }
+                }
+                
+                Footer(title: "Footer")
+            }
+            .list(spacing: 10)
+            .padding(.horizontal, 20)
+            .spacingAfter(20)
             
-            // section2
-            Section(
-                id: "id2",
-                layout: .grid(columns: 3, itemSpacing: 10), // optional
-                header: Header(title: "Header"),            // optional
-                footer: Footer(title: "Footer"),            // optional
-                items: [
-                    NumberComponent(number: 1),
-                    NumberComponent(number: 2),
-                    NumberComponent(number: 3),
-                ]
-            ),
-            
-            // section3
-            Section(
-                id: "id3",
-                layout: .grid(columns: 2, itemSpacing: 10),
-                header: Header(title: "Header"),
-                footer: Footer(title: "Footer"),
-                items: [
-                    NumberComponent(number: 1)
-                        .padding(.leading, 50)
-                    ,
-                    NumberComponent(number: 2)
-                        .padding(.trailing, 50)
-                    ,
-                ]
-            ),
-        ])
+            // example 2
+            Section("id3") {
+                Header(title: "Header")
+                For(of: 0..<3) { idx in
+                    NumberComponent(number: idx)
+                }
+                Footer(title: "Footer")
+            }
+            .grid(columns: 2, vSpacing: 10, hSpacing: 10)
+            .padding(.horizontal, 20)
+        }
     }
+}
+
+
     
     
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     
@@ -167,9 +163,7 @@ final class TurboListAdapterDSLVC2: UIViewController {
     
     
     
-    
-    
-}
+
 
 #Preview {
     TurboListAdapterDSLVC2()
