@@ -23,12 +23,12 @@ extension UICollectionView {
     /// - Note: 내부적으로 `UICollectionViewFlowLayout`을 생성하여 적용합니다.
     public convenience init(scrollDirection: UICollectionView.ScrollDirection,
                             lineSpacing: CGFloat = 0,
-                            interitemSpacing: CGFloat = 0
+                            itemSpacing: CGFloat = 0
     ) {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = scrollDirection
         layout.minimumLineSpacing = lineSpacing
-        layout.minimumInteritemSpacing = interitemSpacing
+        layout.minimumInteritemSpacing = itemSpacing
         self.init(frame: .zero, collectionViewLayout: layout)
         backgroundColor = .clear
         showsVerticalScrollIndicator = false

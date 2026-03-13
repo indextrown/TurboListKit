@@ -9,7 +9,7 @@ import DifferenceKit
 import UIKit
 
 public enum SectionLayout {
-    case list
+    case list(lineSpacing: CGFloat = 0)
     case grid(columns: Int,
               itemSpacing: CGFloat = 0,
               lineSpacing: CGFloat = 0)
@@ -20,21 +20,24 @@ public struct TurboSection: Differentiable {
     public var layout: SectionLayout
     public var header: AnyTurboItem?
     public var footer: AnyTurboItem?
+    public var spacingAfter: CGFloat
     public var items: [AnyTurboItem]
     
-    /// 섹션 전체 여백 (UICollectionViewFlowLayout.sectionInset)
+    /// section 내부 padding
     public var inset: UIEdgeInsets = .zero
     
     public init(id: String,
-                layout: SectionLayout = .list,
+                layout: SectionLayout = .list(),
                 header: (any CellDataModel)? = nil,
                 footer: (any CellDataModel)? = nil,
+                spacingAfter: CGFloat = 0,
                 items: [any CellDataModel]
     ) {
         self.id = id
         self.layout = layout
         self.header = header.map { AnyTurboItem(base: $0) }
         self.footer = footer.map { AnyTurboItem(base: $0) }
+        self.spacingAfter = spacingAfter
         self.items = items.map { AnyTurboItem(base: $0) }
     }
     
@@ -47,20 +50,61 @@ public struct TurboSection: Differentiable {
         self.layout = source.layout
         self.header = source.header
         self.footer = source.footer
+        self.spacingAfter = source.spacingAfter
         self.items = Array(items)
     }
     
     // MARK: - ResultBuilder
-    public init(_ id: String,
-                layout: SectionLayout = .list,
-                header: AnyTurboItem? = nil,
-                footer: AnyTurboItem? = nil,
-                @AnyTurboItemBuilder content: () -> [AnyTurboItem]) {
+//    public init(_ id: String,
+//                layout: SectionLayout = .list,
+//                header: AnyTurboItem? = nil,
+//                footer: AnyTurboItem? = nil,
+//                spacingAfter: CGFloat = 0,
+//                @AnyTurboItemBuilder content: () -> [AnyTurboItem]) {
+//        self.id = id
+//        self.layout = layout
+//        self.header = header
+//        self.footer = footer
+//        self.spacingAfter = spacingAfter
+//        self.items = content()
+//    }
+    
+    public init(
+        _ id: String,
+        layout: SectionLayout = .list(),
+        header: AnyTurboItem? = nil,
+        footer: AnyTurboItem? = nil,
+        spacingAfter: CGFloat = 0,
+        @AnyTurboItemBuilder content: () -> [AnyTurboItem]
+    ) {
         self.id = id
         self.layout = layout
-        self.header = header
-        self.footer = footer
-        self.items = content()
+        self.spacingAfter = spacingAfter
+
+        let builtItems = content()
+
+        var resolvedHeader = header
+        var resolvedFooter = footer
+        var cells: [AnyTurboItem] = []
+
+        for item in builtItems {
+
+            let base = item.base
+
+            if base is any HeaderComponent {
+                resolvedHeader = item
+            }
+            else if base is any FooterComponent {
+                resolvedFooter = item
+            }
+            else {
+                cells.append(item)
+            }
+        }
+
+        self.header = resolvedHeader
+        self.footer = resolvedFooter
+        self.items = cells
     }
     
     public var differenceIdentifier: String {
@@ -71,3 +115,4 @@ public struct TurboSection: Differentiable {
         id == source.id
     }
 }
+

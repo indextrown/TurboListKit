@@ -83,6 +83,7 @@ public struct PaddingModifier<Wrapped: Component>: LayoutModifier {
         let innerSize = CGSize(
             width: cellSize.width - inset.left - inset.right,
             height: cellSize.height
+            // .greatestFiniteMagnitude // cellSize.height 추후에
         )
 
         let inner = wrapped.size(cellSize: innerSize)
@@ -160,64 +161,63 @@ extension PaddingContainerView: Touchable where Content: Touchable {
     }
 }
 
-/*
- [DSL API]
- TitleComponent()
-    .left()
-    .right()
- */
-
+// [Padding DSL API]
 public extension Component {
-    func padding(left value: CGFloat) -> PaddingModifier<Self> {
-        return PaddingModifier(wrapped: self,
-                               inset: UIEdgeInsets(top: 0,
-                                                   left: value,
-                                                   bottom: 0,
-                                                   right: 0))
+    // 4 방향을 직접 지정할 수 있는 padding
+    /*
+     TitleComponent(title: "Hello")
+         .padding(
+             UIEdgeInsets(
+                 top: 10,
+                 left: 20,
+                 bottom: 30,
+                 right: 40
+             )
+         )
+     */
+    func padding(
+        _ inset: UIEdgeInsets
+    ) -> PaddingModifier<Self> {
+        return PaddingModifier(
+            wrapped: self,
+            inset: inset
+        )
     }
     
-    func padding(right value: CGFloat) -> PaddingModifier<Self> {
-        return PaddingModifier(wrapped: self,
-                               inset: UIEdgeInsets(top: 0,
-                                                   left: 0,
-                                                   bottom: 0,
-                                                   right: value))
+    // 모든 방향 동일 padding
+    /*
+     TitleComponent(title: "Hello")
+         .padding(16)
+     */
+    func padding(
+        _ value: CGFloat
+    ) -> PaddingModifier<Self> {
+        return padding(
+            UIEdgeInsets(
+                top: value,
+                left: value,
+                bottom: value,
+                right: value
+            )
+        )
     }
     
-    func padding(v value: CGFloat) -> PaddingModifier<Self> {
-        return PaddingModifier(wrapped: self,
-                               inset: UIEdgeInsets(
-                                top: value,
-                                left: 0,
-                                bottom: value,
-                                right: 0))
-    }
-    
-    func padding(h value: CGFloat) -> PaddingModifier<Self> {
-        return PaddingModifier(wrapped: self,
-                               inset: UIEdgeInsets(
-                                top: 0,
-                                left: value,
-                                bottom: 0,
-                                right: value))
-    }
-    
-    func padding(t value: CGFloat) -> PaddingModifier<Self> {
-        return PaddingModifier(wrapped: self,
-                               inset: UIEdgeInsets(
-                                top: value,
-                                left: 0,
-                                bottom: 0,
-                                right: 0))
-    }
-    
-    func padding(b value: CGFloat) -> PaddingModifier<Self> {
-        return PaddingModifier(wrapped: self,
-                               inset: UIEdgeInsets(
-                                top: 0,
-                                left: 0,
-                                bottom: value,
-                                right: 0))
+    // v, h
+    /*
+     TitleComponent(title: "Hello")
+         .padding(v: 10, h: 20)
+     */
+    func padding(
+        v: CGFloat = 0,
+        h: CGFloat = 0
+    ) -> PaddingModifier<Self> {
+        return padding(
+            UIEdgeInsets(
+                top: v,
+                left: h,
+                bottom: v,
+                right: h
+            )
+        )
     }
 }
-

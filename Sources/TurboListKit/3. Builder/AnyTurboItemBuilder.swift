@@ -401,13 +401,85 @@ public struct AnyTurboItemBuilder {
         first
     }
 
-    public static func buildPartialBlock(
-        accumulated: [AnyTurboItem],
-        next: [AnyTurboItem]
-    ) -> [AnyTurboItem] {
+    // MARK: - b10: Builder 단계별 누적 처리 (성능 최적화)
+    /// ResultBuilder가 DSL을 단계적으로 누적하며
+    /// 처리할 수 있도록 하는 메서드입니다.
+    ///
+    /// `buildBlock` 대신 사용할 수 있는
+    /// incremental 방식의 Builder API입니다.
+    ///
+    /// DSL이 매우 커질 경우
+    /// 컴파일러가 Builder 결과를
+    /// 단계적으로 합치면서 성능을 개선할 수 있습니다.
+    ///
+    /// --------------------------------------------------
+    /// [예시 DSL]
+    ///
+    /// TurboSection {
+    ///     AComponent()
+    ///     BComponent()
+    ///     CComponent()
+    /// }
+    ///
+    /// --------------------------------------------------
+    /// [buildPartialBlock 동작 흐름]
+    ///
+    /// buildPartialBlock(first: [A])
+    ///
+    /// buildPartialBlock(
+    ///     accumulated: [A],
+    ///     next: [B]
+    /// )
+    ///
+    /// buildPartialBlock(
+    ///     accumulated: [A, B],
+    ///     next: [C]
+    /// )
+    ///
+    /// --------------------------------------------------
+    /// [결과]
+    ///
+    /// [A, B, C]
+    ///
+    /// DSL 규모가 커질 때
+    /// Builder 성능을 개선하는 데 도움이 될 수 있습니다.
+    public static func buildPartialBlock(accumulated: [AnyTurboItem], next: [AnyTurboItem]) -> [AnyTurboItem] {
         accumulated + next
     }
     
+    // MARK: - b11: For DSL 표현식 지원
+    /// DSL 내부에서 `For` 타입을 직접 사용할 수 있도록 합니다.
+    ///
+    /// `For` DSL은 내부에서 이미 `[AnyTurboItem]` 배열을 생성합니다.
+    /// 따라서 Builder에서는 해당 배열을 그대로 전달하면 됩니다.
+    ///
+    /// --------------------------------------------------
+    /// [예시 DSL]
+    ///
+    /// TurboSection {
+    ///     For(of: 0..<3) { index in
+    ///         NumberComponent(number: index)
+    ///     }
+    /// }
+    ///
+    /// --------------------------------------------------
+    /// [For 내부 결과]
+    ///
+    /// [AnyTurboItem, AnyTurboItem, AnyTurboItem]
+    ///
+    /// --------------------------------------------------
+    /// [컴파일러 내부 변환]
+    ///
+    /// buildExpression(
+    ///     For(...)
+    /// )
+    ///
+    /// --------------------------------------------------
+    /// [결과]
+    ///
+    /// [AnyTurboItem]
+    ///
+    /// `For`가 만든 Item 배열을 Builder로 전달합니다.
     public static func buildExpression<Data>(_ value: For<Data>) -> [AnyTurboItem] {
         value.items
     }

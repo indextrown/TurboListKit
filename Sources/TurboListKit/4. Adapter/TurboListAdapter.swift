@@ -11,29 +11,39 @@ import DifferenceKit
 @MainActor
 public final class TurboListAdapter: NSObject {
     
-    // collectionView
-    private weak var collectionView: UICollectionView?
+    // MARK: - collectionView
+    internal weak var collectionView: UICollectionView?
     
-    // identifier
+    // MARK: - Registered Identifiers
     private var registeredHeaderReuseIdentifiers: Set<String> = []
     private var registeredFooterReuseIdentifiers: Set<String> = []
     private var registeredCellReuseIdentifiers: Set<String> = []
     
-    // sections
+    // MARK: - Section Data
     internal var sections: [TurboSection] = []
     
-    // animation
+    // MARK: - Animation
     private let animated: Bool
     
-    public init(collectionView: UICollectionView,
-                animated: Bool = true
+    internal let emptyFooterIdentifier = "TurboEmptyFooter"
+    
+    public init(
+        collectionView: UICollectionView,
+        animated: Bool = true
     ) {
         self.collectionView = collectionView
         self.animated = animated
         super.init()
 
+        collectionView.collectionViewLayout = makeLayout()
         collectionView.dataSource = self
-        collectionView.delegate = self
+        
+        // empty
+        collectionView.register(
+            UICollectionReusableView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: emptyFooterIdentifier
+        )
     }
 }
 
@@ -60,6 +70,7 @@ public extension TurboListAdapter {
             setData: { [weak self] data in
                 self?.sections = data
         })
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     /// ResultBuilder DSL 지원
@@ -145,3 +156,4 @@ private extension TurboListAdapter {
         }
     }
 }
+

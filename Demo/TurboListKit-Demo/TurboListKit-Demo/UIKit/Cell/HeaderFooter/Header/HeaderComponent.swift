@@ -9,7 +9,7 @@ import Foundation
 import TurboListKit
 import UIKit
 
-struct HeaderComponent: Component {
+struct Header: HeaderComponent {
     
     typealias CellUIView = HeaderView
     let title: String

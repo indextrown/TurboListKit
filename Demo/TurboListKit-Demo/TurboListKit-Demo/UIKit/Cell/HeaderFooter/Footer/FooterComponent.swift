@@ -9,7 +9,7 @@ import Foundation
 import TurboListKit
 import UIKit
 
-struct FooterComponent: Component {
+struct Footer: FooterComponent {
     
     typealias CellUIView = FooterView
     let title: String
@@ -28,5 +28,8 @@ struct FooterComponent: Component {
     func render(context: Context, content: CellUIView) {
         content.setTitle(title)
         content.setBackground(.gray)
+        
+        // spacer
+        content.contentHeight = 40
     }
 }

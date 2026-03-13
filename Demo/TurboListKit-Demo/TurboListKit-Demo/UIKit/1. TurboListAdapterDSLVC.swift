@@ -38,25 +38,17 @@ final class TurboListAdapterDSLVC: UIViewController {
          ])
      }
     
-    let collectionView = UICollectionView(
-        scrollDirection: .vertical
-    )
+    let collectionView = UICollectionView(scrollDirection: .vertical)
     
     lazy var adapter = TurboListAdapter(
         collectionView: collectionView,
         animated: true
     )
     
-    
-    
-    
-    
-    
-    
     // Component는 사용자 정의 UI
     func setupAdapter() {
         adapter.setSections {
-            
+            /*
             // example 1
             TurboSection("id2") {
                 for idx in 0..<3 {
@@ -81,6 +73,21 @@ final class TurboListAdapterDSLVC: UIViewController {
             .sectionLayout(.grid(columns: 2,        // 가로 셀 개수
                                  itemSpacing: 10,   // 열 간격
                                  lineSpacing: 10))  // 행 간격
+             */
+            
+//            TurboSection("id4") {
+//                For(of: 0..<3) { idx in
+//                    NumberComponent(number: idx)
+//                }
+//            }
+//            .header { HeaderComponent(title: "Header") }
+//            
+//            TurboSection("id5") {
+//                For(of: 0..<3) { idx in
+//                    NumberComponent(number: idx)
+//                }
+//            }
+//            .header { HeaderComponent(title: "Header") }
         }
     }
     

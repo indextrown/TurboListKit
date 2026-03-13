@@ -39,7 +39,9 @@ public struct OnTouchModifier<Wrapped: Component>: BehaviorModifier where Wrappe
     public let onTouch: (CellUIView) -> Void
     
     @MainActor
-    public func size(cellSize: CGSize) -> CGSize {
+    public func size(
+        cellSize: CGSize
+    ) -> CGSize {
         return wrapped.size(cellSize: cellSize)
     }
     
@@ -49,8 +51,14 @@ public struct OnTouchModifier<Wrapped: Component>: BehaviorModifier where Wrappe
     }
     
     @MainActor
-    public func render(context: Context, content: CellUIView) {
-        wrapped.render(context: context, content: content)
+    public func render(
+        context: Context,
+        content: CellUIView
+    ) {
+        wrapped.render(
+            context: context,
+            content: content
+        )
         content.touchableAreaTap {
             onTouch(content)
         }
