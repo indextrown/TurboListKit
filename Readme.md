@@ -77,6 +77,9 @@ func setupAdapter() {
 <br/> <br/> <br/>
 
 ### SwiftUI Compatibility
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/3d30c423-2e0f-46b2-a9af-31b6213a7059" />
+
+<!--
 <img src="https://github.com/user-attachments/assets/f036d5d0-57af-4ccd-bc81-a54df6daf74e" height=600 align=right>
 
 ```swift
@@ -162,6 +165,6 @@ func setupAdapter() {
     ])
 }
 ```
-
+-->
 
 
