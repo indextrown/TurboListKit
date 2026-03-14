@@ -7,6 +7,7 @@
 
 import TurboListKit
 import UIKit
+import SwiftUI
 
 struct NumberComponent: Component {
 
@@ -35,3 +36,5 @@ struct NumberComponent: Component {
         // print(context.indexPath)
     }
 }
+
+extension NumberComponent: View {}

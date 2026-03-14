@@ -76,6 +76,32 @@ func setupAdapter() {
 ```
 <br/>
 
+### SwiftUI Compatibility
+<img src="https://github.com/user-attachments/assets/a5a834e0-597d-4e43-819c-eff7530ac8c1" height=600 align=right>
+```swift
+import SwiftUI
+
+struct TurboView: View {
+    var body: some View {
+        VStack {
+            Text("Hello Turbo!")
+            
+            TitleComponent(title: "123")
+                .onTouch {
+                    print("Touched")
+                }
+                
+            NumberComponent(number: 1)
+                
+        }
+        .padding(.horizontal, 10)
+    }
+}
+
+#Preview {
+    TurboView()
+}
+```
 
 ### UIKit MVP
 <img src="https://github.com/user-attachments/assets/a5a834e0-597d-4e43-819c-eff7530ac8c1" height=600 align=right>

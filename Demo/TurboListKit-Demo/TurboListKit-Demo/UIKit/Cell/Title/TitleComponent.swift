@@ -7,6 +7,7 @@
 
 import TurboListKit
 import UIKit
+import SwiftUI
 
 struct TitleComponent: Component {
 
@@ -36,5 +37,4 @@ struct TitleComponent: Component {
     }
 }
 
-
-
+extension TitleComponent: View {}
