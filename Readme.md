@@ -74,10 +74,11 @@ func setupAdapter() {
     }
 }
 ```
-<br/>
+<br/> <br/> <br/>
 
 ### SwiftUI Compatibility
-<img src="https://github.com/user-attachments/assets/a5a834e0-597d-4e43-819c-eff7530ac8c1" height=600 align=right>
+<img src="https://github.com/user-attachments/assets/f036d5d0-57af-4ccd-bc81-a54df6daf74e" height=600 align=right>
+
 ```swift
 import SwiftUI
 
@@ -102,6 +103,8 @@ struct TurboView: View {
     TurboView()
 }
 ```
+<br/> <br/> <br/> <br/> <br/>
+
 
 ### UIKit MVP
 <img src="https://github.com/user-attachments/assets/a5a834e0-597d-4e43-819c-eff7530ac8c1" height=600 align=right>
