@@ -12,29 +12,31 @@ import SwiftUI
  - Component + SwiftUI View
  - 문제: B처럼 UIView가 아닌 타입이어도 extension이 적용된다
  struct AComponent: Component, View {
-     typealias CellUIView = UILabel
+ typealias CellUIView = UILabel
  }
  
  struct BComponent: Component, View {
-     typealias CellUIView = SomeCustomType
+ typealias CellUIView = SomeCustomType
  }
  
  [public extension Component where Self: View, Self.CellUIView: UIView]
  - Component + SwiftUI View + CellUIView == UIView subclass
  
  struct AComponent: Component, View {
-     typealias CellUIView = UILabel
+ typealias CellUIView = UILabel
  }
  
  // 정상적으로 적용 안됨
  struct BComponent: Component, View {
-     typealias CellUIView = String
+ typealias CellUIView = String
  }
  
  [public extension Component where Self.CellUIView: UIView]
  - CellUIView가 UIView suclass인 Component에만 extension을 적용합니다
  - UIKit 기반 Component에만 SwiftUI Bridge 적용 가능합니다.
  */
+
+// MARK: - Component를 View로 변환합니다
 struct ComponentRepresenting<C: Component>: UIViewRepresentable {
 
     let component: C

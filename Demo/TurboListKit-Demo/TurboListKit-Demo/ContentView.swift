@@ -18,7 +18,8 @@ struct ContentView: View {
         // TurboListAdapterDSLVC2.toSwiftUI()
         // SampleView()
         // SwiftUIListView2()
-        ShuffleVC.toSwiftUI()
+        // ShuffleVC.toSwiftUI()
+        ViewController.toSwiftUI()
     }
 }
 
