@@ -47,9 +47,18 @@ final class TurboListAdapterDSLVC: UIViewController {
     
     // Component는 사용자 정의 UI
     func setupAdapter() {
-//        adapter.apply {
-//
-//        }
+        adapter.apply {
+            TurboSection("id1") {
+                Header(title: "Header")
+                
+                for idx in 0..<1000 {
+                    NumberComponent(number: idx)
+                }
+                
+                Footer(title: "Footer")
+            }
+            .list(spacing: 10)
+        }
     }
     
     

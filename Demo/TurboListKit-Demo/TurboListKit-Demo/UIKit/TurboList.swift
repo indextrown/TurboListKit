@@ -25,7 +25,7 @@ struct TurboCell: View {
 struct TurboListView: View {
     
     var body: some View {
-        TurboList(spacing: 20) {
+        TurboList(spacing: 40) {
             ForEach(0...2, id: \.self) { idx in
                 TurboCell(number: idx)
             }

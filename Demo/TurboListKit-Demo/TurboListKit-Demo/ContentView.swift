@@ -19,7 +19,32 @@ struct ContentView: View {
         // SampleView()
         // SwiftUIListView2()
         // ShuffleVC.toSwiftUI()
-        ViewController.toSwiftUI()
+        // ViewController.toSwiftUI()
+        
+        NavigationStack {
+            List {
+                Section("UIKit") {
+                    NavigationLink("List") {
+                        TurboListAdapterDSLVC.toSwiftUI(withNavigation: false)
+                    }
+                    
+                    NavigationLink("Shuffle") {
+                        ShuffleVC.toSwiftUI(withNavigation: false)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }
+                    
+                    NavigationLink("Header Footer Spacer") {
+                        TurboListAdapterDSLVC2.toSwiftUI(withNavigation: false)
+                    }
+                }
+                
+                Section("SwiftUI") {
+                    NavigationLink("SwiftUI") {
+                        TurboView()
+                    }
+                }
+            }
+        }
     }
 }
 

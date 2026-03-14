@@ -52,7 +52,7 @@ final class ShuffleVC: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            shuffleButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: shuffleButton.topAnchor, constant: -10),
             shuffleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             shuffleButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -250)
         ])
