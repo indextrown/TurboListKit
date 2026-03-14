@@ -15,10 +15,12 @@ public struct AnyTurboItem: Differentiable {
         self.base = base
     }
     
+    // diff identity
     public var differenceIdentifier: AnyHashable {
         return AnyHashable(base)
     }
 
+    // content 비교
     public func isContentEqual(to source: AnyTurboItem) -> Bool {
         return AnyHashable(base) == AnyHashable(source.base)
     }

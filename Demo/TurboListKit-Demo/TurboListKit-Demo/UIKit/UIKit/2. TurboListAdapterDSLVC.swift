@@ -48,7 +48,7 @@ final class TurboListAdapterDSLVC2: UIViewController {
     // Component는 사용자 정의 UI
     func setupAdapter() {
         typealias Section = TurboSection
-        adapter.setSections {
+        adapter.apply {
             
             // example 1
             Section("id2") {

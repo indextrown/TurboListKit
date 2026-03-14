@@ -30,6 +30,11 @@ private extension CellView {
         addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        // corner
+        layer.cornerRadius = 12
+        layer.cornerCurve = .continuous
+        layer.masksToBounds = true
+        
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),

@@ -35,3 +35,4 @@ struct CellComponent: Component {
         // print(context.indexPath)
     }
 }
+

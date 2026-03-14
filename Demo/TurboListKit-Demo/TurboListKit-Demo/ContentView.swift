@@ -16,8 +16,9 @@ struct ContentView: View {
         // Diff_Section_Builder_ViewController2.toSwiftUI()
         // TurboListAdapterVC.toSwiftUI()
         // TurboListAdapterDSLVC2.toSwiftUI()
-        SampleView()
+        // SampleView()
         // SwiftUIListView2()
+        ShuffleVC.toSwiftUI()
     }
 }
 

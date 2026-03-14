@@ -107,7 +107,7 @@ public struct TurboListRepresentable: UIViewRepresentable {
         _ uiView: UICollectionView,
         context: Self.Context
     ) {
-        context.coordinator.adapter?.setSections(sections)
+        context.coordinator.adapter?.apply(sections)
     }
 
     public final class Coordinator {

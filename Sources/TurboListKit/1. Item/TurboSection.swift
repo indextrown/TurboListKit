@@ -15,7 +15,8 @@ public enum SectionLayout {
               lineSpacing: CGFloat = 0)
 }
 
-public struct TurboSection: Differentiable {
+public struct TurboSection: DifferentiableSection {
+
     public var id: String
     public var layout: SectionLayout
     public var header: AnyTurboItem?
@@ -54,20 +55,18 @@ public struct TurboSection: Differentiable {
         self.items = Array(items)
     }
     
-    // MARK: - ResultBuilder
-//    public init(_ id: String,
-//                layout: SectionLayout = .list,
-//                header: AnyTurboItem? = nil,
-//                footer: AnyTurboItem? = nil,
-//                spacingAfter: CGFloat = 0,
-//                @AnyTurboItemBuilder content: () -> [AnyTurboItem]) {
-//        self.id = id
-//        self.layout = layout
-//        self.header = header
-//        self.footer = footer
-//        self.spacingAfter = spacingAfter
-//        self.items = content()
-//    }
+    // DifferenceKit sectioned diff 지원
+    public var elements: [AnyTurboItem] {
+        items
+    }
+    
+    // DifferentiableSection
+    public init<C>(
+        source: TurboSection,
+        elements: C
+    ) where C: Collection, C.Element == AnyTurboItem {
+        self.init(source: source, items: elements)
+    }
     
     public init(
         _ id: String,
@@ -108,11 +107,28 @@ public struct TurboSection: Differentiable {
     }
     
     public var differenceIdentifier: String {
-        id
+        return id
     }
-
+    
     public func isContentEqual(to source: TurboSection) -> Bool {
-        id == source.id
+         return id == source.id
     }
 }
 
+
+
+
+// MARK: - ResultBuilder
+//    public init(_ id: String,
+//                layout: SectionLayout = .list,
+//                header: AnyTurboItem? = nil,
+//                footer: AnyTurboItem? = nil,
+//                spacingAfter: CGFloat = 0,
+//                @AnyTurboItemBuilder content: () -> [AnyTurboItem]) {
+//        self.id = id
+//        self.layout = layout
+//        self.header = header
+//        self.footer = footer
+//        self.spacingAfter = spacingAfter
+//        self.items = content()
+//    }

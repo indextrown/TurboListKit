@@ -49,7 +49,7 @@ public final class TurboListAdapter: NSObject {
 
 // MARK: - Public API
 public extension TurboListAdapter {
-    func setSections(_ newSections: [TurboSection]) {
+    func apply(_ newSections: [TurboSection]) {
         guard let collectionView else { return }
         registerCells(in: newSections)
         
@@ -63,22 +63,35 @@ public extension TurboListAdapter {
         let changeset = StagedChangeset(
             source: sections,
             target: newSections)
-        
+
         collectionView.reload(
             using: changeset,
             interrupt: { _ in false },
             setData: { [weak self] data in
                 self?.sections = data
         })
-        collectionView.collectionViewLayout.invalidateLayout()
+        // collectionView.collectionViewLayout.invalidateLayout()
     }
     
     /// ResultBuilder DSL 지원
-    func setSections(
+    func apply(
         @TurboSectionBuilder _ content: () -> [TurboSection]
     ) {
-        setSections(content())
+        apply(content())
     }
+    
+    /*
+    func apply(
+        @AnyTurboItemBuilder _ content: () -> [AnyTurboItem]
+    ) {
+        let items = content()
+        let  section = TurboSection(
+            id: "implicit-section",
+            items: items.map { $0.base }// [AnyTurboItem] -> [CellDataModel]
+        )
+        apply([section])
+    }
+     */
 }
 
 // MARK: - Register

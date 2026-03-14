@@ -36,5 +36,16 @@ struct NumberComponent: Component {
         // print(context.indexPath)
     }
 }
+extension NumberComponent: Hashable {
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(number)
+    }
+
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.number == rhs.number
+    }
+
+}
 
 extension NumberComponent: View {}
