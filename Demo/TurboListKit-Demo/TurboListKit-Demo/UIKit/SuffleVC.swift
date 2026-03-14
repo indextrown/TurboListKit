@@ -48,13 +48,13 @@ final class ShuffleVC: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            shuffleButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            shuffleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: shuffleButton.bottomAnchor, constant: 10),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            
+            shuffleButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
+            shuffleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            shuffleButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -250)
         ])
     }
     
@@ -67,6 +67,9 @@ final class ShuffleVC: UIViewController {
                 Header(title: "Header")
                 for number in numbers {
                     CellComponent(number: number)
+                        .onTouch {
+                            print("\(number) tapped!")
+                        }
                 }
                 Footer(title: "Footer")
             }
