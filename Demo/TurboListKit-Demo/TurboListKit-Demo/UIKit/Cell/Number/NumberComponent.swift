@@ -33,19 +33,18 @@ struct NumberComponent: Component {
     func render(context: Context, content: CellUIView) {
         content.setTitle(number)
         content.setBackground(.green)
-        // print(context.indexPath)
     }
 }
-extension NumberComponent: Hashable {
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(number)
-    }
-
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.number == rhs.number
-    }
-
-}
+//extension NumberComponent: Hashable {
+//
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(number)
+//    }
+//
+//    static func == (lhs: Self, rhs: Self) -> Bool {
+//        lhs.number == rhs.number
+//    }
+//
+//}
 
 extension NumberComponent: View {}

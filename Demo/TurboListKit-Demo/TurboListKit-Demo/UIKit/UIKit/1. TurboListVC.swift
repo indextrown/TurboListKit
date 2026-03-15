@@ -8,7 +8,7 @@
 import UIKit
 import TurboListKit
 
-final class TurboListAdapterDSLVC: UIViewController {
+final class TurboListVC: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -50,6 +50,9 @@ final class TurboListAdapterDSLVC: UIViewController {
         adapter.apply {
             TurboSection("id1") {
                 Header(title: "Header")
+                    .onTouch {
+                        print("header tapped")
+                    }
                 
                 for idx in 0..<1000 {
                     NumberComponent(number: idx)
@@ -66,7 +69,7 @@ final class TurboListAdapterDSLVC: UIViewController {
 }
 
 #Preview {
-    TurboListAdapterDSLVC()
+    TurboListVC()
 }
 
 

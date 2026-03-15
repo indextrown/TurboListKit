@@ -8,7 +8,7 @@
 import UIKit
 import TurboListKit
 
-final class TurboListAdapterDSLVC2: UIViewController {
+final class TurboListHeaderFooterSpacerVC: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -81,5 +81,5 @@ final class TurboListAdapterDSLVC2: UIViewController {
 }
 
 #Preview {
-    TurboListAdapterDSLVC2()
+    TurboListHeaderFooterSpacerVC()
 }

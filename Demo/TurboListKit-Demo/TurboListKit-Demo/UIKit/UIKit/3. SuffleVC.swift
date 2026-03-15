@@ -17,8 +17,13 @@ final class ShuffleVC: UIViewController {
     )
     
     private lazy var shuffleButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Shuffle", for: .normal)
+        var config = UIButton.Configuration.filled()
+        config.title = "Shuffle"
+        config.cornerStyle = .capsule
+        config.baseBackgroundColor = .white
+        config.baseForegroundColor = .black
+
+        let button = UIButton(configuration: config)
         button.addTarget(self, action: #selector(shuffleTapped), for: .touchUpInside)
         return button
     }()
@@ -38,8 +43,7 @@ final class ShuffleVC: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
-        
+        view.backgroundColor = .black
         view.addSubview(shuffleButton)
         view.addSubview(collectionView)
         
@@ -73,6 +77,7 @@ final class ShuffleVC: UIViewController {
                 }
                 Footer(title: "Footer")
             }
+            .padding(.horizontal, 10)
             .grid(columns: 4, spacing: 10)
         }
     }

@@ -8,7 +8,9 @@
 import Foundation
 import TurboListKit
 import UIKit
+import SwiftUI
 
+extension Header: View {}
 struct Header: HeaderComponent {
     
     typealias CellUIView = HeaderView

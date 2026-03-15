@@ -37,6 +37,7 @@ extension Touchable where Self: UIView {
     }
 }
 
+
 /// 버튼 존재 여부
 public protocol ContainsButton {
     
@@ -125,6 +126,17 @@ class ContainerCell<C>: UICollectionViewCell, CellDataModelBindable where C: Com
         
         // Component render
         component.render(context: context, content: content)
+        
+        // touchable이면 애니메이션을 실행
+        if let touchable = content as? (UIView & Touchable) {
+            print("애니메이션 설정")
+            touchable.enableTouchAnimation()
+        }
+        
+        if let touchAnimatable = content as? (UIView & TouchAnimatable) {
+            print("애니메이션 설정")
+            touchAnimatable.enableTouchAnimation()
+        }
     }
 }
 
@@ -136,3 +148,50 @@ public protocol Swipeable {
 
 public protocol HeaderComponent: Component {}
 public protocol FooterComponent: Component {}
+
+
+
+
+
+// --
+
+// selector handler를 UIView extension으로 이동
+@MainActor
+extension Touchable where Self: UIView {
+
+    func enableTouchAnimation() {
+
+        let gesture = UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(UIView._handleTouchAnimation(_:))
+        )
+
+        gesture.minimumPressDuration = 0
+        addGestureRecognizer(gesture)
+    }
+}
+
+// 실제 handler
+private extension UIView {
+
+    @objc func _handleTouchAnimation(_ gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+
+        case .began:
+            UIView.animate(withDuration: 0.15) {
+                self.transform = CGAffineTransform(scaleX: 0.86, y: 0.86)
+            }
+
+        case .ended, .cancelled, .failed:
+            UIView.animate(withDuration: 0.2) {
+                self.transform = .identity
+            }
+
+        default:
+            break
+        }
+    }
+}
+
+
+
