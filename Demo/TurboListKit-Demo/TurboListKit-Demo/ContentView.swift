@@ -17,25 +17,25 @@ struct ContentView: View {
                 Section("UIKit") {
                     NavigationLink("List") {
                         TurboListVC.toSwiftUI(withNavigation: false)
-                            .toolbar(.hidden, for: .navigationBar)
+                            // .toolbar(.hidden, for: .navigationBar)
                     }
                     
                     NavigationLink("Header Footer Spacer") {
                         TurboListHeaderFooterSpacerVC.toSwiftUI(withNavigation: false)
-                            .toolbar(.hidden, for: .navigationBar)
+                            // .toolbar(.hidden, for: .navigationBar)
                     }
                     
                     NavigationLink("Shuffle") {
                         ShuffleVC.toSwiftUI(withNavigation: false)
-                            .toolbar(.hidden, for: .navigationBar)
-                            .preferredColorScheme(.dark)
+                            // .toolbar(.hidden, for: .navigationBar)
+                            // .preferredColorScheme(.dark)
                     }
                 }
                 
                 Section("SwiftUI") {
                     NavigationLink("TurboCompont Can be used in SwiftUI") {
                         TurboView()
-                        toolbar(.hidden, for: .navigationBar)
+                            // .toolbar(.hidden, for: .navigationBar)
                     }
                 }
             }
