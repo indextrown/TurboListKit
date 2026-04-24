@@ -7,7 +7,7 @@ struct VerticalLayoutItemComponent: Component {
     let viewModel: ViewModel
 
     var layoutMode: ContentLayoutMode {
-        .flexibleHeight(estimatedHeight: 72)
+        .flexibleHeight(estimatedHeight: 54.0)
     }
 
     func renderContent(coordinator: Void) -> VerticalLayoutItemView {
@@ -20,6 +20,12 @@ struct VerticalLayoutItemComponent: Component {
 }
 
 final class VerticalLayoutItemView: UIView {
+    private enum Layout {
+        static let horizontalInset: CGFloat = 16
+        static let verticalInset: CGFloat = 8
+        static let spacing: CGFloat = 4
+    }
+
     struct ViewModel: Equatable {
         let id: UUID
         var title: String?
@@ -58,7 +64,6 @@ final class VerticalLayoutItemView: UIView {
         label.adjustsFontForContentSizeCategory = true
         label.font = .preferredFont(forTextStyle: .body)
         label.textColor = .label
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -68,23 +73,13 @@ final class VerticalLayoutItemView: UIView {
         label.adjustsFontForContentSizeCategory = true
         label.font = .preferredFont(forTextStyle: .subheadline)
         label.textColor = .secondaryLabel
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private let separator: UIView = {
         let view = UIView()
         view.backgroundColor = .separator
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    }()
-
-    private let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 4
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
     }()
 
     init(viewModel: ViewModel) {
@@ -100,27 +95,9 @@ final class VerticalLayoutItemView: UIView {
     }
 
     private func defineLayout() {
-        backgroundColor = .systemBackground
-
-        addSubview(stackView)
+        addSubview(titleLabel)
+        addSubview(subtitleLabel)
         addSubview(separator)
-
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(subtitleLabel)
-
-        let separatorHeight = 1.0 / traitCollection.displayScale
-
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
-
-            separator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            separator.trailingAnchor.constraint(equalTo: trailingAnchor),
-            separator.bottomAnchor.constraint(equalTo: bottomAnchor),
-            separator.heightAnchor.constraint(equalToConstant: separatorHeight),
-        ])
     }
 
     private func applyViewModel() {
@@ -128,17 +105,85 @@ final class VerticalLayoutItemView: UIView {
         subtitleLabel.text = viewModel.subtitle
         titleLabel.isHidden = viewModel.title == nil
         subtitleLabel.isHidden = viewModel.subtitle == nil
+        setNeedsLayout()
     }
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        let targetWidth = max(size.width, 1)
-        let fittingSize = CGSize(width: targetWidth, height: UIView.layoutFittingCompressedSize.height)
-        let result = systemLayoutSizeFitting(
-            fittingSize,
-            withHorizontalFittingPriority: .required,
-            verticalFittingPriority: .fittingSizeLevel
+        let contentWidth = max(size.width - (Layout.horizontalInset * 2), 0)
+        var height = Layout.verticalInset * 2
+
+        if titleLabel.isHidden == false {
+            height += titleLabel.sizeThatFits(
+                CGSize(width: contentWidth, height: .greatestFiniteMagnitude)
+            ).height
+        }
+
+        if subtitleLabel.isHidden == false {
+            if titleLabel.isHidden == false {
+                height += Layout.spacing
+            }
+
+            height += subtitleLabel.sizeThatFits(
+                CGSize(width: contentWidth, height: .greatestFiniteMagnitude)
+            ).height
+        }
+
+        return CGSize(width: size.width, height: ceil(height))
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        let contentWidth = max(bounds.width - (Layout.horizontalInset * 2), 0)
+        var y = Layout.verticalInset
+
+        if titleLabel.isHidden == false {
+            let titleSize = titleLabel.sizeThatFits(
+                CGSize(width: contentWidth, height: .greatestFiniteMagnitude)
+            )
+            titleLabel.frame = CGRect(
+                x: Layout.horizontalInset,
+                y: y,
+                width: contentWidth,
+                height: ceil(titleSize.height)
+            )
+            y = titleLabel.frame.maxY
+        } else {
+            titleLabel.frame = .zero
+        }
+
+        if subtitleLabel.isHidden == false {
+            if titleLabel.isHidden == false {
+                y += Layout.spacing
+            }
+
+            let subtitleSize = subtitleLabel.sizeThatFits(
+                CGSize(width: contentWidth, height: .greatestFiniteMagnitude)
+            )
+            subtitleLabel.frame = CGRect(
+                x: Layout.horizontalInset,
+                y: y,
+                width: contentWidth,
+                height: ceil(subtitleSize.height)
+            )
+        } else {
+            subtitleLabel.frame = .zero
+        }
+
+        separator.frame = CGRect(
+            x: Layout.horizontalInset,
+            y: bounds.height - (1.0 / traitCollection.displayScale),
+            width: max(bounds.width - Layout.horizontalInset, 0),
+            height: 1.0 / traitCollection.displayScale
         )
-        return CGSize(width: targetWidth, height: result.height)
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
+            setNeedsLayout()
+        }
     }
 }
 

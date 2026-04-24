@@ -14,11 +14,13 @@ final class ListingViewEventStorage {
     private var source: [AnyHashable: Any] = [:]
     
     /// 특정 타입의 이벤트 조회
+    @MainActor
     func event<E: ListingViewEvent>(for type: E.Type) -> E? {
         source[String(reflecting: type)] as? E
     }
     
     /// 이벤트 등록
+    @MainActor
     func register(_ event: some ListingViewEvent) {
         source[event.id] = event
     }

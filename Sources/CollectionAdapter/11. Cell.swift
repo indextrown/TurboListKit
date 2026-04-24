@@ -74,6 +74,7 @@ extension Cell {
   ///
   /// - Parameters:
   ///  - handler: 선택 이벤트 콜백
+  @MainActor
   public func didSelect(_ handler: @escaping (DidSelectEvent.EventContext) -> Void) -> Self {
     registerEvent(DidSelectEvent(handler: handler))
   }
@@ -82,6 +83,7 @@ extension Cell {
   ///
   /// - Parameters:
   ///  - handler: willDisplay 이벤트 콜백
+  @MainActor
   public func willDisplay(_ handler: @escaping (WillDisplayEvent.EventContext) -> Void) -> Self {
     registerEvent(WillDisplayEvent(handler: handler))
   }
@@ -90,6 +92,7 @@ extension Cell {
   ///
   /// - Parameters:
   ///  - handler: didEndDisplay 이벤트 콜백
+  @MainActor
   public func didEndDisplay(_ handler: @escaping (DidEndDisplayingEvent.EventContext) -> Void) -> Self {
     registerEvent(DidEndDisplayingEvent(handler: handler))
   }
@@ -98,6 +101,7 @@ extension Cell {
   ///
   /// - Parameters:
   ///  - handler: highlight 이벤트 콜백
+  @MainActor
   public func onHighlight(_ handler: @escaping (HighlightEvent.EventContext) -> Void) -> Self {
     registerEvent(HighlightEvent(handler: handler))
   }
@@ -106,6 +110,7 @@ extension Cell {
   ///
   /// - Parameters:
   ///  - handler: unhighlight 이벤트 콜백
+  @MainActor
   public func onUnhighlight(_ handler: @escaping (UnhighlightEvent.EventContext) -> Void) -> Self {
     registerEvent(UnhighlightEvent(handler: handler))
   }

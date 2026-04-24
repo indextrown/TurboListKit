@@ -55,8 +55,8 @@ struct ContentView: View {
                         .toSwiftUI()
                         .ignoresSafeArea()
                 case .sample:
-                    UINavigationController(rootViewController: SampleViewController())
-                        .toSwiftUI()
+                    SampleViewController()
+                        .toSwiftUI(hideNavigationBar: true)
                         .ignoresSafeArea()
                 }
             }

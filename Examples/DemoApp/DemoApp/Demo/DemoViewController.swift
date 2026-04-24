@@ -17,11 +17,7 @@ final class DemoViewController: UIViewController {
 
     private let layoutAdapter = CollectionViewLayoutAdapter()
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewCompositionalLayout { [weak self] index, environment in
-            self?.layoutAdapter.sectionLayout(index: index, enviroment: environment)
-        }
-
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(layoutAdapter: layoutAdapter)
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.alwaysBounceVertical = true
         return collectionView

@@ -4,27 +4,32 @@ import UIKit
 final class VerticalLayoutListView: UIView {
     private enum Const {
         static let pageSize = 100
-        static let maximumViewModelCount = 1_000
+        static let maximumViewModelCount = 10000
     }
 
     private let layoutAdapter = CollectionViewLayoutAdapter()
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewCompositionalLayout { [weak self] index, environment in
-            self?.layoutAdapter.sectionLayout(index: index, enviroment: environment)
-        }
-
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(layoutAdapter: layoutAdapter)
         collectionView.backgroundColor = .systemBackground
         collectionView.alwaysBounceVertical = true
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
 
     private lazy var collectionViewAdapter = CollectionViewAdapter(
-        configuration: .init(refreshControl: .enabled(tintColor: .systemBlue)),
+        configuration: CollectionViewAdapterConfiguration(
+            refreshControl: .enabled(tintColor: .systemBlue)
+        ),
         collectionView: collectionView,
         layoutAdapter: layoutAdapter
     )
+    
+//    private lazy var collectionViewAdapter = CollectionViewAdapter(
+//        configuration: CollectionViewAdapterConfiguration(),
+//        collectionView: collectionView,
+//        layoutAdapter: layoutAdapter
+//    )
+    
+    
 
     private var viewModels: [VerticalLayoutItemComponent.ViewModel] = [] {
         didSet {
@@ -45,44 +50,41 @@ final class VerticalLayoutListView: UIView {
     }
 
     private func defineLayout() {
-        backgroundColor = .systemBackground
         addSubview(collectionView)
-
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        ])
     }
 
     private func resetViewModels() {
-        viewModels = []
-        appendViewModels()
+        viewModels = (0..<Const.pageSize).map { _ in .random() }
     }
 
     private func appendViewModels() {
         guard viewModels.count < Const.maximumViewModelCount else { return }
-
         let remainingCount = Const.maximumViewModelCount - viewModels.count
         let nextCount = min(Const.pageSize, remainingCount)
+        guard nextCount > 0 else { return }
         viewModels.append(contentsOf: (0..<nextCount).map { _ in .random() })
     }
 
     private func applyViewModels() {
         collectionViewAdapter.apply(
             List {
-                Section(id: "vertical-layout-sample") {
+                Section(id: "Section") {
                     for viewModel in viewModels {
                         Cell(
                             id: viewModel.id,
                             component: VerticalLayoutItemComponent(viewModel: viewModel)
                         )
+                        .willDisplay { context in
+                            let model = context.anyComponent.base.viewModel as! VerticalLayoutItemView.ViewModel
+                            print("표시직전: \(model.title!)")
+                        }
+                        .didEndDisplay { context in
+                            let model = context.anyComponent.base.viewModel as! VerticalLayoutItemView.ViewModel
+                            print("사라짐:  \(model.title!)")
+                        }
                     }
                 }
-                .withSectionLayout(
-                    DefaultCompositionalLayoutSectionFactory.vertical(spacing: 10)
-                )
+                .withSectionLayout(.vertical)
             }
             .onRefresh { [weak self] _ in
                 self?.resetViewModels()
@@ -92,8 +94,13 @@ final class VerticalLayoutListView: UIView {
             }
         )
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        collectionView.frame = bounds
+    }
 }
 
 #Preview {
-    VerticalLayoutItemView(viewModel: .random())
+    VerticalLayoutListView()
 }

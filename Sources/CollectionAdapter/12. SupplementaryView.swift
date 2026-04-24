@@ -61,6 +61,7 @@ extension SupplementaryView {
   ///
   /// - Parameters:
   ///  - handler: 표시 이벤트 콜백
+  @MainActor
   public func willDisplay(_ handler: @escaping (WillDisplayEvent.EventContext) -> Void) -> Self {
     registerEvent(WillDisplayEvent(handler: handler))
   }
@@ -69,6 +70,7 @@ extension SupplementaryView {
   ///
   /// - Parameters:
   ///  - handler: 제거 이벤트 콜백
+  @MainActor
   public func didEndDisplaying(_ handler: @escaping (DidEndDisplayingEvent.EventContext) -> Void) -> Self {
     registerEvent(DidEndDisplayingEvent(handler: handler))
   }

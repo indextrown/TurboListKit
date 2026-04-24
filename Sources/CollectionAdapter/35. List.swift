@@ -42,6 +42,7 @@ extension List {
     ///
     /// - Parameters:
     ///  - handler: did scroll 이벤트에 대한 콜백 핸들러
+    @MainActor
     public func didScroll(
     _ handler: @escaping (DidScrollEvent.EventContext) -> Void
     ) -> Self {
@@ -52,6 +53,7 @@ extension List {
     ///
     /// - Parameters:
     ///  - handler: pull to refresh 이벤트에 대한 콜백 핸들러
+    @MainActor
     public func onRefresh(
         _ handler: @escaping (PullToRefreshEvent.EventContext) -> Void
     ) -> Self {
@@ -64,6 +66,7 @@ extension List {
     ///   - offset: 이벤트를 트리거하는 콘텐츠 끝 기준 오프셋. 기본값은 콘텐츠 높이의 2배
     ///   - handler: reached end 이벤트에 대한 콜백 핸들러
     /// - Returns: 이벤트 핸들러가 등록된 새로운 `List`
+    @MainActor
     public func onReachEnd(
         offsetFromEnd offset: ReachedEndEvent.OffsetFromEnd = .relativeToContainerSize(multiplier: 2.0),
         _ handler: @escaping (ReachedEndEvent.EventContext) -> Void
@@ -80,6 +83,7 @@ extension List {
     ///
     /// - Parameters:
     ///  - handler: will begin dragging 이벤트에 대한 콜백 핸들러
+    @MainActor
     public func willBeginDragging(_ handler: @escaping (WillBeginDraggingEvent.EventContext) -> Void) -> Self {
         registerEvent(WillBeginDraggingEvent(handler: handler))
     }
@@ -88,6 +92,7 @@ extension List {
     ///
     /// - Parameters:
     ///  - handler: will end dragging 이벤트에 대한 콜백 핸들러
+    @MainActor
     public func willEndDragging(_ handler: @escaping (WillEndDraggingEvent.EventContext) -> Void) -> Self {
         registerEvent(WillEndDraggingEvent(handler: handler))
     }
@@ -96,6 +101,7 @@ extension List {
     ///
     /// - Parameters:
     ///  - handler: did end dragging 이벤트에 대한 콜백 핸들러
+    @MainActor
     public func didEndDragging(_ handler: @escaping (DidEndDraggingEvent.EventContext) -> Void) -> Self {
         registerEvent(DidEndDraggingEvent(handler: handler))
     }
@@ -104,6 +110,7 @@ extension List {
     ///
     /// - Parameters:
     ///  - handler: did scroll to top 이벤트에 대한 콜백 핸들러
+    @MainActor
     public func didScrollToTop(_ handler: @escaping (DidScrollToTopEvent.EventContext) -> Void) -> Self {
         registerEvent(DidScrollToTopEvent(handler: handler))
     }
@@ -112,6 +119,7 @@ extension List {
     ///
     /// - Parameters:
     ///  - handler: will begin decelerating 이벤트에 대한 콜백 핸들러
+    @MainActor
     public func willBeginDecelerating(_ handler: @escaping (WillBeginDeceleratingEvent.EventContext) -> Void) -> Self {
         registerEvent(WillBeginDeceleratingEvent(handler: handler))
     }
@@ -120,6 +128,7 @@ extension List {
     ///
     /// - Parameters:
     ///  - handler: did end decelerating 이벤트에 대한 콜백 핸들러
+    @MainActor
     public func didEndDecelerating(_ handler: @escaping (DidEndDeceleratingEvent.EventContext) -> Void) -> Self {
         registerEvent(DidEndDeceleratingEvent(handler: handler))
     }
@@ -128,6 +137,7 @@ extension List {
     ///
     /// - Parameters:
     ///  - handler: shouldScrollToTop 이벤트에 대한 콜백 핸들러
+    @MainActor
     public func shouldScrollToTop(_ handler: @escaping (ShouldScrollToTopEvent.EventContext) -> Bool) -> Self {
         registerEvent(ShouldScrollToTopEvent(handler: handler))
     }

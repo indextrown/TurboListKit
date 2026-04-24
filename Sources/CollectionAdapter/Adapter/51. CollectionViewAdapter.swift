@@ -44,6 +44,9 @@ final public class CollectionViewAdapter: NSObject {
     /// 현재 업데이트 진행 중 여부
     private var isUpdating = false
     
+    /// pull-to-refresh로 시작된 업데이트 여부
+    private var isHandlingPullToRefresh = false
+
     /// 업데이트 도중 들어온 다음 업데이트 요청 (큐)
     private var queuedUpdate: (
         list: List,
@@ -70,7 +73,9 @@ final public class CollectionViewAdapter: NSObject {
     }()
     
     @objc
+    @MainActor
     private func pullToRefresh() {
+        isHandlingPullToRefresh = true
         list?.event(for: PullToRefreshEvent.self)?.handler(.init())
     }
     
@@ -130,8 +135,15 @@ final public class CollectionViewAdapter: NSObject {
         
         /// 내부 completion 래핑
         let overridedCompletion: (Bool) -> Void = { [weak self] _ in
-            guard let self else { return }
-            pullToRefreshControl.endRefreshing()
+            guard let self else {
+                return
+            }
+            
+            if isHandlingPullToRefresh {
+                isHandlingPullToRefresh = false
+                pullToRefreshControl.endRefreshing()
+            }
+            
             completion?()
             
             /// 대기 중인 업데이트가 있으면 이어서 실행
@@ -234,30 +246,22 @@ final public class CollectionViewAdapter: NSObject {
         new: List?,
         completion: @escaping (Bool) -> Void
     ) {
-        guard let collectionView else {
-            completion(false)
-            return
-        }
-
         let changeset = StagedChangeset(
             source: old?.sections ?? [],
             target: new?.sections ?? []
         )
-        var workingList = new ?? List(sections: [])
 
-        collectionView.reload(
+        collectionView?.reload(
             using: changeset,
             interrupt: { [configuration] changeset in
                 changeset.changeCount > configuration.batchUpdateInterruptCount
             },
             setData: { [weak self] sections in
-                workingList.sections = sections
-                self?.list = workingList
-            }
+                self?.list?.sections = sections
+            },
+            enablesReconfigureItems: configuration.enablesReconfigureItems,
+            completion: completion
         )
-
-        collectionView.layoutIfNeeded()
-        completion(true)
     }
 }
 
@@ -280,6 +284,7 @@ extension CollectionViewAdapter {
     /// 사용자가 드래그 중이거나 터치 추적 중이 아닐 때만 검사한다.
     /// 기본적으로 끝 도달 여부는 scrollViewWillEndDragging에서 처리되지만,
     /// 드래그 없이 스크롤 위치가 변하는 경우를 보완하기 위해 사용된다.
+    @MainActor
     private func manuallyCheckReachedEndEventIfNeeded() {
         guard let collectionView,
               collectionView.isDragging == false,
@@ -300,6 +305,7 @@ extension CollectionViewAdapter {
     /// viewLength, contentLength, offset을 다르게 계산한다.
     /// contentLength가 viewLength보다 작으면 즉시 이벤트를 발생시키고,
     /// 그렇지 않으면 남은 거리를 계산하여 triggerDistance 이하일 때 이벤트를 발생시킨다.
+    @MainActor
     private func triggerReachedEndEventIfNeeded(contentOffset: CGPoint) {
         guard
             let event = list?.event(for: ReachedEndEvent.self),
@@ -324,11 +330,6 @@ extension CollectionViewAdapter {
             offset = contentOffset.x
         }
         
-        if contentLength < viewLength {
-            event.handler(.init())
-            return
-        }
-        
         let triggerDistance: CGFloat = {
             switch event.offset {
             case .absolute(let offset):
@@ -339,7 +340,7 @@ extension CollectionViewAdapter {
         }()
         
         let remainingDistance = contentLength - viewLength - offset
-        if remainingDistance <= triggerDistance {
+        if contentLength < viewLength || remainingDistance <= triggerDistance {
             event.handler(.init())
         }
     }
@@ -352,6 +353,7 @@ extension CollectionViewAdapter: CollectionViewLayoutAdapterDataSource {
     ///
     /// - Parameter index: 가져올 Section의 index
     /// - Returns: 해당 index의 Section. 없으면 nil
+    @MainActor
     public func sectionItem(at index: Int) -> Section? {
         list?.sections[safe: index]
     }
@@ -359,6 +361,7 @@ extension CollectionViewAdapter: CollectionViewLayoutAdapterDataSource {
     /// 컴포넌트 사이즈 캐시 저장소를 반환한다.
     ///
     /// - Returns: 셀 / 헤더 / 푸터 사이즈를 저장하는 ComponentSizeStorage
+    @MainActor
     public func sizeStorage() -> ComponentSizeStorage {
         componentSizeStorage
     }
@@ -372,6 +375,7 @@ extension CollectionViewAdapter: UICollectionViewDelegate {
     ///
     /// 해당 indexPath의 Cell을 찾고,
     /// Cell에 등록된 DidSelectEvent가 있다면 이벤트 핸들러를 실행한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
@@ -392,6 +396,7 @@ extension CollectionViewAdapter: UICollectionViewDelegate {
     ///
     /// 해당 Cell의 WillDisplayEvent가 있다면,
     /// indexPath, component, 실제 렌더링된 content를 함께 전달한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         willDisplay cell: UICollectionViewCell,
@@ -414,6 +419,7 @@ extension CollectionViewAdapter: UICollectionViewDelegate {
     ///
     /// 해당 Cell의 DidEndDisplayingEvent가 있다면,
     /// indexPath, component, 실제 렌더링된 content를 함께 전달한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         didEndDisplaying cell: UICollectionViewCell,
@@ -436,6 +442,7 @@ extension CollectionViewAdapter: UICollectionViewDelegate {
     ///
     /// elementKind에 따라 header 또는 footer를 구분하고,
     /// 각각의 WillDisplayEvent가 있다면 이벤트를 전달한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         willDisplaySupplementaryView view: UICollectionReusableView,
@@ -482,6 +489,7 @@ extension CollectionViewAdapter: UICollectionViewDelegate {
     ///
     /// elementKind에 따라 header 또는 footer를 구분하고,
     /// 각각의 DidEndDisplayingEvent가 있다면 이벤트를 전달한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         didEndDisplayingSupplementaryView view: UICollectionReusableView,
@@ -527,6 +535,7 @@ extension CollectionViewAdapter: UICollectionViewDelegate {
     /// 셀이 highlight 상태가 되었을 때 호출된다.
     ///
     /// 터치 다운 등으로 셀이 눌린 상태가 되면 HighlightEvent를 전달한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         didHighlightItemAt indexPath: IndexPath
@@ -547,6 +556,7 @@ extension CollectionViewAdapter: UICollectionViewDelegate {
     /// 셀의 highlight 상태가 해제되었을 때 호출된다.
     ///
     /// 터치가 끝나거나 취소되어 셀이 더 이상 눌린 상태가 아니면 UnhighlightEvent를 전달한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         didUnhighlightItemAt indexPath: IndexPath
@@ -572,6 +582,7 @@ extension CollectionViewAdapter {
     ///
     /// DidScrollEvent를 전달하고,
     /// 필요하면 끝 도달 이벤트도 직접 검사한다.
+    @MainActor
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let collectionView else {
             return
@@ -589,6 +600,7 @@ extension CollectionViewAdapter {
     /// 사용자가 드래그를 시작할 때 호출된다.
     ///
     /// WillBeginDraggingEvent를 전달한다.
+    @MainActor
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         guard let collectionView else {
             return
@@ -605,6 +617,7 @@ extension CollectionViewAdapter {
     ///
     /// velocity와 targetContentOffset을 함께 전달하며,
     /// targetContentOffset 기준으로 끝 도달 여부도 검사한다.
+    @MainActor
     public func scrollViewWillEndDragging(
         _ scrollView: UIScrollView,
         withVelocity velocity: CGPoint,
@@ -628,6 +641,7 @@ extension CollectionViewAdapter {
     /// 사용자가 드래그를 끝냈을 때 호출된다.
     ///
     /// 감속 여부(decelerate)를 함께 전달한다.
+    @MainActor
     public func scrollViewDidEndDragging(
         _ scrollView: UIScrollView,
         willDecelerate decelerate: Bool
@@ -647,6 +661,7 @@ extension CollectionViewAdapter {
     /// scrollView가 맨 위로 스크롤되었을 때 호출된다.
     ///
     /// DidScrollToTopEvent를 전달한다.
+    @MainActor
     public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
         guard let collectionView else {
             return
@@ -662,6 +677,7 @@ extension CollectionViewAdapter {
     /// scrollView가 감속을 시작할 때 호출된다.
     ///
     /// WillBeginDeceleratingEvent를 전달한다.
+    @MainActor
     public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         guard let collectionView else {
             return
@@ -677,6 +693,7 @@ extension CollectionViewAdapter {
     /// scrollView의 감속이 끝났을 때 호출된다.
     ///
     /// DidEndDeceleratingEvent를 전달한다.
+    @MainActor
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard let collectionView else {
             return
@@ -693,6 +710,7 @@ extension CollectionViewAdapter {
     ///
     /// ShouldScrollToTopEvent가 있으면 해당 handler 결과를 사용하고,
     /// 없으면 기본값으로 true를 반환한다.
+    @MainActor
     public func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
         guard let collectionView else {
             return true
@@ -715,6 +733,7 @@ extension CollectionViewAdapter: UICollectionViewDataSourcePrefetching {
     /// 해당 item의 component가 ComponentResourcePrefetchable을 지원하면
     /// 등록된 prefetchingPlugins를 실행하고,
     /// 반환된 AnyCancellable들을 indexPath 기준으로 저장한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         prefetchItemsAt indexPaths: [IndexPath]
@@ -740,6 +759,7 @@ extension CollectionViewAdapter: UICollectionViewDataSourcePrefetching {
     ///
     /// indexPath에 저장된 AnyCancellable들을 꺼내 cancel을 호출하여
     /// 진행 중인 프리패칭 작업을 취소한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         cancelPrefetchingForItemsAt indexPaths: [IndexPath]
@@ -755,10 +775,12 @@ extension CollectionViewAdapter: UICollectionViewDataSourcePrefetching {
 // MARK: - UICollectionViewDataSource
 extension CollectionViewAdapter: UICollectionViewDataSource {
     
+    @MainActor
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         list?.sections.count ?? 0
     }
 
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
@@ -774,6 +796,7 @@ extension CollectionViewAdapter: UICollectionViewDataSource {
     ///
     /// cell의 사이즈가 계산되면 componentSizeStorage에 저장되며,
     /// 프리패칭 작업이 있었다면 cell.cancellables로 넘겨 셀 생명주기에서 관리한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
@@ -810,6 +833,7 @@ extension CollectionViewAdapter: UICollectionViewDataSource {
     ///
     /// 각각 component를 렌더링하고,
     /// 사이즈가 계산되면 componentSizeStorage에 header/footer size로 저장한다.
+    @MainActor
     public func collectionView(
         _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
@@ -875,4 +899,3 @@ extension CollectionViewAdapter: UICollectionViewDataSource {
         }
     }
 }
-

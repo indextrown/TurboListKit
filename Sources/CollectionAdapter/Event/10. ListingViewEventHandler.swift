@@ -24,12 +24,14 @@ protocol ListingViewEventHandler {
 extension ListingViewEventHandler {
     
     /// 이벤트를 저장소에 등록하고 자기 자신을 반환
+    @MainActor
     func registerEvent(_ event: some ListingViewEvent) -> Self {
         eventStorage.register(event)
         return self
     }
     
     /// 특정 이벤트 타입으로 조회
+    @MainActor
     func event<E: ListingViewEvent>(for type: E.Type) -> E? {
         eventStorage.event(for: type)
     }
