@@ -131,6 +131,7 @@ final public class CollectionViewAdapter: NSObject {
         /// 내부 completion 래핑
         let overridedCompletion: (Bool) -> Void = { [weak self] _ in
             guard let self else { return }
+            pullToRefreshControl.endRefreshing()
             completion?()
             
             /// 대기 중인 업데이트가 있으면 이어서 실행
@@ -156,6 +157,7 @@ final public class CollectionViewAdapter: NSObject {
             collectionView.reloadData()
             collectionView.layoutIfNeeded()
             overridedCompletion(true)
+            return
         }
         
         /// 업데이트 전략에 따라 처리
@@ -211,6 +213,7 @@ final public class CollectionViewAdapter: NSObject {
             cellReuseIdentifiers
                 .subtracting(registeredCellReuseIdentifiers)
                 .forEach { reuseIdentifier in
+                    registeredCellReuseIdentifiers.insert(reuseIdentifier)
                     collectionView?.register(
                         UICollectionViewComponentCell.self,
                         forCellWithReuseIdentifier: reuseIdentifier
@@ -231,10 +234,30 @@ final public class CollectionViewAdapter: NSObject {
         new: List?,
         completion: @escaping (Bool) -> Void
     ) {
+        guard let collectionView else {
+            completion(false)
+            return
+        }
+
         let changeset = StagedChangeset(
             source: old?.sections ?? [],
             target: new?.sections ?? []
         )
+        var workingList = new ?? List(sections: [])
+
+        collectionView.reload(
+            using: changeset,
+            interrupt: { [configuration] changeset in
+                changeset.changeCount > configuration.batchUpdateInterruptCount
+            },
+            setData: { [weak self] sections in
+                workingList.sections = sections
+                self?.list = workingList
+            }
+        )
+
+        collectionView.layoutIfNeeded()
+        completion(true)
     }
 }
 
@@ -732,15 +755,15 @@ extension CollectionViewAdapter: UICollectionViewDataSourcePrefetching {
 // MARK: - UICollectionViewDataSource
 extension CollectionViewAdapter: UICollectionViewDataSource {
     
-    // MARK: - Required
-    /// collectionView의 section 개수를 반환한다.
-    ///
-    /// 현재 list가 없으면 0을 반환한다.
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        list?.sections.count ?? 0
+    }
+
     public func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        list?.sections.count ?? 0
+        sectionItem(at: section)?.cells.count ?? 0
     }
     
     // MARK: - Required
@@ -852,6 +875,4 @@ extension CollectionViewAdapter: UICollectionViewDataSource {
         }
     }
 }
-
-
 

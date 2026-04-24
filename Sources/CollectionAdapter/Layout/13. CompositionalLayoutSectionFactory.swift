@@ -213,7 +213,9 @@ extension CompositionalLayoutSectionFactory {
                 layoutSize: makeLayoutSize(
                     mode: header.component.layoutMode,
                     size: sizeContext.size
-                )
+                ),
+                elementKind: header.kind,
+                alignment: header.alignment
             )
         } else {
             return NSCollectionLayoutBoundarySupplementaryItem(

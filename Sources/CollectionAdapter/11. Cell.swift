@@ -25,7 +25,7 @@ public struct Cell: Identifiable, ListingViewEventHandler {
     /// - Parameters:
     ///  - id: Cell을 식별하기 위한 ID
     /// - component: 셀을 구성하는 Component (내부에서 AnyComponent로 타입 소거되어 저장됨)
-    init(id: some Hashable, component: some Component) {
+    public init(id: some Hashable, component: some Component) {
         self.id = id
         self.component = AnyComponent(component)
     }
