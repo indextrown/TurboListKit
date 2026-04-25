@@ -112,6 +112,7 @@ final public class CollectionViewAdapter: NSObject {
         
         if configuration.refreshControl.isEnabled {
             collectionView.refreshControl = pullToRefreshControl
+            configureRefreshControlAppearance()
         }
     }
     
@@ -904,4 +905,62 @@ extension CollectionViewAdapter: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
     }
+}
+
+extension CollectionViewAdapter {
+
+    private func configureRefreshControlAppearance() {
+        guard
+            let refreshControl = collectionView?.refreshControl,
+            let appearance = configuration.refreshControlAppearance
+        else {
+            return
+        }
+        
+        let indicator = appearance.indicator
+        let image = indicator.tintColor == nil
+            ? indicator.image
+            : indicator.image.withRenderingMode(.alwaysTemplate)
+        
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let tintColor = indicator.tintColor {
+            imageView.tintColor = tintColor
+        }
+        
+        if let size = indicator.size {
+            NSLayoutConstraint.activate([
+                imageView.widthAnchor.constraint(equalToConstant: size),
+                imageView.heightAnchor.constraint(equalToConstant: size)
+            ])
+        }
+        
+        refreshControl.addSubview(imageView)
+        
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: refreshControl.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: refreshControl.centerYAnchor)
+        ])
+        
+        if let duration = indicator.spinDuration {
+            addSpinAnimation(to: imageView, duration: duration)
+        }
+        
+        refreshControl.tintColor = .clear
+    }
+
+    private func addSpinAnimation(
+        to view: UIView,
+        duration: TimeInterval
+    ) {
+        let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+        animation.fromValue = 0
+        animation.toValue = CGFloat.pi * 2
+        animation.duration = duration
+        animation.repeatCount = .infinity
+        animation.isRemovedOnCompletion = false
+        view.layer.add(animation, forKey: "refresh.spin")
+    }
+
 }
