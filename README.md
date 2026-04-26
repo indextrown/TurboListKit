@@ -11,8 +11,10 @@ DifferenceKit 기반 diff 업데이트, compositional layout 연결, 이벤트 m
 
 - [목적](#목적)
 - [사용법](#사용법)
+- [오토레이아웃 컴포넌트](#오토레이아웃-컴포넌트)
 - [핵심 타입](#핵심-타입)
 - [기능](#기능)
+- [예제 앱](#예제-앱)
 - [성능 비교](#성능-비교)
 - [전체 파이프라인](#전체-파이프라인)
 - [동작 파이프라인](#동작-파이프라인)
@@ -100,6 +102,41 @@ func render() {
 
 `TurboListKit`은 상태를 직접 보관하지 않으므로, 데이터가 바뀌면 새 `List`를 다시 만들어 `apply(...)`하는 방식으로 갱신합니다.
 
+## 오토레이아웃 컴포넌트
+
+오토레이아웃으로 구성한 `UIView`도 `TurboListKit` 컴포넌트로 그대로 사용할 수 있습니다. 이 경우 핵심은 `sizeThatFits(_:)`에서 오토레이아웃이 계산한 크기를 반환하는 것입니다.
+
+`DemoApp` 예제에는 공통 헬퍼 [`UIView+AutoLayoutFittingSize.swift`](./Examples/DemoApp/DemoApp/UIView+AutoLayoutFittingSize.swift)가 포함되어 있습니다.
+
+```swift
+override func sizeThatFits(_ size: CGSize) -> CGSize {
+    autoLayoutFittingSize(for: size)
+}
+```
+
+폭 상한이나 최소 높이가 필요한 카드형 컴포넌트는 이렇게 사용할 수 있습니다.
+
+```swift
+override func sizeThatFits(_ size: CGSize) -> CGSize {
+    autoLayoutFittingSize(
+        for: size,
+        targetWidth: min(size.width, 240),
+        minimumHeight: 140
+    )
+}
+```
+
+반대로 pill 태그처럼 높이는 고정이고 텍스트 길이에 따라 폭이 달라져야 하는 뷰는 `sizeThatFits(_:)`에서 내용 크기와 패딩을 직접 계산하는 편이 더 자연스럽습니다.
+
+```swift
+override func sizeThatFits(_ size: CGSize) -> CGSize {
+    let labelSize = label.sizeThatFits(
+        CGSize(width: CGFloat.greatestFiniteMagnitude, height: 24)
+    )
+    return CGSize(width: labelSize.width + 28, height: 48)
+}
+```
+
 ## 핵심 타입
 
 | 타입 | 역할 | 주로 언제 쓰는가 |
@@ -178,6 +215,18 @@ func render() {
 | 크기 조절 | `.size(_:)` | 이미지 렌더링 크기를 포인트 단위로 설정합니다. |
 | 색상 적용 | `.tintColor(_:)` | 템플릿 렌더링용 tint color를 적용합니다. |
 | 회전 애니메이션 | `.spin(duration:)` | 지정한 duration으로 인디케이터 회전 애니메이션을 적용합니다. |
+
+## 예제 앱
+
+[`Examples/DemoApp`](./Examples/DemoApp)에는 현재 다음 UIKit 예제가 포함되어 있습니다.
+
+- `DemoViewController`: 세로/가로/그리드 섹션, refresh, reach-end, selection을 한 화면에서 보여주는 종합 예제
+- `SampleViewController`: 가장 단순한 세로 리스트 예제
+- `SampleAutoLayoutViewController`: `SampleViewController`를 오토레이아웃 아이템 컴포넌트로 옮긴 버전
+- `AutoLayoutSampleViewController`: `UIStackView`와 제약만으로 셀 높이를 계산하는 오토레이아웃 예제
+- `HorizontalOnlyViewController`: 가로 카드 페이징과 연속 가로 태그 섹션만 모아둔 예제
+
+예제 앱 상세 설명은 [`Examples/DemoApp/README.md`](./Examples/DemoApp/README.md)에서 볼 수 있습니다.
 
 ## 성능 비교
 
