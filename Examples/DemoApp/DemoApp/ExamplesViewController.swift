@@ -7,6 +7,7 @@ final class ExamplesViewController: UITableViewController {
         case sampleAutoLayout
         case autoLayoutSample
         case horizontalOnly
+        case square
 
         var title: String {
             switch self {
@@ -14,6 +15,8 @@ final class ExamplesViewController: UITableViewController {
                 return "DemoViewController"
             case .horizontalOnly:
                 return "HorizontalOnlyViewController"
+            case .square:
+                return "SquareViewController"
             case .sample:
                 return "SampleViewController"
             case .sampleAutoLayout:
@@ -29,6 +32,8 @@ final class ExamplesViewController: UITableViewController {
                 return "TurboListKit 데모 화면"
             case .horizontalOnly:
                 return "가로 스크롤 레이아웃만 모아둔 예제"
+            case .square:
+                return "정사각형 셀만 모아둔 예제"
             case .sample:
                 return "새 화면 작업용 기본 틀"
             case .sampleAutoLayout:
@@ -44,6 +49,8 @@ final class ExamplesViewController: UITableViewController {
                 return DemoViewController()
             case .horizontalOnly:
                 return HorizontalOnlyViewController()
+            case .square:
+                return SquareViewController()
             case .sample:
                 return SampleViewController()
             case .sampleAutoLayout:
