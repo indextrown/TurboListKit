@@ -86,6 +86,11 @@ final class VerticalLayoutItemView: UIView {
         self.viewModel = viewModel
         super.init(frame: .zero)
         defineLayout()
+        registerForTraitChanges(
+            [UITraitPreferredContentSizeCategory.self]
+        ) { (self: Self, _: UITraitCollection) in
+            self.setNeedsLayout()
+        }
         applyViewModel()
     }
 
@@ -130,7 +135,7 @@ final class VerticalLayoutItemView: UIView {
 
         return CGSize(width: size.width, height: ceil(height))
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -176,14 +181,6 @@ final class VerticalLayoutItemView: UIView {
             width: max(bounds.width - Layout.horizontalInset, 0),
             height: 1.0 / traitCollection.displayScale
         )
-    }
-
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        if previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
-            setNeedsLayout()
-        }
     }
 }
 

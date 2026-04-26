@@ -11,7 +11,9 @@ import SwiftUI
 struct DemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            UINavigationController(rootViewController: ExamplesViewController())
+                .toSwiftUI()
+                .ignoresSafeArea()
         }
     }
 }

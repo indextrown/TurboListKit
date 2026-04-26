@@ -97,13 +97,6 @@ final class TextBlockView: UIView {
     }
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        let targetWidth = max(size.width, 1)
-        let fittingSize = CGSize(width: targetWidth, height: UIView.layoutFittingCompressedSize.height)
-        let result = systemLayoutSizeFitting(
-            fittingSize,
-            withHorizontalFittingPriority: .required,
-            verticalFittingPriority: .fittingSizeLevel
-        )
-        return CGSize(width: targetWidth, height: result.height)
+        autoLayoutFittingSize(for: size)
     }
 }

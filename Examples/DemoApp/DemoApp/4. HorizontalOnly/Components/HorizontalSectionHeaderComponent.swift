@@ -1,7 +1,9 @@
 import TurboListKit
 import UIKit
 
-struct SectionHeaderComponent: Component {
+/// 가로 섹션 헤더용 컴포넌트.
+/// `flexibleHeight`를 사용하고, 높이는 `sizeThatFits`에서 오토레이아웃이 계산한 내용 높이에 맞춰 유연하게 결정된다.
+struct HorizontalSectionHeaderComponent: Component {
     struct ViewModel: Equatable {
         let title: String
         let subtitle: String?
@@ -13,16 +15,16 @@ struct SectionHeaderComponent: Component {
         .flexibleHeight(estimatedHeight: 64)
     }
 
-    func renderContent(coordinator: Void) -> SectionHeaderView {
-        SectionHeaderView()
+    func renderContent(coordinator: Void) -> HorizontalSectionHeaderView {
+        HorizontalSectionHeaderView()
     }
 
-    func render(in content: SectionHeaderView, coordinator: Void) {
+    func render(in content: HorizontalSectionHeaderView, coordinator: Void) {
         content.apply(viewModel: viewModel)
     }
 }
 
-final class SectionHeaderView: UIView {
+final class HorizontalSectionHeaderView: UIView {
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
     private let stackView = UIStackView()
@@ -57,20 +59,13 @@ final class SectionHeaderView: UIView {
         nil
     }
 
-    func apply(viewModel: SectionHeaderComponent.ViewModel) {
+    func apply(viewModel: HorizontalSectionHeaderComponent.ViewModel) {
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
         subtitleLabel.isHidden = viewModel.subtitle == nil
     }
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        let targetWidth = max(size.width, 1)
-        let fittingSize = CGSize(width: targetWidth, height: UIView.layoutFittingCompressedSize.height)
-        let result = systemLayoutSizeFitting(
-            fittingSize,
-            withHorizontalFittingPriority: .required,
-            verticalFittingPriority: .fittingSizeLevel
-        )
-        return CGSize(width: targetWidth, height: result.height)
+        autoLayoutFittingSize(for: size)
     }
 }

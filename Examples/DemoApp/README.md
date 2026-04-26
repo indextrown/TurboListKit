@@ -2,7 +2,7 @@
 
 `DemoApp`은 `TurboListKit`을 실제 화면에서 확인하기 위한 예제 앱입니다.
 
-앱 시작 화면은 [ContentView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/TurboListKit/Examples/DemoApp/DemoApp/ContentView.swift:1)이며, 여기서 각 `UIViewController` 예제로 이동합니다.
+앱 시작 화면은 [ExamplesViewController.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Examples/DemoApp/DemoApp/ExamplesViewController.swift:1)이며, 여기서 각 `UIViewController` 예제로 이동합니다.
 
 ## 화면 구성
 
@@ -108,29 +108,42 @@ collectionViewAdapter.apply(
 )
 ```
 
+### `AutoLayoutSampleViewController`
+
+파일: [AutoLayoutSampleViewController.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Examples/DemoApp/DemoApp/AutoLayoutSample/AutoLayoutSampleViewController.swift:1)
+
+컴포넌트 내부 뷰를 오토레이아웃만으로 구성한 예제입니다. 셀 내부는 `UIStackView`와 `NSLayoutConstraint`만 사용하고, 높이 계산은 `systemLayoutSizeFitting`으로 처리합니다.
+
+관련 파일:
+
+- [AutoLayoutMessageComponent.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Examples/DemoApp/DemoApp/AutoLayoutSample/AutoLayoutMessageComponent.swift:1)
+
+이럴 때 참고하면 좋습니다:
+
+- `layoutSubviews`로 직접 프레임을 계산하지 않고 컴포넌트를 만들고 싶을 때
+- Dynamic Type 대응을 포함해 내용 길이에 따라 셀 높이를 자동으로 늘리고 싶을 때
+- 기존 UIKit 오토레이아웃 패턴을 `TurboListKit` 컴포넌트에 그대로 옮기고 싶을 때
+
 ## 진입 방식
 
-`DemoApp`은 SwiftUI 목록에서 UIKit 화면으로 이동하는 구조입니다.
+`DemoApp`은 UIKit `UINavigationController`가 전체 네비게이션을 담당하는 구조입니다.
 
-- [ContentView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/TurboListKit/Examples/DemoApp/DemoApp/ContentView.swift:1)에서 `NavigationStack` + `List` 사용
-- 각 항목은 `UIViewController.toSwiftUI()`로 감싸서 이동
-- 새 예제를 추가하려면 `Destination`에 case를 추가하고 `navigationDestination`에 연결하면 됩니다
+- [ExamplesViewController.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Examples/DemoApp/DemoApp/ExamplesViewController.swift:1)에서 예제 목록 표시
+- 선택한 항목은 `navigationController?.pushViewController(...)`로 이동
+- 앱 시작 시 `UINavigationController(rootViewController: ExamplesViewController())`를 루트로 사용
 
 예시:
 
 ```swift
-case .sample:
-    UINavigationController(rootViewController: SampleViewController())
-        .toSwiftUI()
-        .ignoresSafeArea()
+navigationController?.pushViewController(SampleViewController(), animated: true)
 ```
 
 ## 새 ViewController 추가 순서
 
 1. `Examples/DemoApp/DemoApp` 아래에 새 `UIViewController` 파일을 만듭니다.
 2. 필요하면 전용 `Component`와 `UIView`를 같은 폴더에 둡니다.
-3. [ContentView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/TurboListKit/Examples/DemoApp/DemoApp/ContentView.swift:1)의 `Destination`에 항목을 추가합니다.
-4. `navigationDestination`에서 해당 `UIViewController`를 연결합니다.
+3. [ExamplesViewController.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Examples/DemoApp/DemoApp/ExamplesViewController.swift:1)의 `Destination`에 항목을 추가합니다.
+4. `makeViewController()` 또는 `didSelectRowAt`에서 해당 `UIViewController`를 연결합니다.
 
 ## 실행
 

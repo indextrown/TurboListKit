@@ -1,7 +1,9 @@
 import TurboListKit
 import UIKit
 
-struct FeatureCardComponent: Component {
+/// 가로 카드 예제용 컴포넌트.
+/// `fitContent`를 사용하고, 실제 크기는 `sizeThatFits`에서 최대 폭 240pt와 최소 높이 140pt를 기준으로 오토레이아웃 결과를 반환한다.
+struct HorizontalFeatureCardComponent: Component {
     struct ViewModel: Equatable {
         enum Accent: Equatable {
             case blue
@@ -21,16 +23,16 @@ struct FeatureCardComponent: Component {
         .fitContent(estimatedSize: CGSize(width: 240, height: 150))
     }
 
-    func renderContent(coordinator: Void) -> FeatureCardView {
-        FeatureCardView()
+    func renderContent(coordinator: Void) -> HorizontalFeatureCardView {
+        HorizontalFeatureCardView()
     }
 
-    func render(in content: FeatureCardView, coordinator: Void) {
+    func render(in content: HorizontalFeatureCardView, coordinator: Void) {
         content.apply(viewModel: viewModel)
     }
 }
 
-final class FeatureCardView: UIView {
+final class HorizontalFeatureCardView: UIView {
     private let eyebrowLabel = UILabel()
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
@@ -44,7 +46,7 @@ final class FeatureCardView: UIView {
         clipsToBounds = true
 
         eyebrowLabel.font = .preferredFont(forTextStyle: .caption1)
-        eyebrowLabel.text = "Feature"
+        eyebrowLabel.text = "Horizontal"
         eyebrowLabel.textColor = .secondaryLabel
 
         titleLabel.font = .preferredFont(forTextStyle: .title3)
@@ -74,7 +76,7 @@ final class FeatureCardView: UIView {
         nil
     }
 
-    func apply(viewModel: FeatureCardComponent.ViewModel) {
+    func apply(viewModel: HorizontalFeatureCardComponent.ViewModel) {
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
 
@@ -99,13 +101,10 @@ final class FeatureCardView: UIView {
     }
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        let targetWidth = min(max(size.width, 1), 240)
-        let fittingSize = CGSize(width: targetWidth, height: UIView.layoutFittingCompressedSize.height)
-        let result = systemLayoutSizeFitting(
-            fittingSize,
-            withHorizontalFittingPriority: .required,
-            verticalFittingPriority: .fittingSizeLevel
+        autoLayoutFittingSize(
+            for: size,
+            targetWidth: min(size.width, 240),
+            minimumHeight: 140
         )
-        return CGSize(width: targetWidth, height: max(result.height, 140))
     }
 }

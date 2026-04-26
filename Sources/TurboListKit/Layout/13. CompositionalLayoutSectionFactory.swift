@@ -158,7 +158,7 @@ extension CompositionalLayoutSectionFactory {
             )
         case .fitContent:
             return .init(
-                widthDimension: .fractionalWidth(size.width),
+                widthDimension: .estimated(size.width),
                 heightDimension: .estimated(size.height)
             )
         }
