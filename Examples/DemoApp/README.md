@@ -1,14 +1,14 @@
 # DemoApp
 
-`DemoApp`은 `CollectionAdapter`를 실제 화면에서 확인하기 위한 예제 앱입니다.
+`DemoApp`은 `TurboListKit`을 실제 화면에서 확인하기 위한 예제 앱입니다.
 
-앱 시작 화면은 [ContentView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/CollectionAdapter/Examples/DemoApp/DemoApp/ContentView.swift:1)이며, 여기서 각 `UIViewController` 예제로 이동합니다.
+앱 시작 화면은 [ContentView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/TurboListKit/Examples/DemoApp/DemoApp/ContentView.swift:1)이며, 여기서 각 `UIViewController` 예제로 이동합니다.
 
 ## 화면 구성
 
 ### `DemoViewController`
 
-파일: [DemoViewController.swift](/Users/kimdonghyeon/2025/개발/라이브러리/CollectionAdapter/Examples/DemoApp/DemoApp/Demo/DemoViewController.swift:1)
+파일: [DemoViewController.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/TurboListKit/Examples/DemoApp/DemoApp/Demo/DemoViewController.swift:1)
 
 라이브러리 기능을 한 화면에서 종합적으로 보여주는 데모입니다.
 
@@ -57,7 +57,7 @@ adapter.apply(
 
 ### `SampleViewController`
 
-파일: [SampleViewController.swift](/Users/kimdonghyeon/2025/개발/라이브러리/CollectionAdapter/Examples/DemoApp/DemoApp/Sample/SampleViewController.swift:1)
+파일: [SampleViewController.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/TurboListKit/Examples/DemoApp/DemoApp/Sample/SampleViewController.swift:1)
 
 최소한의 세로 리스트 예제입니다. 참고용 샘플 코드를 이 프로젝트 스타일에 맞게 다시 옮긴 화면입니다.
 
@@ -72,12 +72,12 @@ adapter.apply(
 
 관련 파일:
 
-- [VerticalLayoutListView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/CollectionAdapter/Examples/DemoApp/DemoApp/Sample/VerticalLayoutListView.swift:1)
-- [VerticalLayoutItemComponent.swift](/Users/kimdonghyeon/2025/개발/라이브러리/CollectionAdapter/Examples/DemoApp/DemoApp/Sample/VerticalLayoutItemComponent.swift:1)
+- [VerticalLayoutListView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/TurboListKit/Examples/DemoApp/DemoApp/Sample/VerticalLayoutListView.swift:1)
+- [VerticalLayoutItemComponent.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/TurboListKit/Examples/DemoApp/DemoApp/Sample/VerticalLayoutItemComponent.swift:1)
 
 이럴 때 참고하면 좋습니다:
 
-- 가장 단순한 `CollectionAdapter` 도입 예제가 필요할 때
+- 가장 단순한 `TurboListKit` 도입 예제가 필요할 때
 - 셀 높이를 내용에 따라 자동 계산하고 싶을 때
 - `UIViewController` 안에 리스트 하나만 빠르게 붙이고 싶을 때
 - 무한 스크롤과 새로고침을 작은 예제로 보고 싶을 때
@@ -112,7 +112,7 @@ collectionViewAdapter.apply(
 
 `DemoApp`은 SwiftUI 목록에서 UIKit 화면으로 이동하는 구조입니다.
 
-- [ContentView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/CollectionAdapter/Examples/DemoApp/DemoApp/ContentView.swift:1)에서 `NavigationStack` + `List` 사용
+- [ContentView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/TurboListKit/Examples/DemoApp/DemoApp/ContentView.swift:1)에서 `NavigationStack` + `List` 사용
 - 각 항목은 `UIViewController.toSwiftUI()`로 감싸서 이동
 - 새 예제를 추가하려면 `Destination`에 case를 추가하고 `navigationDestination`에 연결하면 됩니다
 
@@ -129,7 +129,7 @@ case .sample:
 
 1. `Examples/DemoApp/DemoApp` 아래에 새 `UIViewController` 파일을 만듭니다.
 2. 필요하면 전용 `Component`와 `UIView`를 같은 폴더에 둡니다.
-3. [ContentView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/CollectionAdapter/Examples/DemoApp/DemoApp/ContentView.swift:1)의 `Destination`에 항목을 추가합니다.
+3. [ContentView.swift](/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/TurboListKit/Examples/DemoApp/DemoApp/ContentView.swift:1)의 `Destination`에 항목을 추가합니다.
 4. `navigationDestination`에서 해당 `UIViewController`를 연결합니다.
 
 ## 실행

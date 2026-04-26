@@ -5,7 +5,7 @@
 //  Created by 김동현 on 4/25/26.
 //
 
-import CollectionAdapter
+import TurboListKit
 import UIKit
 
 struct TextComponent: Component {

@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "CollectionAdapter",
+    name: "TurboListKit",
     platforms: [.iOS(.v13), .macOS(.v10_15)],
     products: [
         .library(
-            name: "CollectionAdapter",
-            targets: ["CollectionAdapter"]
+            name: "TurboListKit",
+            targets: ["TurboListKit"]
         ),
     ],
     dependencies: [
@@ -25,14 +25,16 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "CollectionAdapter",
+            name: "TurboListKit",
             dependencies: [
                 "DifferenceKit"
-            ]
+            ],
+            path: "Sources/TurboListKit"
         ),
         .testTarget(
-            name: "CollectionAdapterTests",
-            dependencies: ["CollectionAdapter"]
+            name: "TurboListKitTests",
+            dependencies: ["TurboListKit"],
+            path: "Tests/TurboListKitTests"
         ),
     ],
 //    swiftLanguageModes: [.v6]

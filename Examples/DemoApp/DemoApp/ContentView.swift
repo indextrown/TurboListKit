@@ -26,7 +26,7 @@ struct ContentView: View {
         var subtitle: String {
             switch self {
             case .demo:
-                return "CollectionAdapter 데모 화면"
+                return "TurboListKit 데모 화면"
             case .sample:
                 return "새 화면 작업용 기본 틀"
             }

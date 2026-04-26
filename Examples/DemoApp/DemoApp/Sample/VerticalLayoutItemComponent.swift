@@ -1,4 +1,4 @@
-import CollectionAdapter
+import TurboListKit
 import UIKit
 
 struct VerticalLayoutItemComponent: Component {

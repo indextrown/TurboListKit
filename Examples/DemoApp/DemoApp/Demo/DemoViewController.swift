@@ -1,4 +1,4 @@
-import CollectionAdapter
+import TurboListKit
 import UIKit
 
 final class DemoViewController: UIViewController {
@@ -58,7 +58,7 @@ final class DemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "CollectionAdapter"
+        title = "TurboListKit"
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(title: "Shuffle", style: .plain, target: self, action: #selector(shuffleContent)),

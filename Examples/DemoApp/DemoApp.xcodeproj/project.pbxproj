@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF13CE1F2F9BC51200E4245B /* CollectionAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = DF13CE1E2F9BC51200E4245B /* CollectionAdapter */; };
+		DF13CE1F2F9BC51200E4245B /* TurboListKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF13CE1E2F9BC51200E4245B /* TurboListKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF13CE1F2F9BC51200E4245B /* CollectionAdapter in Frameworks */,
+				DF13CE1F2F9BC51200E4245B /* TurboListKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 			);
 			name = DemoApp;
 			packageProductDependencies = (
-				DF13CE1E2F9BC51200E4245B /* CollectionAdapter */,
+				DF13CE1E2F9BC51200E4245B /* TurboListKit */,
 			);
 			productName = DemoApp;
 			productReference = DF13CE0F2F9BC50200E4245B /* DemoApp.app */;
@@ -101,7 +101,7 @@
 			mainGroup = DF13CE062F9BC50200E4245B;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				DF13CE1D2F9BC51200E4245B /* XCLocalSwiftPackageReference "../../../CollectionAdapter" */,
+				DF13CE1D2F9BC51200E4245B /* XCLocalSwiftPackageReference "../../../TurboListKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DF13CE102F9BC50200E4245B /* Products */;
@@ -345,16 +345,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		DF13CE1D2F9BC51200E4245B /* XCLocalSwiftPackageReference "../../../CollectionAdapter" */ = {
+		DF13CE1D2F9BC51200E4245B /* XCLocalSwiftPackageReference "../../../TurboListKit" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../../CollectionAdapter;
+			relativePath = ../../../TurboListKit;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DF13CE1E2F9BC51200E4245B /* CollectionAdapter */ = {
+		DF13CE1E2F9BC51200E4245B /* TurboListKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = CollectionAdapter;
+			productName = TurboListKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,6 +1,6 @@
-# CollectionAdapter
+# TurboListKit
 
-`CollectionAdapter`는 `UICollectionView`를 `Component -> Cell -> Section -> List` 구조로 선언형에 가깝게 구성할 수 있게 도와주는 UIKit 리스트 어댑터입니다.
+`TurboListKit`은 `UICollectionView`를 `Component -> Cell -> Section -> List` 구조로 선언형에 가깝게 구성할 수 있게 도와주는 UIKit 리스트 어댑터입니다.
 
 DifferenceKit 기반 diff 업데이트, compositional layout 연결, 이벤트 modifier, prefetching plugin 구성을 한 곳에 묶어 `UICollectionView` 보일러플레이트를 줄이는 것이 목적입니다.
 
@@ -26,7 +26,7 @@ DifferenceKit 기반 diff 업데이트, compositional layout 연결, 이벤트 m
 ### 1. Adapter 준비
 
 ```swift
-import CollectionAdapter
+import TurboListKit
 import UIKit
 
 private let layoutAdapter = CollectionViewLayoutAdapter()
@@ -94,7 +94,7 @@ func render() {
 }
 ```
 
-`CollectionAdapter`는 상태를 직접 보관하지 않으므로, 데이터가 바뀌면 새 `List`를 다시 만들어 `apply(...)`하는 방식으로 갱신합니다.
+`TurboListKit`은 상태를 직접 보관하지 않으므로, 데이터가 바뀌면 새 `List`를 다시 만들어 `apply(...)`하는 방식으로 갱신합니다.
 
 ## 핵심 타입
 
