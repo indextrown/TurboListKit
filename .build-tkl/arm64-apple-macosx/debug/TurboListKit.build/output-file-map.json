@@ -1,0 +1,404 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/primary.swiftdeps"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/11. Cell.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/11. Cell.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/11. Cell.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/11. Cell~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/11. Cell.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/11. Cell.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/12. SupplementaryView.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/12. SupplementaryView.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/12. SupplementaryView.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/12. SupplementaryView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/12. SupplementaryView.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/12. SupplementaryView.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/13. Section.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/13. Section.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/13. Section.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/13. Section~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/13. Section.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/13. Section.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/35. List.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/35. List.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/35. List.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/35. List~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/35. List.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/35. List.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Adapter/49. CollectionViewLayoutAdaptable.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/49. CollectionViewLayoutAdaptable.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/49. CollectionViewLayoutAdaptable.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/49. CollectionViewLayoutAdaptable~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/49. CollectionViewLayoutAdaptable.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/49. CollectionViewLayoutAdaptable.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Adapter/5. CollectionViewAdapterConfiguration.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/5. CollectionViewAdapterConfiguration.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/5. CollectionViewAdapterConfiguration.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/5. CollectionViewAdapterConfiguration~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/5. CollectionViewAdapterConfiguration.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/5. CollectionViewAdapterConfiguration.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Adapter/51. CollectionViewAdapter.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/51. CollectionViewAdapter.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/51. CollectionViewAdapter.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/51. CollectionViewAdapter~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/51. CollectionViewAdapter.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/51. CollectionViewAdapter.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Adapter/6. CollectionViewAdapterUpdateStrategy.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/6. CollectionViewAdapterUpdateStrategy.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/6. CollectionViewAdapterUpdateStrategy.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/6. CollectionViewAdapterUpdateStrategy~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/6. CollectionViewAdapterUpdateStrategy.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/6. CollectionViewAdapterUpdateStrategy.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Adapter/7. ComponentSizeStorage.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/7. ComponentSizeStorage.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/7. ComponentSizeStorage.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/7. ComponentSizeStorage~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/7. ComponentSizeStorage.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/7. ComponentSizeStorage.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Builder/33. CellsBuilder.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/33. CellsBuilder.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/33. CellsBuilder.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/33. CellsBuilder~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/33. CellsBuilder.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/33. CellsBuilder.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Builder/34. SectionsBuilder.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/34. SectionsBuilder.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/34. SectionsBuilder.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/34. SectionsBuilder~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/34. SectionsBuilder.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/34. SectionsBuilder.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Component/1. ContentLayoutMode.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/1. ContentLayoutMode.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/1. ContentLayoutMode.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/1. ContentLayoutMode~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/1. ContentLayoutMode.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/1. ContentLayoutMode.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Component/2. Component.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/2. Component.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/2. Component.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/2. Component~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/2. Component.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/2. Component.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Component/3. AnyComponent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/3. AnyComponent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/3. AnyComponent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/3. AnyComponent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/3. AnyComponent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/3. AnyComponent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Component/4. IdentifiableComponent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/4. IdentifiableComponent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/4. IdentifiableComponent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/4. IdentifiableComponent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/4. IdentifiableComponent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/4. IdentifiableComponent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/10. ListingViewEventHandler.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/10. ListingViewEventHandler.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/10. ListingViewEventHandler.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/10. ListingViewEventHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/10. ListingViewEventHandler.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/10. ListingViewEventHandler.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/8. ListingViewEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/8. ListingViewEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/8. ListingViewEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/8. ListingViewEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/8. ListingViewEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/8. ListingViewEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/9. ListingViewEventStorage.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/9. ListingViewEventStorage.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/9. ListingViewEventStorage.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/9. ListingViewEventStorage~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/9. ListingViewEventStorage.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/9. ListingViewEventStorage.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/Cell/21. DidSelectEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/21. DidSelectEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/21. DidSelectEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/21. DidSelectEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/21. DidSelectEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/21. DidSelectEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/Cell/22. HighlightEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/22. HighlightEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/22. HighlightEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/22. HighlightEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/22. HighlightEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/22. HighlightEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/Cell/23. UnhighlightEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/23. UnhighlightEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/23. UnhighlightEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/23. UnhighlightEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/23. UnhighlightEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/23. UnhighlightEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/Common/19. DidEndDisplayingEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/19. DidEndDisplayingEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/19. DidEndDisplayingEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/19. DidEndDisplayingEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/19. DidEndDisplayingEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/19. DidEndDisplayingEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/Common/20. WillDisplayEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/20. WillDisplayEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/20. WillDisplayEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/20. WillDisplayEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/20. WillDisplayEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/20. WillDisplayEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/List/24. DidEndDeceleratingEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/24. DidEndDeceleratingEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/24. DidEndDeceleratingEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/24. DidEndDeceleratingEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/24. DidEndDeceleratingEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/24. DidEndDeceleratingEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/List/25. DidEndDraggingEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/25. DidEndDraggingEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/25. DidEndDraggingEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/25. DidEndDraggingEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/25. DidEndDraggingEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/25. DidEndDraggingEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/List/26. DidScrollEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/26. DidScrollEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/26. DidScrollEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/26. DidScrollEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/26. DidScrollEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/26. DidScrollEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/List/26. DidScrollToTopEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/26. DidScrollToTopEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/26. DidScrollToTopEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/26. DidScrollToTopEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/26. DidScrollToTopEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/26. DidScrollToTopEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/List/27. PullToRefreshEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/27. PullToRefreshEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/27. PullToRefreshEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/27. PullToRefreshEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/27. PullToRefreshEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/27. PullToRefreshEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/List/28. ReachedEndEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/28. ReachedEndEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/28. ReachedEndEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/28. ReachedEndEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/28. ReachedEndEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/28. ReachedEndEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/List/29. ShouldScrollToTopEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/29. ShouldScrollToTopEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/29. ShouldScrollToTopEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/29. ShouldScrollToTopEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/29. ShouldScrollToTopEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/29. ShouldScrollToTopEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/List/30. WillBeginDeclearatingEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/30. WillBeginDeclearatingEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/30. WillBeginDeclearatingEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/30. WillBeginDeclearatingEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/30. WillBeginDeclearatingEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/30. WillBeginDeclearatingEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/List/31. WillBeginDraggingEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/31. WillBeginDraggingEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/31. WillBeginDraggingEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/31. WillBeginDraggingEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/31. WillBeginDraggingEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/31. WillBeginDraggingEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Event/List/32. WillEndDraggingEvent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/32. WillEndDraggingEvent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/32. WillEndDraggingEvent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/32. WillEndDraggingEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/32. WillEndDraggingEvent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/32. WillEndDraggingEvent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Extension/42. UIView+TraitCollection.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/42. UIView+TraitCollection.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/42. UIView+TraitCollection.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/42. UIView+TraitCollection~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/42. UIView+TraitCollection.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/42. UIView+TraitCollection.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Extension/52. UICollectionView+Difference.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/52. UICollectionView+Difference.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/52. UICollectionView+Difference.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/52. UICollectionView+Difference~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/52. UICollectionView+Difference.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/52. UICollectionView+Difference.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Extension/53. UICollectionView+Init.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/53. UICollectionView+Init.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/53. UICollectionView+Init.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/53. UICollectionView+Init~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/53. UICollectionView+Init.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/53. UICollectionView+Init.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/FeatureFlag/36. FeatureFlagType.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/36. FeatureFlagType.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/36. FeatureFlagType.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/36. FeatureFlagType~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/36. FeatureFlagType.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/36. FeatureFlagType.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/FeatureFlag/37. FeatureFlagItem.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/37. FeatureFlagItem.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/37. FeatureFlagItem.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/37. FeatureFlagItem~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/37. FeatureFlagItem.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/37. FeatureFlagItem.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/FeatureFlag/38. FeatureFlagProviding.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/38. FeatureFlagProviding.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/38. FeatureFlagProviding.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/38. FeatureFlagProviding~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/38. FeatureFlagProviding.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/38. FeatureFlagProviding.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/FeatureFlag/39. DefaultFeatureFlagProvider.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/39. DefaultFeatureFlagProvider.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/39. DefaultFeatureFlagProvider.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/39. DefaultFeatureFlagProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/39. DefaultFeatureFlagProvider.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/39. DefaultFeatureFlagProvider.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/FeatureFlag/40. ListKitFeatureFlag.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/40. ListKitFeatureFlag.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/40. ListKitFeatureFlag.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/40. ListKitFeatureFlag~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/40. ListKitFeatureFlag.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/40. ListKitFeatureFlag.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Layout/13. CompositionalLayoutSectionFactory.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/13. CompositionalLayoutSectionFactory.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/13. CompositionalLayoutSectionFactory.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/13. CompositionalLayoutSectionFactory~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/13. CompositionalLayoutSectionFactory.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/13. CompositionalLayoutSectionFactory.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Layout/14. VerticalLayout.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/14. VerticalLayout.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/14. VerticalLayout.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/14. VerticalLayout~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/14. VerticalLayout.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/14. VerticalLayout.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Layout/15. HorizontalLayout.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/15. HorizontalLayout.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/15. HorizontalLayout.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/15. HorizontalLayout~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/15. HorizontalLayout.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/15. HorizontalLayout.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Layout/17. VerticalGridLayout.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/17. VerticalGridLayout.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/17. VerticalGridLayout.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/17. VerticalGridLayout~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/17. VerticalGridLayout.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/17. VerticalGridLayout.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Layout/18. DefaultCompositionalLayoutSectionFactory.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/18. DefaultCompositionalLayoutSectionFactory.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/18. DefaultCompositionalLayoutSectionFactory.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/18. DefaultCompositionalLayoutSectionFactory~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/18. DefaultCompositionalLayoutSectionFactory.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/18. DefaultCompositionalLayoutSectionFactory.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Prefetching/45. PrefetchableComponent.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/45. PrefetchableComponent.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/45. PrefetchableComponent.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/45. PrefetchableComponent~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/45. PrefetchableComponent.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/45. PrefetchableComponent.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Prefetching/46. RemoteImagePrefetching.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/46. RemoteImagePrefetching.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/46. RemoteImagePrefetching.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/46. RemoteImagePrefetching~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/46. RemoteImagePrefetching.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/46. RemoteImagePrefetching.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Prefetching/Plugins/47. CollectionViewPrefetchingPlugin.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/47. CollectionViewPrefetchingPlugin.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/47. CollectionViewPrefetchingPlugin.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/47. CollectionViewPrefetchingPlugin~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/47. CollectionViewPrefetchingPlugin.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/47. CollectionViewPrefetchingPlugin.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Prefetching/Plugins/48. RemoteImagePrefetchingPlugin.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/48. RemoteImagePrefetchingPlugin.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/48. RemoteImagePrefetchingPlugin.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/48. RemoteImagePrefetchingPlugin~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/48. RemoteImagePrefetchingPlugin.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/48. RemoteImagePrefetchingPlugin.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/TurboListKit.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/TurboListKit.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/TurboListKit.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/TurboListKit~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/TurboListKit.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/TurboListKit.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Utils/0. Any+Equatable.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/0. Any+Equatable.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/0. Any+Equatable.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/0. Any+Equatable~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/0. Any+Equatable.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/0. Any+Equatable.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Utils/16. Chunked.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/16. Chunked.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/16. Chunked.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/16. Chunked~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/16. Chunked.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/16. Chunked.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/Utils/50. Collection+SafeIndex.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/50. Collection+SafeIndex.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/50. Collection+SafeIndex.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/50. Collection+SafeIndex~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/50. Collection+SafeIndex.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/50. Collection+SafeIndex.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/View/41. ComponentRenderable.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/41. ComponentRenderable.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/41. ComponentRenderable.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/41. ComponentRenderable~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/41. ComponentRenderable.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/41. ComponentRenderable.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/View/43. UICollectionComponentReusableView.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/43. UICollectionComponentReusableView.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/43. UICollectionComponentReusableView.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/43. UICollectionComponentReusableView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/43. UICollectionComponentReusableView.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/43. UICollectionComponentReusableView.dia"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/Sources/TurboListKit/View/44. UICollectionViewComponentCell.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/44. UICollectionViewComponentCell.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/44. UICollectionViewComponentCell.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/44. UICollectionViewComponentCell~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/44. UICollectionViewComponentCell.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/TurboListKit.build/44. UICollectionViewComponentCell.dia"
+  }
+}

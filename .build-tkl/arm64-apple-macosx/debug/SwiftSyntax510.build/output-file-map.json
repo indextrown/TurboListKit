@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntax510.build/primary.swiftdeps"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/checkouts/swift-syntax/Sources/VersionMarkerModules/SwiftSyntax510/Empty.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntax510.build/Empty.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntax510.build/Empty.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntax510.build/Empty~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntax510.build/Empty.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntax510.build/Empty.dia"
+  }
+}

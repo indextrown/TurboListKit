@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntaxMacrosGenericTestSupport.build/primary.swiftdeps"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/checkouts/swift-syntax/Sources/SwiftSyntaxMacrosGenericTestSupport/Assertions.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntaxMacrosGenericTestSupport.build/Assertions.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntaxMacrosGenericTestSupport.build/Assertions.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntaxMacrosGenericTestSupport.build/Assertions~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntaxMacrosGenericTestSupport.build/Assertions.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftSyntaxMacrosGenericTestSupport.build/Assertions.dia"
+  }
+}

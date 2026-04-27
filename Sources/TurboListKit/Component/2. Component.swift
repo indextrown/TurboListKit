@@ -38,6 +38,7 @@ public protocol Component {
     ///
     /// - Parameter coordinator: 렌더링에 사용할 Coordinator
     /// - Returns: 생성된 Content(View)
+    @MainActor
     func renderContent(coordinator: Coordinator) -> Content
     
     /// 기존 Content에 새로운 데이터를 반영하여 업데이트합니다.
@@ -45,6 +46,7 @@ public protocol Component {
     /// - Parameters:
     ///   - content: 업데이트할 Content
     ///   - coordinator: 렌더링에 사용할 Coordinator
+    @MainActor
     func render(in content: Content, coordinator: Coordinator)
     
     /// Content를 container 뷰 안에 배치(layout)합니다.
@@ -52,12 +54,14 @@ public protocol Component {
     /// - Parameters:
     ///   - content: 배치할 Content
     ///   - container: Content를 담을 부모 뷰
+    @MainActor
     func layout(content: Content, in container: UIView)
     
     /// SwiftUI에서 View → 외부와 통신하기 위한 Coordinator를 생성합니다.
     ///
     /// 만약 View가 외부와 상호작용하지 않는다면 Coordinator는 필요 없습니다.
     /// - Returns: 새로운 Coordinator 인스턴스
+    @MainActor
     func makeCoordinator() -> Coordinator
 }
 
@@ -70,6 +74,7 @@ extension Component {
 
 extension Component where Coordinator == Void {
     /// Coordinator를 사용하지 않는 경우, 기본적으로 빈 값(Void)을 반환합니다.
+    @MainActor
     public func makeCoordinator() -> Coordinator {
         return ()
     }

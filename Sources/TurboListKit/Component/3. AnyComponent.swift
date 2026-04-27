@@ -37,10 +37,10 @@ private protocol ComponentBox {
     var layoutMode: ContentLayoutMode { get }
     var viewModel: Base.ViewModel { get }
     
-    func renderContent(coordinator: Any) -> UIView
-    func render(in content: UIView, coordinator: Any)
-    func layout(content: UIView, in container: UIView)
-    func makeCoordinator() -> Any
+    @MainActor func renderContent(coordinator: Any) -> UIView
+    @MainActor func render(in content: UIView, coordinator: Any)
+    @MainActor func layout(content: UIView, in container: UIView)
+    @MainActor func makeCoordinator() -> Any
 }
 
 /// 실제 `Component`를 감싸는 Box 구현체
@@ -75,11 +75,13 @@ private struct AnyComponentBox<Base: Component>: ComponentBox {
     }
     
     /// 콘텐츠 생성 (강제 캐스팅)
+    @MainActor
     func renderContent(coordinator: Any) -> UIView {
         baseComponent.renderContent(coordinator: coordinator as! Base.Coordinator)
     }
     
     /// 콘텐츠 업데이트
+    @MainActor
     func render(in content: UIView, coordinator: Any) {
         guard let content = content as? Base.Content,
               let coordinator = coordinator as? Base.Coordinator else {
@@ -89,12 +91,14 @@ private struct AnyComponentBox<Base: Component>: ComponentBox {
     }
     
     /// 레이아웃 수행
+    @MainActor
     func layout(content: UIView, in container: UIView) {
         guard let content = content as? Base.Content else { return }
         baseComponent.layout(content: content, in: container)
     }
     
     /// Coordinator 생성
+    @MainActor
     func makeCoordinator() -> Any {
         baseComponent.makeCoordinator()
     }
@@ -136,6 +140,7 @@ public struct AnyComponent: Component, Equatable {
     ///
     /// - Parameter coordinator: 렌더링에 사용할 coordinator
     /// - Returns: 생성된 UIView
+    @MainActor
     public func renderContent(coordinator: Any) -> UIView {
         box.renderContent(coordinator: coordinator)
     }
@@ -144,6 +149,7 @@ public struct AnyComponent: Component, Equatable {
     ///
     /// - Parameter coordinator: 렌더링에 사용할 coordinator
     /// - Returns: 생성된 UIView
+    @MainActor
     public func render(in content: UIView, coordinator: Any) {
         box.render(in: content, coordinator: coordinator)
     }
@@ -153,6 +159,7 @@ public struct AnyComponent: Component, Equatable {
     /// - Parameters:
     ///   - content: 배치할 콘텐츠
     ///   - container: 콘텐츠를 배치할 부모 뷰
+    @MainActor
     public func layout(content: UIView, in container: UIView) {
         box.layout(content: content, in: container)
     }
@@ -169,6 +176,7 @@ public struct AnyComponent: Component, Equatable {
     ///
     /// (SwiftUI와 상호작용하지 않는 경우 필요 없음)
     /// - Returns: Coordinator 인스턴스
+    @MainActor
     public func makeCoordinator() -> Any {
         box.makeCoordinator()
     }

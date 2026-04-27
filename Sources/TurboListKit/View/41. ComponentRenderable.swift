@@ -23,6 +23,7 @@ protocol ComponentRenderable: AnyObject {
     var renderedComponent: AnyComponent? { get set }
     
     /// Component를 렌더링하는 함수
+    @MainActor
     func render(component: AnyComponent)
 }
 
@@ -46,6 +47,7 @@ extension ComponentRenderable where Self: UICollectionReusableView {
 /// UIView 기반에서의 기본 렌더링 로직
 extension ComponentRenderable where Self: UIView {
     
+    @MainActor
     func render(component: AnyComponent) {
         
         /// 이미 렌더링된 콘텐츠가 있는 경우

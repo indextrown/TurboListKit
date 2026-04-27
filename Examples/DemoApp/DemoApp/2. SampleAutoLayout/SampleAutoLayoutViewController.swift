@@ -111,6 +111,7 @@ final class SampleAutoLayoutViewController: UIViewController {
             }
             .onRefresh { [weak self] _ in
                 self?.resetViewModels()
+                print("새로고침!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             }
             .onReachEnd(offsetFromEnd: .relativeToContainerSize(multiplier: 1.0)) { [weak self] _ in
                 self?.appendViewModels()

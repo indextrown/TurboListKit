@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftCompilerPlugin.build/primary.swiftdeps"
+  },
+  "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/checkouts/swift-syntax/Sources/SwiftCompilerPlugin/CompilerPlugin.swift": {
+    "dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftCompilerPlugin.build/CompilerPlugin.d",
+    "object": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftCompilerPlugin.build/CompilerPlugin.swift.o",
+    "swiftmodule": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftCompilerPlugin.build/CompilerPlugin~partial.swiftmodule",
+    "swift-dependencies": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftCompilerPlugin.build/CompilerPlugin.swiftdeps",
+    "diagnostics": "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/arm64-apple-macosx/debug/SwiftCompilerPlugin.build/CompilerPlugin.dia"
+  }
+}

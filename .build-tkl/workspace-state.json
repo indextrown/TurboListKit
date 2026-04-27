@@ -1,0 +1,81 @@
+{
+  "object" : {
+    "artifacts" : [
+
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "differencekit",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/ra1028/DifferenceKit.git",
+          "name" : "DifferenceKit"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "073b9671ce2b9b5b96398611427a1f929927e428",
+            "version" : "1.3.0"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "DifferenceKit"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "swift-syntax",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/swiftlang/swift-syntax.git",
+          "name" : "swift-syntax"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "4799286537280063c85a32f09884cfbca301b1a1",
+            "version" : "602.0.0"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "swift-syntax"
+      }
+    ],
+    "prebuilts" : [
+      {
+        "cModules" : [
+
+        ],
+        "checkoutPath" : "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/checkouts/swift-syntax",
+        "identity" : "swift-syntax",
+        "includePath" : [
+          "Sources/_SwiftSyntaxCShims/include",
+          "Sources/_SwiftLibraryPluginProviderCShims/include"
+        ],
+        "libraryName" : "MacroSupport",
+        "path" : "/Users/kimdonghyeon/2025/개발/라이브러리/TurboListKit/.build-tkl/prebuilts/swift-syntax/602.0.0/swiftlang-6.3.0.123.5-macosx26.4-MacroSupport",
+        "products" : [
+          "swift-syntaxPackageTests",
+          "SwiftBasicFormat",
+          "SwiftCompilerPlugin",
+          "SwiftDiagnostics",
+          "SwiftIDEUtils",
+          "SwiftIfConfig",
+          "SwiftLexicalLookup",
+          "SwiftOperators",
+          "SwiftParser",
+          "SwiftParserDiagnostics",
+          "SwiftRefactor",
+          "SwiftSyntax",
+          "SwiftSyntaxBuilder",
+          "SwiftSyntaxMacros",
+          "SwiftSyntaxMacroExpansion",
+          "SwiftSyntaxMacrosTestSupport",
+          "SwiftSyntaxMacrosGenericTestSupport",
+          "_SwiftCompilerPluginMessageHandling",
+          "_SwiftLibraryPluginProvider"
+        ],
+        "version" : "602.0.0"
+      }
+    ]
+  },
+  "version" : 7
+}
